@@ -1,0 +1,38 @@
+{
+  "id": "puzzle",
+  "name": "Puzzle",
+  "description": "For games centered around logic, puzzle mechanics, and level progression.",
+  "spaces": [
+    {
+      "name": "Design",
+      "decks": [
+        {
+          "name": "Core Mechanics",
+          "description": "Defining the foundational rules and interactions of the puzzles.",
+          "cards": [
+            {
+              "title": "Define the 'Color Switch' Mechanic",
+              "content": "Players can step on a switch to change their color. They can only pass through gates that match their current color."
+            }
+          ]
+        },
+        {
+          "name": "Level Progression",
+          "description": "Difficulty curve and introduction of new mechanics across levels."
+        },
+        {
+          "name": "Tutorial Flow",
+          "description": "How we teach the mechanics to the player non-verbally."
+        }
+      ]
+    },
+    {
+      "name": "Production",
+      "decks": [
+        {"name": "Programming (Mechanics)"},
+        {"name": "UI Art & VFX"},
+        {"name": "Sound Design"}
+      ]
+    }
+  ]
+}

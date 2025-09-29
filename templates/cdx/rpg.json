@@ -1,0 +1,44 @@
+{
+  "id": "rpg",
+  "name": "RPG / Adventure",
+  "description": "For games heavy on narrative, characters, world-building, and quests.",
+  "spaces": [
+    {
+      "name": "GDD",
+      "decks": [
+        {
+          "name": "Quests",
+          "description": "Design and track all mainline, side, and radiant quests.",
+          "cards": [
+            {
+              "title": "Example: The Village Elder's Request",
+              "content": "### Quest Overview\nThe elder of Oakhaven asks the player to retrieve a lost family heirloom from the nearby goblin caves.\n\n#### Acceptance Criteria:\n- [ ] Player can accept the quest from the Elder.\n- [ ] Quest is added to the player's journal.\n- [ ] Goblin cave location is marked on the map.\n- [ ] Heirloom is placed in the final chest of the cave.\n- [ ] Player can return the heirloom to the Elder for a reward.\n\nThis quest should introduce the player to the basic combat loop. See $GoblinEnemy."
+            }
+          ]
+        },
+        {
+          "name": "Characters",
+          "description": "Main characters, NPCs, and enemies.",
+          "journey": {
+            "steps": [
+              {"title": "Concept Art", "targetDeck": "Art"},
+              {"title": "3D Model / Sprite Sheet", "targetDeck": "Art"},
+              {"title": "Animation", "targetDeck": "Animation"},
+              {"title": "AI Behavior", "targetDeck": "Programming"},
+              {"title": "Dialogue Implementation", "targetDeck": "Writing"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "decks": [
+        {"name": "Art"},
+        {"name": "Animation"},
+        {"name": "Programming"},
+        {"name": "Writing"}
+      ]
+    }
+  ]
+}

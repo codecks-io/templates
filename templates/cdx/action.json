@@ -1,0 +1,39 @@
+{
+  "id": "action",
+  "name": "Action / Shooter",
+  "description": "For projects focused on player mechanics, level design, and asset pipelines.",
+  "spaces": [
+    {
+      "name": "Design",
+      "decks": [
+        {
+          "name": "Player Mechanics",
+          "description": "Core movement, abilities, and controls."
+        },
+        {
+          "name": "Weapons",
+          "description": "All player-usable weapons, including stats and behaviors.",
+          "cards": [
+            {
+              "title": "Plasma Rifle",
+              "content": "- **Type:** Energy-based, medium range\n- **Primary Fire:** Rapid-fire plasma bolts\n- **Alternate Fire:** Charged area-of-effect blast\n- **Visuals:** Blue muzzle flash, projectile trails."
+            }
+          ]
+        },
+        {
+          "name": "Enemies",
+          "description": "Design for all enemy types, from grunts to bosses."
+        }
+      ]
+    },
+    {
+      "name": "Production",
+      "decks": [
+        {"name": "Level Design"},
+        {"name": "Gameplay Programming"},
+        {"name": "3D Art & VFX"},
+        {"name": "Audio"}
+      ]
+    }
+  ]
+}

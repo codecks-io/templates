@@ -1,0 +1,26 @@
+{
+  "id": "sports",
+  "name": "Sports",
+  "description": "For games simulating real-world or fantasy sports.",
+  "spaces": [
+    {
+      "name": "Design",
+      "decks": [
+        {"name": "Game Rules & Logic", "description": "The core rulebook for the sport."},
+        {
+          "name": "Teams & Players",
+          "description": "Rosters, stats, and attributes for all teams and players."
+        },
+        {"name": "Stadiums & Venues"}
+      ]
+    },
+    {
+      "name": "Implementation",
+      "decks": [
+        {"name": "Physics & Animation"},
+        {"name": "AI Opponents"},
+        {"name": "UI (Scoreboards, Menus)"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "roguelike",
+  "name": "Roguelike / Roguelite",
+  "description": "For games with procedural generation, permadeath, and run-based systems.",
+  "spaces": [
+    {
+      "name": "Systems Design",
+      "decks": [
+        {
+          "name": "Procedural Generation",
+          "description": "Algorithms and rules for generating levels, loot, and encounters."
+        },
+        {
+          "name": "Items & Power-ups",
+          "description": "All discoverable items and their effects on a run."
+        },
+        {
+          "name": "Player Progression",
+          "description": "Meta-progression systems that persist between runs."
+        }
+      ]
+    },
+    {
+      "name": "Implementation",
+      "decks": [
+        {"name": "Core Loop Programming"},
+        {"name": "Art (Tilesets & Sprites)"},
+        {"name": "UI/UX"}
+      ]
+    }
+  ]
+}
