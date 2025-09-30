@@ -79,7 +79,7 @@ jobs:
                 echo "❌ $file is invalid"
                 # Format errors as a markdown list
                 errors=$(echo "$body" | jq -r '.errors[]' | sed 's/^/- /' | sed 's/$/  /')
-                validation_results+=("❌ [\`$file\`](https://github.com/$REPO/blob/$SHA/$file) -Invalid\n<details><summary>Errors</summary>$errors</details>")
+                validation_results+=("❌ [\`$file\`](https://github.com/$REPO/blob/$SHA/$file) -Invalid <details><summary>Errors</summary>$errors</details>")
                 all_valid=false
               fi
             else
