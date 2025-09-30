@@ -20,7 +20,7 @@
       ]
     },
     {
-      "name": "Implementation",
+      "name": "Tasks",
       "decks": [
         {"name": "Core Loop Programming"},
         {"name": "Art (Tilesets & Sprites)"},
