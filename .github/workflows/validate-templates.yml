@@ -1,0 +1,135 @@
+name: Validate JSON Templates
+
+on:
+  pull_request:
+    paths:
+      - "templates/**/*.json"
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  validate-templates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Get changed JSON files
+        id: changed-files
+        uses: tj-actions/changed-files@v47
+        with:
+          files: |
+            templates/**/*.json
+
+      - name: Validate JSON files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        id: validate
+        env:
+          VALIDATION_ENDPOINT: ${{ secrets.VALIDATION_ENDPOINT_URL }}
+          VALIDATION_TOKEN: ${{ secrets.VALIDATION_API_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -e
+
+          echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+
+          validation_results=()
+          all_valid=true
+
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "Validating: $file"
+
+            # Extract org and template name from path
+            org=$(echo "$file" | cut -d'/' -f2)
+            template=$(basename "$file" .json)
+
+            # Read file content
+            file_content=$(cat "$file")
+
+            # Create JSON payload using jq to properly escape content
+            jq -n \
+              --arg org "$org" \
+              --arg template "$template" \
+              --arg content "$file_content" \
+              '{org: $org, template: $template, content: $content}' > /tmp/payload.json
+
+            # Call validation endpoint
+            response=$(curl --retry 3 --retry-delay 2 -s -w "\n%{http_code}" -X POST "$VALIDATION_ENDPOINT" \
+              -H "Content-Type: application/json" \
+              -H "Authorization: Bearer $VALIDATION_TOKEN" \
+              -d @/tmp/payload.json)
+
+            http_code=$(echo "$response" | tail -n1)
+            body=$(echo "$response" | sed '$d')
+
+            if [ "$http_code" -eq 200 ]; then
+              is_valid=$(echo "$body" | jq -r '.valid')
+
+              if [ "$is_valid" = "true" ]; then
+                echo "✅ $file is valid"
+                validation_results+=("✅ [\`$file\`](https://github.com/$REPO/blob/$SHA/$file) - Valid")
+              else
+                echo "❌ $file is invalid"
+                # Format errors as a markdown list
+                errors=$(echo "$body" | jq -r '.errors[]' | sed 's/^/- /' | sed 's/$/  /')
+                validation_results+=("❌ [\`$file\`](https://github.com/$REPO/blob/$SHA/$file) -Invalid\n<details><summary>Errors</summary>$errors</details>")
+                all_valid=false
+              fi
+            else
+              echo "⚠️ Failed to validate $file (HTTP $http_code)"
+              error_msg=""
+              if [ -n "$body" ]; then
+                error_msg=$(echo "$body" | jq -r '.message // .error // empty' || echo "$body")
+                if [ -n "$error_msg" ]; then
+                  error_msg=" - $error_msg"
+                fi
+              fi
+              validation_results+=("⚠️ [\`$file\`](https://github.com/$REPO/blob/$SHA/$file) - Validation service error (HTTP $http_code)$error_msg")
+              all_valid=false
+            fi
+
+            # Clean up payload file
+            rm -f /tmp/payload.json
+          done
+
+          echo "all_valid=$all_valid" >> $GITHUB_OUTPUT
+          printf '%s\n' "${validation_results[@]}" > /tmp/validation_results.txt
+
+      - name: Report Results via Check Run
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const results = fs.readFileSync('/tmp/validation_results.txt', 'utf8').trim();
+            const allValid = '${{ steps.validate.outputs.all_valid }}' === 'true';
+
+            const conclusion = allValid ? 'success' : 'failure';
+            const summary = allValid
+              ? '✅ All templates are valid!'
+              : '❌ Some templates failed validation';
+
+            await github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'Template Validation',
+              head_sha: context.payload.pull_request.head.sha,
+              status: 'completed',
+              conclusion: conclusion,
+              output: {
+                title: 'JSON Template Validation Results',
+                summary: summary,
+                text: results
+              }
+            });
+
+      - name: Fail job if validation failed
+        if: steps.validate.outputs.all_valid == 'false'
+        run: exit 1
