@@ -1,6 +1,5 @@
 {
-  "id": "action",
-  "name": "Action / Shooter",
+  "title": "Action / Shooter",
   "description": "For projects focused on player mechanics, level design, and asset pipelines.",
   "spaces": [
     {

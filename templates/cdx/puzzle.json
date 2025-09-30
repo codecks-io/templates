@@ -1,6 +1,5 @@
 {
-  "id": "puzzle",
-  "name": "Puzzle",
+  "title": "Puzzle",
   "description": "For games centered around logic, puzzle mechanics, and level progression.",
   "spaces": [
     {

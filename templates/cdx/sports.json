@@ -1,6 +1,5 @@
 {
-  "id": "sports",
-  "name": "Sports",
+  "title": "Sports",
   "description": "For games simulating real-world or fantasy sports.",
   "spaces": [
     {

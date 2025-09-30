@@ -1,6 +1,5 @@
 {
-  "id": "roguelike",
-  "name": "Roguelike / Roguelite",
+  "title": "Roguelike / Roguelite",
   "description": "For games with procedural generation, permadeath, and run-based systems.",
   "spaces": [
     {
