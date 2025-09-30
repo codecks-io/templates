@@ -1,0 +1,46 @@
+name: Sync Templates
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "templates/**/*.json"
+
+permissions:
+  contents: read
+
+jobs:
+  sync-templates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Sync Endpoint
+        env:
+          API_HOST: ${{ secrets.API_HOST }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: |
+          set -e
+
+          SYNC_ENDPOINT="${API_HOST}/templates/sync"
+
+          echo "Triggering template sync..."
+
+          response=$(curl --retry 3 --retry-delay 2 -s -w "\n%{http_code}" -X POST "$SYNC_ENDPOINT" \
+            -H "Authorization: Bearer $API_TOKEN")
+
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+
+          if [ "$http_code" -eq 200 ] || [ "$http_code" -eq 202 ]; then
+            echo "✅ Sync triggered successfully (HTTP $http_code)"
+            if [ -n "$body" ]; then
+              echo "Response: $body"
+            fi
+          else
+            echo "❌ Sync failed (HTTP $http_code)"
+            if [ -n "$body" ]; then
+              echo "Error: $body"
+            fi
+            exit 1
+          fi

@@ -31,14 +31,16 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         id: validate
         env:
-          VALIDATION_ENDPOINT: ${{ secrets.VALIDATION_ENDPOINT_URL }}
-          VALIDATION_TOKEN: ${{ secrets.VALIDATION_API_TOKEN }}
+          API_HOST: ${{ secrets.API_HOST }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
           REPO: ${{ github.repository }}
           SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           set -e
 
           echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+
+          VALIDATION_ENDPOINT="${API_HOST}/templates/validate"
 
           validation_results=()
           all_valid=true
@@ -63,7 +65,7 @@ jobs:
             # Call validation endpoint
             response=$(curl --retry 3 --retry-delay 2 -s -w "\n%{http_code}" -X POST "$VALIDATION_ENDPOINT" \
               -H "Content-Type: application/json" \
-              -H "Authorization: Bearer $VALIDATION_TOKEN" \
+              -H "Authorization: Bearer $API_TOKEN" \
               -d @/tmp/payload.json)
 
             http_code=$(echo "$response" | tail -n1)
@@ -79,7 +81,7 @@ jobs:
                 echo "❌ $file is invalid"
                 # Format errors as a markdown list
                 errors=$(echo "$body" | jq -r '.errors[]' | sed 's/^/- /' | sed 's/$/  /')
-                validation_results+=("❌ [\`$file\`](https://github.com/$REPO/blob/$SHA/$file) -Invalid <details><summary>Errors</summary>$errors</details>")
+                validation_results+=("❌ [\`$file\`](https://github.com/$REPO/blob/$SHA/$file) - Invalid <details><summary>Errors</summary>${errors}</details>")
                 all_valid=false
               fi
             else
