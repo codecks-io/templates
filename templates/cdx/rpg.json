@@ -1,42 +1,173 @@
 {
-  "title": "RPG / Adventure",
-  "description": "For games heavy on narrative, characters, world-building, and quests.",
+  "title": "Fantasy RPG Project",
+  "description": "A starter template for a fantasy RPG. Includes asset decks for Quests, Items, and Creatures, with pre-built production pipelines using Journeys. This template separates game design (GDD) from production (Work).",
+  "tags": [
+    {
+      "tag": "main-quest",
+      "description": "A critical path, story-driven quest",
+      "emoji": "👑"
+    },
+    {
+      "tag": "side-quest",
+      "description": "An optional quest",
+      "emoji": "📜"
+    },
+    {
+      "tag": "common",
+      "description": "A common-tier item or resource",
+      "color": "#AAAAAA"
+    },
+    {
+      "tag": "rare",
+      "description": "A rare-tier item",
+      "color": "#0070DD"
+    },
+    {
+      "tag": "epic",
+      "description": "An epic-tier item",
+      "color": "#A335EE"
+    }
+  ],
   "spaces": [
     {
-      "name": "GDD",
+      "name": "Game Design Documents (GDD)",
+      "defaultDeckType": "hero",
       "decks": [
         {
-          "name": "Quests",
-          "description": "Design and track all mainline, side, and radiant quests.",
+          "name": "Core Mechanics",
+          "description": "Defines fundamental rules: combat, progression, dialogue, etc. These are hero cards, not task cards.",
           "cards": [
             {
-              "title": "Example: The Village Elder's Request",
-              "content": "### Quest Overview\nThe elder of Oakhaven asks the player to retrieve a lost family heirloom from the nearby goblin caves.\n\n#### Acceptance Criteria:\n- [ ] Player can accept the quest from the Elder.\n- [ ] Quest is added to the player's journal.\n- [ ] Goblin cave location is marked on the map.\n- [ ] Heirloom is placed in the final chest of the cave.\n- [ ] Player can return the heirloom to the Elder for a reward.\n\nThis quest should introduce the player to the basic combat loop. See $GoblinEnemy."
+              "title": "Player Stats (STR, DEX, INT)",
+              "content": "Defines the primary attributes for the player character.\n\n- **STR (Strength):** Affects melee damage and carry weight.\n- **DEX (Dexterity):** Affects ranged damage and chance to dodge.\n- **INT (Intelligence):** Affects magic damage and mana pool.",
+              "priority": "a"
+            },
+            {
+              "title": "Combat System (Turn-Based)",
+              "content": "Core spec for the combat loop.\n\n- **System:** Turn-Based, initiative order decided by DEX.\n- **Action Points:** Each unit has 4 AP per turn.\n- **Actions:** Move (1 AP), Attack (2 AP), Use Skill (2-3 AP), Use Item (1 AP).",
+              "priority": "a"
+            },
+            {
+              "title": "Dialogue System",
+              "content": "Spec for player conversations.\n\n- **System:** Branching dialogue tree.\n- **Checks:** Must support stat-based checks (e.g., [INT 10] Persuade).\n- **Flags:** Must be able to set and check quest flags.",
+              "priority": "a"
+            },
+            {
+              "title": "XP & Leveling",
+              "content": "Defines the player progression curve. Reference 'XP_Curve.csv' (link).",
+              "priority": "a"
             }
           ]
         },
         {
-          "name": "Characters",
-          "description": "Main characters, NPCs, and enemies.",
+          "name": "Quests",
+          "description": "The central quest log. Add a new quest as a card, then start its journey to create all production tasks.",
+          "cards": [
+            {
+              "title": "MQ1: The Dragon's Lair",
+              "content": "**Goal:** Player must defeat the dragon in the Burning Peaks.\n**Giver:** King Alistair in the capital.\n**Steps:**\n1. Find the hidden map.\n2. Speak to the Hermit.\n3. Slay the dragon.",
+              "priority": "a",
+              "tags": ["main-quest"]
+            },
+            {
+              "title": "MQ2: The Shadow's Heart",
+              "content": "**Goal:** Stop the Shadow Cult from completing their dark ritual in the sunken temple.\n**Giver:** Varis the Royal Mage, after completing 'MQ1: The Dragon's Lair'.\n**Steps:**\n1. Find the key to the Sunken Temple.\n2. Survive the temple's water traps.\n3. Interrupt the ritual by defeating the 3 Cultist Lieutenants.\n4. Confront the Cult's leader, Malakor.",
+              "priority": "a",
+              "tags": ["main-quest"]
+            },
+            {
+              "title": "SQ1: The Lost Miner",
+              "content": "**Goal:** Find the miner lost in the Crystal Caves.\n**Giver:** Worried Wife in Boulder Town.\n**Reward:** 500 Gold, 2x Health Potion.",
+              "priority": "b",
+              "tags": ["side-quest"]
+            }
+          ],
           "journey": {
             "steps": [
-              {"title": "Concept Art", "targetDeck": "Art"},
-              {"title": "3D Model / Sprite Sheet", "targetDeck": "Art"},
-              {"title": "Animation", "targetDeck": "Animation"},
-              {"title": "AI Behavior", "targetDeck": "Programming"},
-              {"title": "Dialogue Implementation", "targetDeck": "Writing"}
+              { "title": "Write Quest Dialogue & Journal Text", "targetDeck": "Writing", "priority": "a", "effort": 5 },
+              { "title": "Script Quest Logic (Triggers, Objectives, Flags)", "targetDeck": "Coding", "priority": "a", "effort": 8 },
+              { "title": "Design & Populate Quest Location", "targetDeck": "Game Design", "priority": "a", "effort": 8 },
+              { "title": "Implement Quest Rewards", "targetDeck": "Game Design", "priority": "a", "effort": 2 },
+              { "title": "Test Quest (Start to Finish)", "targetDeck": "QA", "priority": "b", "effort": 3 }
+            ]
+          }
+        },
+        {
+          "name": "Items",
+          "description": "Database for all items: weapons, armor, potions, and quest objects. Add an item, then start its journey.",
+          "cards": [
+            {
+              "title": "Iron Sword",
+              "content": "**Type:** 1H Weapon\n**Damage:** 8-12 Physical\n**Stats:** +1 STR\n**Cost:** 50 Gold",
+              "priority": "a",
+              "tags": ["common"],
+              "isDoc": true
+            },
+            {
+              "title": "Health Potion",
+              "content": "**Type:** Consumable\n**Effect:** Restores 50 HP over 3 seconds.\n**Cost:** 25 Gold",
+              "priority": "b",
+              "tags": ["common"],
+              "isDoc": true
+            },
+            {
+              "title": "Shadowfang Mail",
+              "content": "**Type:** Chest Armor (Medium)\n**Defense:** 25\n**Stats:** +2 DEX, +10 Stealth\n**Cost:** 800 Gold",
+              "priority": "c",
+              "tags": ["rare"],
+              "isDoc": true
+            }
+          ],
+          "journey": {
+            "steps": [
+              { "title": "Create Item Concept Art / Icon", "targetDeck": "Art", "priority": "a", "effort": 2 },
+              { "title": "Create Item 3D Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 3 },
+              { "title": "Implement Item Logic", "targetDeck": "Coding", "priority": "a", "effort": 2 },
+              { "title": "Design Item SFX", "targetDeck": "Audio", "priority": "b", "effort": 1 },
+              { "title": "Balancing", "targetDeck": "Game Design", "priority": "b", "effort": 1 }
+            ]
+          }
+        },
+        {
+          "name": "Creatures",
+          "description": "Bestiary of all enemies, monsters, and neutral NPCs. Add a creature, then start its journey.",
+          "cards": [
+            {
+              "title": "Goblin Skirmisher",
+              "content": "**Role:** Weak melee attacker.\n**HP:** 30\n**Behavior:** Rushes the player in groups. Flees at 10% HP.\n**Loot Table:** `LT_Goblin_Common`",
+              "priority": "a",
+              "isDoc": true
+            },
+            {
+              "title": "Shadow Stalker",
+              "content": "**Role:** High-damage 'rogue' enemy.\n**HP:** 75\n**Behavior:** Stays in shadows, attempts to backstab. Applies 'Poison' DoT.\n**Loot Table:** `LT_Shadow_Rare`",
+              "priority": "b",
+              "isDoc": true
+            }
+          ],
+          "journey": {
+            "steps": [
+              { "title": "Create Creature Concept Art", "targetDeck": "Art", "priority": "a", "effort": 5 },
+              { "title": "Create Creature Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 8 },
+              { "title": "Animate Creature", "content":"- [ ] Idle\n- [ ] Attack\n- [ ] Flinch\n- [ ] Death)", "targetDeck": "Art", "priority": "a", "effort": 8 },
+              { "title": "Implement Creature AI & Abilities", "targetDeck": "Coding", "priority": "a", "effort": 13 },
+              { "title": "Design Creature SFX", "content":"- [ ] Attack\n- [ ] Voice)", "targetDeck": "Audio", "priority": "b", "effort": 3 },
+              { "title": "Place Creature in World", "targetDeck": "Game Design", "priority": "b", "effort": 3 }
             ]
           }
         }
       ]
     },
     {
-      "name": "Tasks",
+      "name": "Production",
+      "defaultDeckType": "task",
       "decks": [
-        {"name": "Art"},
-        {"name": "Animation"},
-        {"name": "Programming"},
-        {"name": "Writing"}
+        { "name": "Coding", "description": "Programming tasks, engine work, and systems implementation.", "preferredOrder": { "prop": "priority" } },
+        { "name": "Art", "description": "2D, 3D, Animation, and VFX tasks.", "preferredOrder": { "prop": "priority" } },
+        { "name": "Writing", "description": "Quest dialogue, item descriptions, and lore.", "preferredOrder": { "prop": "priority" } },
+        { "name": "Audio", "description": "SFX design, music implementation, and audio mixing.", "preferredOrder": { "prop": "priority" } },
+        { "name": "Game Design", "description": "Documentation, level design, and balancing.", "preferredOrder": { "prop": "priority" } },
+        { "name": "QA", "description": "Central queue for all defects, exploits, and technical issues.", "preferredOrder": { "prop": "priority" } }
       ]
     }
   ]
