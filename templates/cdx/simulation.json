@@ -38,18 +38,15 @@
           "description": "Defines fundamental rules: economy, colonist needs, time, etc. These are hero cards, not task cards.",
           "cards": [
             {
-              "title": "Economy Loop",
-              "content": "Defines the core resource loop.\n\n- **Primary Resource (In):** `Wood`, `Stone`\n- **Secondary Resource (Processed):** `Planks`, `Tools`\n- **Currency:** `Gold Coins` (Earned by selling processed goods).",
+              "content": "# Economy Loop\n\nDefines the core resource loop.\n\n- **Primary Resource (In):** `Wood`, `Stone`\n- **Secondary Resource (Processed):** `Planks`, `Tools`\n- **Currency:** `Gold Coins` (Earned by selling processed goods).",
               "priority": "a"
             },
             {
-              "title": "Worker Needs System",
-              "content": "Core spec for colonist AI behavior.\n\n- **Hunger:** Must eat 1x `Food` every 8 hours. If 0, work speed -50%.\n- **Energy:** Must sleep in a `Bed` for 4 hours a day. If 0, collapses.\n- **Fun:** Must use a `Recreation` item 1x per day.",
+              "content": "# Worker Needs System\n\nCore spec for colonist AI behavior.\n\n- **Hunger:** Must eat 1x `Food` every 8 hours. If 0, work speed -50%.\n- **Energy:** Must sleep in a `Bed` for 4 hours a day. If 0, collapses.\n- **Fun:** Must use a `Recreation` item 1x per day.",
               "priority": "a"
             },
             {
-              "title": "Day/Night & Season Cycle",
-              "content": "Spec for game time.\n\n- **Day Length:** 12 minutes real-time.\n- **Work Day:** 06:00 - 18:00 (Colonists work).\n- **Seasons:** 4 seasons, 10 days each. `Winter` season halves all `Farm` output.",
+              "content": "# Day/Night & Season Cycle\n\nSpec for game time.\n\n- **Day Length:** 12 minutes real-time.\n- **Work Day:** 06:00 - 18:00 (Colonists work).\n- **Seasons:** 4 seasons, 10 days each. `Winter` season halves all `Farm` output.",
               "priority": "a"
             }
           ]
@@ -59,31 +56,28 @@
           "description": "Database for all placeable structures. Add a building, then start its journey.",
           "cards": [
             {
-              "title": "Colonist Tent",
-              "content": "**Tier:** 1\n**Cost:** 10 Wood, 5 Fiber\n**Function:** Provides 1 `Bed` to satisfy `Energy` need.",
+              "content": "# Colonist Tent\n\n**Tier:** 1\n**Cost:** 10 Wood, 5 Fiber\n**Function:** Provides 1 `Bed` to satisfy `Energy` need.",
               "priority": "a",
               "tags": ["tier-1", "housing"]
             },
             {
-              "title": "Lumber Mill",
-              "content": "**Tier:** 1\n**Cost:** 20 Wood, 10 Stone\n**Function:** Converts 1 `Wood` -> 2 `Planks`. Requires 1 Colonist to operate.",
+              "content": "# Lumber Mill\n\n**Tier:** 1\n**Cost:** 20 Wood, 10 Stone\n**Function:** Converts 1 `Wood` -> 2 `Planks`. Requires 1 Colonist to operate.",
               "priority": "a",
               "tags": ["tier-1", "production"]
             },
             {
-              "title": "Research Bench",
-              "content": "**Tier:** 2\n**Cost:** 50 Planks, 5 Tools\n**Function:** Unlocks Tier 2 technology. Generates `Research Points`.",
+              "content": "# Research Bench\n\n**Tier:** 2\n**Cost:** 50 Planks, 5 Tools\n**Function:** Unlocks Tier 2 technology. Generates `Research Points`.",
               "priority": "b",
               "tags": ["tier-2", "production"]
             }
           ],
           "journey": {
             "steps": [
-              { "title": "Create Concept Art", "targetDeck": "Art", "priority": "a", "effort": 3 },
-              { "title": "Create 3D Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 5 },
-              { "title": "Implement Logic (Cost, Function)", "targetDeck": "Coding", "priority": "a", "effort": 5 },
-              { "title": "Design SFX","content": "- [ ] Placement\n- [ ] Active Loop)", "targetDeck": "Audio", "priority": "b", "effort": 2 },
-              { "title": "Balance Building Cost & Output", "targetDeck": "Game Design", "priority": "b", "effort": 2, "tags": ["economy"] }
+              { "content": "Create Concept Art", "targetDeck": "2-art", "priority": "a", "effort": 3 },
+              { "content": "Create 3D Model & Textures", "targetDeck": "2-art", "priority": "a", "effort": 5 },
+              { "content": "Implement Logic (Cost, Function)", "targetDeck": "1-coding", "priority": "a", "effort": 5 },
+              { "content": "Design SFX\n\n- [ ] Placement\n- [ ] Active Loop)", "targetDeck": "4-audio", "priority": "b", "effort": 2 },
+              { "content": "Balance Building Cost & Output", "targetDeck": "5-game-design", "priority": "b", "effort": 2, "tags": ["economy"] }
             ]
           }
         },
@@ -92,15 +86,13 @@
           "description": "All items craftable by colonists (tools, food, resources). Add an item, then start its journey.",
           "cards": [
             {
-              "title": "Stone Axe",
-              "content": "**Tier:** 1\n**Recipe:** 5 Stone, 5 Wood\n**Function:** Allows Colonist to chop `Wood` 50% faster.",
+              "content": "# Stone Axe\n\n**Tier:** 1\n**Recipe:** 5 Stone, 5 Wood\n**Function:** Allows Colonist to chop `Wood` 50% faster.",
               "priority": "a",
               "tags": ["tier-1"],
               "isDoc": true
             },
             {
-              "title": "Bread",
-              "content": "**Tier:** 1\n**Recipe:** 2 Wheat (at `Bakery`)\n**Function:** `Food` item. Restores 50 `Hunger`.",
+              "content": "# Bread\n\n**Tier:** 1\n**Recipe:** 2 Wheat (at `Bakery`)\n**Function:** `Food` item. Restores 50 `Hunger`.",
               "priority": "b",
               "tags": ["tier-1"],
               "isDoc": true
@@ -108,10 +100,10 @@
           ],
           "journey": {
             "steps": [
-              { "title": "Create Item Icon", "targetDeck": "Art", "priority": "a", "effort": 1 },
-              { "title": "Implement Item Recipe & Stats", "targetDeck": "Coding", "priority": "a", "effort": 2 },
-              { "title": "Design Item SFX (Craft, Use)", "targetDeck": "Audio", "priority": "b", "effort": 1 },
-              { "title": "Balance Item Recipe", "targetDeck": "Game Design", "priority": "b", "effort": 1, "tags": ["economy"] }
+              { "content": "Create Item Icon", "targetDeck": "2-art", "priority": "a", "effort": 1 },
+              { "content": "Implement Item Recipe & Stats", "targetDeck": "1-coding", "priority": "a", "effort": 2 },
+              { "content": "Design Item SFX (Craft, Use)", "targetDeck": "4-audio", "priority": "b", "effort": 1 },
+              { "content": "Balance Item Recipe", "targetDeck": "5-game-design", "priority": "b", "effort": 1, "tags": ["economy"] }
             ]
           }
         },
@@ -120,22 +112,20 @@
           "description": "Random and milestone events (replaces 'Quests'). Add an event, then start its journey.",
           "cards": [
             {
-              "title": "Random Event: Heatwave",
-              "content": "**Trigger:** 10% chance every day in `Summer`.\n**Effect:** `Energy` and `Hunger` needs drain 2x as fast for 1 day.\n**Player Choice:** 'Provide water' (Cost 50 `Water`) or 'Tough it out' (Risk 20% colonist mood drop).",
+              "content": "# Random Event: Heatwave\n\n**Trigger:** 10% chance every day in `Summer`.\n**Effect:** `Energy` and `Hunger` needs drain 2x as fast for 1 day.\n**Player Choice:** 'Provide water' (Cost 50 `Water`) or 'Tough it out' (Risk 20% colonist mood drop).",
               "priority": "b"
             },
             {
-              "title": "Milestone: New Colonist Arrives",
-              "content": "**Trigger:** When `Total Housing` > `Total Colonists`.\n**Effect:** A new colonist (with random stats) arrives at the town center.",
+              "content": "# Milestone: New Colonist Arrives\n\n**Trigger:** When `Total Housing` > `Total Colonists`.\n**Effect:** A new colonist (with random stats) arrives at the town center.",
               "priority": "a"
             }
           ],
           "journey": {
             "steps": [
-              { "title": "Write Event Text (Description & Choices)", "targetDeck": "Writing", "priority": "a", "effort": 2 },
-              { "title": "Implement Event Logic (Triggers, Effects)", "targetDeck": "Coding", "priority": "a", "effort": 5 },
-              { "title": "Create Event UI Popup Art", "targetDeck": "Art", "priority": "b", "effort": 2 },
-              { "title": "Test Event Triggers & Outcomes", "targetDeck": "QA", "priority": "b", "effort": 3 }
+              { "content": "Write Event Text (Description & Choices)", "targetDeck": "3-writing", "priority": "a", "effort": 2 },
+              { "content": "Implement Event Logic (Triggers, Effects)", "targetDeck": "1-coding", "priority": "a", "effort": 5 },
+              { "content": "Create Event UI Popup Art", "targetDeck": "2-art", "priority": "b", "effort": 2 },
+              { "content": "Test Event Triggers & Outcomes", "targetDeck": "6-qa", "priority": "b", "effort": 3 }
             ]
           }
         }
@@ -145,12 +135,12 @@
       "name": "Production",
       "defaultDeckType": "task",
       "decks": [
-        { "name": "Coding", "description": "Programming tasks, systems logic, and AI.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Art", "description": "2D Icons, 3D Models, UI Art, and Animation.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Writing", "description": "Event text, item descriptions, and tutorials.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Audio", "description": "SFX design, music implementation, and audio mixing.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Game Design", "description": "Documentation, systems balancing, and economy tuning.", "preferredOrder": { "prop": "priority" } },
-        { "name": "QA", "description": "Central queue for all defects, exploits, and technical issues.", "preferredOrder": { "prop": "priority" } }
+        { "id": "1-coding", "name": "Coding", "description": "Programming tasks, systems logic, and AI.", "preferredOrder": { "prop": "priority" } },
+        { "id": "2-art", "name": "Art", "description": "2D Icons, 3D Models, UI Art, and Animation.", "preferredOrder": { "prop": "priority" } },
+        { "id": "3-writing", "name": "Writing", "description": "Event text, item descriptions, and tutorials.", "preferredOrder": { "prop": "priority" } },
+        { "id": "4-audio", "name": "Audio", "description": "SFX design, music implementation, and audio mixing.", "preferredOrder": { "prop": "priority" } },
+        { "id": "5-game-design", "name": "Game Design", "description": "Documentation, systems balancing, and economy tuning.", "preferredOrder": { "prop": "priority" } },
+        { "id": "6-qa", "name": "QA", "description": "Central queue for all defects, exploits, and technical issues.", "preferredOrder": { "prop": "priority" } }
       ]
     }
   ]

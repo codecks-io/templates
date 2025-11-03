@@ -10,8 +10,7 @@
           "description": "Defining the foundational rules and interactions of the puzzles.",
           "cards": [
             {
-              "title": "Define the 'Color Switch' Mechanic",
-              "content": "Players can step on a switch to change their color. They can only pass through gates that match their current color."
+              "content": "# Define the 'Color Switch' Mechanic\n\nPlayers can step on a switch to change their color. They can only pass through gates that match their current color."
             }
           ]
         },

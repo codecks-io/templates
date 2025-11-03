@@ -13,10 +13,12 @@ Template
 ├── tags (optional)
 └── spaces (required, array)
     └── Space
-        ├── name (required)
+        ├── name (nullable)
+        ├── icon (optional)
         ├── defaultDeckType (optional)
         └── decks (required, array)
             └── Deck
+                ├── id (optional)
                 ├── name (required)
                 ├── description (optional)
                 ├── coverFileUrl (optional)
@@ -24,21 +26,22 @@ Template
                 ├── preferredOrder (optional)
                 ├── cards (optional, array)
                 │   └── Card
-                │       ├── title (required)
-                │       ├── content (optional)
+                │       ├── id (optional)
+                │       ├── content (required)
                 │       ├── priority (optional)
                 │       ├── effort (optional)
                 │       ├── tags (optional)
+                │       ├── subCards (optional)
                 │       └── isDoc (optional)
                 └── journey (optional)
                     └── steps (array)
                         └── JourneyStep
-                            ├── title (required)
-                            ├── targetDeck (required)
-                            ├── content (optional)
+                            ├── content (required)
+                            ├── targetDeck (nullable)
                             ├── priority (optional)
                             ├── effort (optional)
-                            └── tags (optional)
+                            ├── tags (optional)
+                            └── zoneLabel (optional)
 ```
 
 ## Field Definitions
@@ -52,13 +55,16 @@ Template
 
 ### Space
 
-- **name** (string, required): The name of the space
+- **name** (string, nullable): The name of the space
+- **icon** (enum, optional, nullable): Icon for the space
+  - Valid values: `"default"`, `"journey"`, `"robot"`, `"gdd"`, `"tasks"`, `"knowledge"`, `"qa"`
 - **decks** (array, required): One or more decks in this space
 - **defaultDeckType** (enum, optional): Default type for decks in this space
   - Valid values: `"task"`, `"hero"`, `"doc"`, `"mixed"`
 
 ### Deck
 
+- **id** (string, optional): Unique identifier for the deck such that you can reference it as targetDeck in journey steps
 - **name** (string, required): The name of the deck
 - **description** (string, optional): Description of the deck's purpose
 - **coverFileUrl** (string, optional): URL to a cover image
@@ -70,24 +76,25 @@ Template
 
 ### Card
 
-- **title** (string, required): The card title
-- **content** (string, optional): Markdown content for the card
-- **priority** (enum, optional): Priority level
+- **id** (string, optional): Unique identifier for the card such that you can reference it within the subCards array
+- **content** (string, required): Markdown content for the card
+- **priority** (enum, optional, nullable): Priority level
   - Valid values: `"a"`, `"b"`, `"c"`
-- **effort** (number, optional): Effort estimate
+- **effort** (number, optional, nullable): Effort estimate
 - **tags** (string array, optional): Tags assigned to this card (must be defined in template tags)
-- **isDoc** (boolean, optional): Whether this card is a document
+- **subCards** (string array, optional): Array of sub-card ids
+- **isDoc** (boolean, optional, nullable): Whether this card is a document
 
 ### Journey Step
 
 Journey steps create cards in target decks when the journey is activated.
 
-- **title** (string, required): The title for the card to be created
-- **targetDeck** (string, required): The name of the deck where the card will be created (must exist in template)
-- **content** (string, optional): Markdown content for the card
-- **priority** (enum, optional): Priority level (`"a"`, `"b"`, `"c"`)
-- **effort** (number, optional): Effort estimate
+- **content** (string, required): Markdown content for the card to be created
+- **targetDeck** (string, nullable): The id of the deck where the card will be created (must exist in template)
+- **priority** (enum, optional, nullable): Priority level (`"a"`, `"b"`, `"c"`)
+- **effort** (number, optional, nullable): Effort estimate
 - **tags** (string array, optional): Tags for the card (must be defined in template tags)
+- **zoneLabel** (string, optional, nullable): Label for the zone grouping
 
 ### Preferred Order
 
@@ -102,9 +109,10 @@ Journey steps create cards in target decks when the journey is activated.
 ## Validation Rules
 
 1. **Tag References**: All tags used in cards or journey steps must be defined in the template's `tags` array
-2. **Deck References**: All `targetDeck` values in journey steps must reference existing deck names within the template
+2. **Deck References**: Non-null `targetDeck` values in journey steps must reference existing deck names within the template
 3. **Required Fields**: All required fields must be present
 4. **No Extra Properties**: Templates cannot include properties not defined in the schema
+5. **SubCard References**: All `subCards` identifiers must reference existing card `id` values within the same deck
 
 ## Simple Template Example
 
@@ -116,19 +124,20 @@ Journey steps create cards in target decks when the journey is activated.
   "spaces": [
     {
       "name": "Development",
+      "icon": "tasks",
       "decks": [
         {
           "name": "To Do",
           "deckType": "task",
           "cards": [
             {
-              "title": "Set up project structure",
+              "content": "Set up project structure",
               "priority": "a",
               "effort": 2,
               "tags": ["code"]
             },
             {
-              "title": "Create initial art assets",
+              "content": "Create initial art assets",
               "priority": "b",
               "effort": 5,
               "tags": ["art"]
@@ -159,9 +168,11 @@ Journey steps create cards in target decks when the journey is activated.
   "spaces": [
     {
       "name": "Production",
+      "icon": "tasks",
       "defaultDeckType": "task",
       "decks": [
         {
+          "id": "1-backlog",
           "name": "Backlog",
           "description": "All upcoming tasks and features",
           "deckType": "task",
@@ -177,21 +188,19 @@ Journey steps create cards in target decks when the journey is activated.
           },
           "cards": [
             {
-              "title": "Implement player movement",
-              "content": "Create basic WASD movement with collision detection",
+              "content": "# Implement player movement\n\nCreate basic WASD movement with collision detection",
               "priority": "a",
               "effort": 5,
               "tags": ["programming"]
             },
             {
-              "title": "Design main character",
-              "content": "Concept art and 3D model for protagonist",
+              "content": "# Design main character\n\nConcept art and 3D model for protagonist",
               "priority": "a",
               "effort": 8,
               "tags": ["art", "design"]
             },
             {
-              "title": "Compose main theme",
+              "content": "Compose main theme",
               "priority": "b",
               "effort": 13,
               "tags": ["audio"]
@@ -199,6 +208,7 @@ Journey steps create cards in target decks when the journey is activated.
           ]
         },
         {
+          "id": "2-sprint",
           "name": "Sprint",
           "description": "Current sprint tasks",
           "deckType": "task",
@@ -223,19 +233,18 @@ Journey steps create cards in target decks when the journey is activated.
     },
     {
       "name": "Documentation",
+      "icon": "knowledge",
       "decks": [
         {
           "name": "Game Design Docs",
           "deckType": "doc",
           "cards": [
             {
-              "title": "Core Gameplay Loop",
               "content": "# Core Gameplay Loop\n\nDescribe the main gameplay mechanics here...",
               "isDoc": true,
               "tags": ["design"]
             },
             {
-              "title": "Technical Architecture",
               "content": "# Technical Architecture\n\n## Engine\n- Unity 2023.1\n\n## Patterns\n- ECS for gameplay\n- MVC for UI",
               "isDoc": true,
               "tags": ["programming"]
@@ -247,7 +256,6 @@ Journey steps create cards in target decks when the journey is activated.
           "deckType": "doc",
           "cards": [
             {
-              "title": "Visual Style Guide",
               "content": "# Visual Style\n\n## Color Palette\n- Primary: #FF6B35\n- Secondary: #004E89\n\n## Art Direction\nLow-poly with hand-painted textures",
               "isDoc": true,
               "tags": ["art", "design"]
@@ -258,6 +266,7 @@ Journey steps create cards in target decks when the journey is activated.
     },
     {
       "name": "Onboarding",
+      "icon": "journey",
       "decks": [
         {
           "name": "Getting Started",
@@ -266,33 +275,29 @@ Journey steps create cards in target decks when the journey is activated.
           "journey": {
             "steps": [
               {
-                "title": "Complete development environment setup",
-                "targetDeck": "Sprint",
-                "content": "Install Unity, Git, and required SDKs. See Technical Architecture doc for versions.",
+                "content": "# Complete development environment setup\n\nInstall Unity, Git, and required SDKs. See Technical Architecture doc for versions.",
+                "targetDeck": "2-sprint",
                 "priority": "a",
                 "effort": 3,
                 "tags": ["programming"]
               },
               {
-                "title": "Read all design documentation",
-                "targetDeck": "Sprint",
-                "content": "Review Core Gameplay Loop and Visual Style Guide",
+                "content": "# Read all design documentation\n\nReview Core Gameplay Loop and Visual Style Guide",
+                "targetDeck": "2-sprint",
                 "priority": "a",
                 "effort": 2,
                 "tags": ["design"]
               },
               {
-                "title": "Set up art pipeline",
-                "targetDeck": "Sprint",
-                "content": "Configure Blender, Substance Painter, and export settings",
+                "content": "# Set up art pipeline\n\nConfigure Blender, Substance Painter, and export settings",
+                "targetDeck": "2-sprint",
                 "priority": "a",
                 "effort": 3,
                 "tags": ["art"]
               },
               {
-                "title": "First task: Create test level",
-                "targetDeck": "Backlog",
-                "content": "Build a simple test level to familiarize yourself with the tools",
+                "content": "# First task: Create test level\n\nBuild a simple test level to familiarize yourself with the tools",
+                "targetDeck": "1-backlog",
                 "priority": "b",
                 "effort": 5,
                 "tags": ["design", "programming"]
@@ -310,9 +315,11 @@ Journey steps create cards in target decks when the journey is activated.
 
 - Using tags in cards/steps that aren't defined in the template `tags` array
 - Referencing non-existent deck names in journey `targetDeck` fields
-- Missing required fields like `title`, `description`, `name`
-- Using invalid enum values for `priority`, `deckType`, etc.
+- Missing required fields like `content` (for cards and journey steps), `description` (for templates), `name` (for decks)
+- Using invalid enum values for `priority`, `deckType`, `icon`, etc.
 - Adding custom properties not defined in the schema
+- Using `title` field on cards (use `content` instead)
+- Referencing invalid card IDs in `subCards` arrays
 
 ## Adding Templates
 

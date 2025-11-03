@@ -23,28 +23,23 @@
           "description": "Defines the fundamental rules, core loops, and player progression. Use this deck for high-level design specs.",
           "cards": [
             {
-              "title": "Aiming Down Sights (ADS)",
-              "content": "Mechanics for \"Right-Click Aiming\".\n\n- **Action:** Toggles player into ADS mode.\n- **Effect:** Zooms camera (amount defined per weapon), tightens weapon spread, and reduces player movement speed by 40%.\n- **Transition Time:** 0.15s",
+              "content": "# Aiming Down Sights (ADS)\n\nMechanics for \"Right-Click Aiming\".\n\n- **Action:** Toggles player into ADS mode.\n- **Effect:** Zooms camera (amount defined per weapon), tightens weapon spread, and reduces player movement speed by 40%.\n- **Transition Time:** 0.15s",
               "priority": "a"
             },
             {
-              "title": "Core Movement",
-              "content": "Defines the basic player controller specs.\n\n- **Walk Speed:** 4.0 m/s\n- **Run Speed:** 7.5 m/s (Requires 'Stamina' resource)\n- **Crouch Speed:** 2.0 m/s\n- **Time to full speed:** 0.2s\n- **Stamina:** 100 points. Drains over 5s of sprinting. Recharges in 3s.",
+              "content": "# Core Movement\n\nDefines the basic player controller specs.\n\n- **Walk Speed:** 4.0 m/s\n- **Run Speed:** 7.5 m/s (Requires 'Stamina' resource)\n- **Crouch Speed:** 2.0 m/s\n- **Time to full speed:** 0.2s\n- **Stamina:** 100 points. Drains over 5s of sprinting. Recharges in 3s.",
               "priority": "a"
             },
             {
-              "title": "Player Health",
-              "content": "Defines player survivability.\n\n- **Base Health:** 100 HP",
+              "content": "# Player Health\n\nDefines player survivability.\n\n- **Base Health:** 100 HP",
               "priority": "a"
             },
             {
-              "title": "Reloading",
-              "content": "Defines how ammo is managed.\n\n- **System:** Magazine-based.\n- **Standard Reload:** Plays full animation. Time is defined per weapon.\n- **Tactical Reload:** If `bullets_in_mag > 0`, plays a faster animation and one bullet is kept in the chamber.\n- **Interrupt:** Reload can be interrupted by sprinting or melee.",
+              "content": "# Reloading\n\nDefines how ammo is managed.\n\n- **System:** Magazine-based.\n- **Standard Reload:** Plays full animation. Time is defined per weapon.\n- **Tactical Reload:** If `bullets_in_mag > 0`, plays a faster animation and one bullet is kept in the chamber.\n- **Interrupt:** Reload can be interrupted by sprinting or melee.",
               "priority": "a"
             },
             {
-              "title": "Melee Combat",
-              "content": "Default melee attack should deal 50 HP. Requires a 0.75s cool-down. Hit-box cone radius is 1.5 units.",
+              "content": "# Melee Combat\n\nDefault melee attack should deal 50 HP. Requires a 0.75s cool-down. Hit-box cone radius is 1.5 units.",
               "priority": "b"
             }
           ]
@@ -54,31 +49,48 @@
           "description": "The live database for all weapons. Add a new weapon as a card, then start its journey to create all production tasks.",
           "cards": [
             {
-              "title": "Crossbow",
-              "content": "The basic weapon type that players start with. **Damage:** 80. **Draw Time:** 1.5s. Bolt is projectile (no hitscan).",
+              "content": "# Crossbow\n\nThe basic weapon type that players start with. **Damage:** 80. **Draw Time:** 1.5s. Bolt is projectile (no hitscan).",
               "priority": "a",
               "tags": ["projectile"]
             },
             {
-              "title": "Rifle",
-              "content": "The standard-issue workhorse rifle. Balances stopping power with a manageable fire rate.\n\n**Role:** All-Purpose Mid-Range\n**Fire Mode:** Full-Auto / Semi-Auto (Selectable)\n**Damage:** 32 HP per shot (body) / 60 HP (headshot)\n**Rate of Fire:** 650 RPM\n**Magazine Size:** 30 rounds\n**Reload Time:** 2.9s\n**Special Trait:** Hitscan. Recoil is high, but predictable (first 3 shots are very accurate).",
+              "content": "# Rifle\n\nThe standard-issue workhorse rifle. Balances stopping power with a manageable fire rate.\n\n**Role:** All-Purpose Mid-Range\n**Fire Mode:** Full-Auto / Semi-Auto (Selectable)\n**Damage:** 32 HP per shot (body) / 60 HP (headshot)\n**Rate of Fire:** 650 RPM\n**Magazine Size:** 30 rounds\n**Reload Time:** 2.9s\n**Special Trait:** Hitscan. Recoil is high, but predictable (first 3 shots are very accurate).",
               "priority": "a",
               "tags": ["hitscan"]
             },
             {
-              "title": "Shotgun",
-              "content": "A pump-action shotgun designed for extreme close-quarters combat. Fires a pellet spread.\n\n**Role:** CQC / Room Clearing\n**Fire Mode:** Pump-Action\n**Damage:** 8 pellets @ 20 HP each\n**Rate of Fire:** 80 RPM\n**Magazine Size:** 6 shells (tube-fed)\n**Reload Time:** 1.0s (first shell) + 0.6s (per additional shell)\n**Special Trait:** Hitscan. Damage falloff is severe. Pellets spread in a fixed pattern.",
+              "content": "# Shotgun\n\nA pump-action shotgun designed for extreme close-quarters combat. Fires a pellet spread.\n\n**Role:** CQC / Room Clearing\n**Fire Mode:** Pump-Action\n**Damage:** 8 pellets @ 20 HP each\n**Rate of Fire:** 80 RPM\n**Magazine Size:** 6 shells (tube-fed)\n**Reload Time:** 1.0s (first shell) + 0.6s (per additional shell)\n**Special Trait:** Hitscan. Damage falloff is severe. Pellets spread in a fixed pattern.",
               "priority": "b",
               "tags": ["hitscan"]
             }
           ],
           "journey": {
             "steps": [
-              { "title": "Create Weapon 3D Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 8 },
-              { "title": "Create Weapon Animations (Fire, Reload, Inspect)", "targetDeck": "Art", "priority": "a", "effort": 5 },
-              { "title": "Design Weapon SFX", "targetDeck": "Audio", "priority": "a", "effort": 3 },
-              { "title": "Implement Weapon Logic", "targetDeck": "Coding", "priority": "a", "effort": 5 },
-              { "title": "Balance & Tune Weapon Stats", "targetDeck": "Game Design", "priority": "b", "effort": 3 }
+              {
+                "content": "Create Weapon 3D Model & Textures",
+                "targetDeck": "1-art",
+                "priority": "a",
+                "effort": 8
+              },
+              {
+                "content": "Create Weapon Animations (Fire, Reload, Inspect)",
+                "targetDeck": "1-art",
+                "priority": "a",
+                "effort": 5
+              },
+              {"content": "Design Weapon SFX", "targetDeck": "2-audio", "priority": "a", "effort": 3},
+              {
+                "content": "Implement Weapon Logic",
+                "targetDeck": "3-coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Balance & Tune Weapon Stats",
+                "targetDeck": "4-game-design",
+                "priority": "b",
+                "effort": 3
+              }
             ]
           }
         },
@@ -87,29 +99,46 @@
           "description": "Enemy units that the player will encounter. Add an enemy card, then start its journey.",
           "cards": [
             {
-              "title": "Patrol Drone",
-              "content": "**Role:** Surveillance/Area Denial. **Behavior:** Follows set path, emits red light cone. If player enters cone, triggers alarm and fires weak lasers. **HP:** 25.",
+              "content": "# Patrol Drone\n\n**Role:** Surveillance/Area Denial. **Behavior:** Follows set path, emits red light cone. If player enters cone, triggers alarm and fires weak lasers. **HP:** 25.",
               "priority": "a"
             },
             {
-              "title": "The Screamer",
-              "content": "**Role:** Support/Harassment. **Behavior:** Retreats from player but stops to emit a disabling auditory scream that slows player and attracts other enemies. **HP:** 50.",
+              "content": "# The Screamer\n\n**Role:** Support/Harassment. **Behavior:** Retreats from player but stops to emit a disabling auditory scream that slows player and attracts other enemies. **HP:** 50.",
               "priority": "b"
             },
             {
-              "title": "Auto Turret",
-              "content": "**Role:** Fixed defense/map hazard. **Behavior:** Static position, 180-degree view cone. Rapidly fires low-damage projectiles when alerted. **HP:** 75.",
+              "content": "# Auto Turret\n\n**Role:** Fixed defense/map hazard. **Behavior:** Static position, 180-degree view cone. Rapidly fires low-damage projectiles when alerted. **HP:** 75.",
               "priority": "b"
             }
           ],
           "journey": {
             "steps": [
-              { "title": "Create Enemy Concept Art", "targetDeck": "Art", "priority": "a", "effort": 2 },
-              { "title": "Create Enemy 3D Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 8 },
-              { "title": "Rig and Animate Enemy", "targetDeck": "Art", "priority": "a", "effort": 3 },
-              { "title": "Implement Enemy AI Behavior", "targetDeck": "Coding", "priority": "a", "effort": 5 },
-              { "title": "Design Enemy SFX", "targetDeck": "Audio", "priority": "b", "effort": 1 },
-              { "title": "Place Enemy in Levels", "targetDeck": "Game Design", "priority": "b", "effort": 10 }
+              {
+                "content": "Create Enemy Concept Art",
+                "targetDeck": "1-art",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Create Enemy 3D Model & Textures",
+                "targetDeck": "1-art",
+                "priority": "a",
+                "effort": 8
+              },
+              {"content": "Rig and Animate Enemy", "targetDeck": "1-art", "priority": "a", "effort": 3},
+              {
+                "content": "Implement Enemy AI Behavior",
+                "targetDeck": "3-coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {"content": "Design Enemy SFX", "targetDeck": "2-audio", "priority": "b", "effort": 1},
+              {
+                "content": "Place Enemy in Levels",
+                "targetDeck": "4-game-design",
+                "priority": "b",
+                "effort": 10
+              }
             ]
           }
         },
@@ -118,24 +147,52 @@
           "description": "Repository for map concepts. Add a map card, then start its journey.",
           "cards": [
             {
-              "title": "Map 1: Warehouse",
-              "content": "Design goal: Encourage close-quarters combat. Must verify all jump puzzles are possible with current player metrics.",
+              "content": "# Map 1: Warehouse\n\nDesign goal: Encourage close-quarters combat. Must verify all jump puzzles are possible with current player metrics.",
               "priority": "a"
             },
             {
-              "title": "Map 2: Badlands",
-              "content": "Design goal: Long-range engagements and verticality. Map features open canyons and tall sniper perches. Key Challenge: Limiting flank routes in the canyons to prevent spawntrapping.",
+              "content": "# Map 2: Badlands\n\nDesign goal: Long-range engagements and verticality. Map features open canyons and tall sniper perches. Key Challenge: Limiting flank routes in the canyons to prevent spawntrapping.",
               "priority": "a"
             }
           ],
           "journey": {
             "steps": [
-              { "title": "Create Map Layout & Blockout", "targetDeck": "Game Design", "priority": "a", "effort": 3 },
-              { "title": "Create Environment Art Assets", "targetDeck": "Art", "priority": "a", "effort": 8 },
-              { "title": "Set-dress and Light the Map", "targetDeck": "Art", "priority": "a", "effort": 6 },
-              { "title": "Implement Map Logic and Spawns", "targetDeck": "Coding", "priority": "a", "effort": 2 },
-              { "title": "Create Map-specific Audio Ambiance", "targetDeck": "Audio", "priority": "b", "effort": 2 },
-              { "title": "Conduct Map Playtest and gather feedback", "targetDeck": "Game Design", "priority": "a", "effort": 2 }
+              {
+                "content": "Create Map Layout & Blockout",
+                "targetDeck": "4-game-design",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Create Environment Art Assets",
+                "targetDeck": "1-art",
+                "priority": "a",
+                "effort": 8
+              },
+              {
+                "content": "Set-dress and Light the Map",
+                "targetDeck": "1-art",
+                "priority": "a",
+                "effort": 6
+              },
+              {
+                "content": "Implement Map Logic and Spawns",
+                "targetDeck": "3-coding",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Create Map-specific Audio Ambiance",
+                "targetDeck": "2-audio",
+                "priority": "b",
+                "effort": 2
+              },
+              {
+                "content": "Conduct Map Playtest and gather feedback",
+                "targetDeck": "4-game-design",
+                "priority": "a",
+                "effort": 2
+              }
             ]
           }
         }
@@ -145,11 +202,35 @@
       "name": "Work",
       "defaultDeckType": "task",
       "decks": [
-        { "name": "Coding", "description": "Programming tasks, engine work, and technical feature implementation.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Art", "description": "2D/3D asset creation, environment modeling, and texturing.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Audio", "description": "SFX design, music implementation, and audio mixing.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Game Design", "description": "Documentation, feature specification, and balancing.", "preferredOrder": { "prop": "priority" } },
-        { "name": "Bugs", "description": "Central queue for all defects, exploits, and technical issues.", "preferredOrder": { "prop": "priority" } }
+        {
+          "id": "3-coding",
+          "name": "Coding",
+          "description": "Programming tasks, engine work, and technical feature implementation.",
+          "preferredOrder": {"prop": "priority"}
+        },
+        {
+          "id": "1-art",
+          "name": "Art",
+          "description": "2D/3D asset creation, environment modeling, and texturing.",
+          "preferredOrder": {"prop": "priority"}
+        },
+        {
+          "id": "2-audio",
+          "name": "Audio",
+          "description": "SFX design, music implementation, and audio mixing.",
+          "preferredOrder": {"prop": "priority"}
+        },
+        {
+          "id": "4-game-design",
+          "name": "Game Design",
+          "description": "Documentation, feature specification, and balancing.",
+          "preferredOrder": {"prop": "priority"}
+        },
+        {
+          "name": "Bugs",
+          "description": "Central queue for all defects, exploits, and technical issues.",
+          "preferredOrder": {"prop": "priority"}
+        }
       ]
     }
   ]
