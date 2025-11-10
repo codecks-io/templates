@@ -1,0 +1,72 @@
+# Deck Image URLs
+# Format: Direct URLs to uploads.codecks.io (used in "coverFileUrl" field)
+
+## Action FPS/TPS Project
+- Game Mechanics: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/28UpfvFwYg/game-mechanics.png
+- Weapons: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/g3hbiWYwDw/weapons.png
+- Enemies: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png
+- Maps: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Adventure Game Project
+- Locations: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/DDdum4GS4f/locations.png
+- Characters: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/oQGmP1a4bP/characters.png
+- Puzzles: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sJljUPWuO3/puzzles.png
+- Story Beats: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/FMsdZ8RTJG/story-beats.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Platformer Project
+- Movement Abilities: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/M6tie3dyjX/movement-abilities.png
+- Levels: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/93tdITKjjq/levels.png
+- Enemies: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png
+- Power-ups: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/HUo02kpjR3/power-ups.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Puzzle Game Project
+- Puzzle Mechanics: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sUvgRWoYJn/puzzle-mechanics.png
+- Puzzle Elements: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ppggDw9XLB/puzzle-elements.png
+- Puzzle Levels: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/CCrtFkaKKW/puzzle-levels.png
+- Tutorial System: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/PzzUS4dcCl/tutorial-system.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Roguelike / Roguelite Project
+- Items & Power-ups: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/GVeKuhuQv2/items-power-ups.png
+- Enemies: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png
+- Room Types: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/qQpfkwlYjp/room-types.png
+- Meta-Progression: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Map5J0obIA/meta-progression.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Fantasy RPG Project
+- Core Mechanics: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/F3DZPKlj4o/core-mechanics.png
+- Quests: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/80ixNg4oIJ/quests.png
+- Items: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IJgQGPNRjt/items.png
+- Creatures: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/YDDZWpYl5L/creatures.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Simulation Project
+- Core Systems: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/zJoNxdJ3QX/core-systems.png
+- Buildings: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png
+- Craftable Items: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/vw73SHu2Vt/craftable-items.png
+- Events: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/M47vUfwXN6/events.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Sports Game Project
+- Game Rules & Mechanics: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/tmPl1DivHa/game-rules-mechanics.png
+- Teams: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ntet9RsgQ4/teams.png
+- Players: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/AO1GMHp1b5/players.png
+- Stadiums & Venues: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Jv8XXpkA96/stadiums-venues.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Strategy Game Project
+- Units: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IBrUvfUpGH/units.png
+- Buildings: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png
+- Technologies: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gSnM2SAVNs/technologies.png
+- Maps: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
+
+## Survival Game Project
+- Resources: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/dcpkkNgix6/resources.png
+- Crafting Recipes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/vw73SHu2Vt/craftable-items.png
+- Threats: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/pK7x3Nz2lv/threats.png
+- World Systems: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/cWYkAlWBL1/world-systems.png
+- Design Notes: https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png
