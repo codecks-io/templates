@@ -3,6 +3,11 @@
   "description": "A template for FPS/TPS projects focused on weapon tuning, level design, and polished combat feel. Includes essential asset decks for weapons, maps, and enemies, with pre-built production pipelines using Journeys.",
   "tags": [
     {
+      "tag": "bug",
+      "description": "Bug or defect that needs fixing",
+      "emoji": "🐞"
+    },
+    {
       "tag": "projectile",
       "description": "Project based weapons",
       "color": "#550000"
@@ -11,104 +16,162 @@
       "tag": "hitscan",
       "description": "Hitscan based weapons",
       "color": "#FF0000"
+    },
+    {
+      "tag": "tier-1",
+      "description": "Early game weapons and content",
+      "emoji": "1️⃣"
+    },
+    {
+      "tag": "tier-2",
+      "description": "Mid game weapons and content",
+      "emoji": "2️⃣"
+    },
+    {
+      "tag": "tier-3",
+      "description": "Late game weapons and content",
+      "emoji": "3️⃣"
     }
   ],
   "spaces": [
     {
       "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
       "defaultDeckType": "hero",
       "decks": [
         {
           "name": "Game Mechanics",
+          "deckType": "hero",
           "description": "Defines the fundamental rules, core loops, and player progression. Use this deck for high-level design specs.",
           "cards": [
             {
-              "content": "# Aiming Down Sights (ADS)\n\nMechanics for \"Right-Click Aiming\".\n\n- **Action:** Toggles player into ADS mode.\n- **Effect:** Zooms camera (amount defined per weapon), tightens weapon spread, and reduces player movement speed by 40%.\n- **Transition Time:** 0.15s",
-              "priority": "a"
+              "id": "ads-card",
+              "content": "Aiming Down Sights (ADS)\n\nDefine how the aiming mechanic works when players want precision shots.\n\n**Consider:**\n- How much zoom when aiming?\n- Does movement slow down? By how much?\n- How tight should weapon accuracy become?\n- Transition speed in and out of ADS\n\nThis mechanic affects weapon balance - tighter accuracy while aiming means weapons can be less accurate from the hip.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
             },
             {
-              "content": "# Core Movement\n\nDefines the basic player controller specs.\n\n- **Walk Speed:** 4.0 m/s\n- **Run Speed:** 7.5 m/s (Requires 'Stamina' resource)\n- **Crouch Speed:** 2.0 m/s\n- **Time to full speed:** 0.2s\n- **Stamina:** 100 points. Drains over 5s of sprinting. Recharges in 3s.",
-              "priority": "a"
+              "id": "movement-card",
+              "content": "Core Movement\n\nDefine how the player moves through the game world.\n\n**Consider:**\n- Walking vs running speeds\n- Sprint duration (stamina system?)\n- Crouch speed and use cases\n- Acceleration and deceleration feel\n- Jump height and air control\n\nMovement speed affects encounter design and map scale.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
             },
             {
-              "content": "# Player Health\n\nDefines player survivability.\n\n- **Base Health:** 100 HP",
-              "priority": "a"
+              "id": "health-card",
+              "content": "Player Health & Damage\n\nDefine player survivability and combat pacing.\n\n**Consider:**\n- Base health amount\n- Health regeneration (passive, medkits, both?)\n- Time-to-kill targets\n- Shield/armor systems?\n\nThis determines if your game is fast-paced (low health) or tactical (high health).",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
             },
             {
-              "content": "# Reloading\n\nDefines how ammo is managed.\n\n- **System:** Magazine-based.\n- **Standard Reload:** Plays full animation. Time is defined per weapon.\n- **Tactical Reload:** If `bullets_in_mag > 0`, plays a faster animation and one bullet is kept in the chamber.\n- **Interrupt:** Reload can be interrupted by sprinting or melee.",
-              "priority": "a"
-            },
-            {
-              "content": "# Melee Combat\n\nDefault melee attack should deal 50 HP. Requires a 0.75s cool-down. Hit-box cone radius is 1.5 units.",
-              "priority": "b"
+              "id": "reload-card",
+              "content": "Reloading System\n\nDefine how ammunition management works.\n\n**Consider:**\n- Magazine-based or pool-based ammo?\n- Standard reload vs tactical reload differences\n- Can reloads be interrupted?\n- Animation timing per weapon type\n\nReload mechanics create vulnerable moments - balance risk vs reward.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
             }
-          ]
+          ],
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/28UpfvFwYg/game-mechanics.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
         },
         {
           "name": "Weapons",
+          "deckType": "hero",
           "description": "The live database for all weapons. Add a new weapon as a card, then start its journey to create all production tasks.",
           "cards": [
             {
-              "content": "# Crossbow\n\nThe basic weapon type that players start with. **Damage:** 80. **Draw Time:** 1.5s. Bolt is projectile (no hitscan).",
+              "id": "crossbow-card",
+              "content": "Crossbow\n\nA basic projectile weapon to start players with.\n\n**Consider:**\n- Damage per bolt\n- Draw/charge time\n- Projectile speed and arc\n- Ammo capacity\n\nProjectile weapons require leading targets - good for teaching players aim prediction.\n\n> **Sub-Cards:** These tasks were created by starting this weapon's journey. Each journey step becomes a production task automatically!",
               "priority": "a",
-              "tags": ["projectile"]
+              "effort": 24,
+              "tags": [
+                "projectile"
+              ],
+              "subCards": []
             },
             {
-              "content": "# Rifle\n\nThe standard-issue workhorse rifle. Balances stopping power with a manageable fire rate.\n\n**Role:** All-Purpose Mid-Range\n**Fire Mode:** Full-Auto / Semi-Auto (Selectable)\n**Damage:** 32 HP per shot (body) / 60 HP (headshot)\n**Rate of Fire:** 650 RPM\n**Magazine Size:** 30 rounds\n**Reload Time:** 2.9s\n**Special Trait:** Hitscan. Recoil is high, but predictable (first 3 shots are very accurate).",
+              "id": "rifle-card",
+              "content": "Rifle\n\nA versatile all-purpose weapon for mid-range combat.\n\n**Consider:**\n- Fire mode (full-auto, burst, semi-auto?)\n- Damage per shot\n- Rate of fire\n- Magazine size and reload time\n- Recoil pattern\n- Hitscan vs projectile\n\nRifles are workhorses - reliable in most situations but not specialized.",
               "priority": "a",
-              "tags": ["hitscan"]
+              "effort": 24,
+              "tags": [
+                "hitscan"
+              ],
+              "subCards": []
             },
             {
-              "content": "# Shotgun\n\nA pump-action shotgun designed for extreme close-quarters combat. Fires a pellet spread.\n\n**Role:** CQC / Room Clearing\n**Fire Mode:** Pump-Action\n**Damage:** 8 pellets @ 20 HP each\n**Rate of Fire:** 80 RPM\n**Magazine Size:** 6 shells (tube-fed)\n**Reload Time:** 1.0s (first shell) + 0.6s (per additional shell)\n**Special Trait:** Hitscan. Damage falloff is severe. Pellets spread in a fixed pattern.",
+              "id": "shotgun-card",
+              "content": "Shotgun\n\nA close-quarters weapon with spread damage.\n\n**Consider:**\n- Pellet count and spread pattern\n- Damage per pellet\n- Effective range and damage falloff\n- Fire rate (pump action vs semi-auto?)\n- Reload method (shell by shell or magazine?)\n\nShotguns should dominate close range but be weak at distance.",
               "priority": "b",
-              "tags": ["hitscan"]
+              "effort": 24,
+              "tags": [
+                "hitscan"
+              ],
+              "subCards": []
             }
           ],
           "journey": {
             "steps": [
               {
-                "content": "Create Weapon 3D Model & Textures",
+                "content": "Create Weapon 3D Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
                 "targetDeck": "1-art",
                 "priority": "a",
                 "effort": 8
               },
               {
-                "content": "Create Weapon Animations (Fire, Reload, Inspect)",
+                "content": "Create Weapon Animations (Fire, Reload, Inspect)\n\n- [ ] Plan animation keyframes\n- [ ] Block out motion\n- [ ] Refine timing and curves\n- [ ] Add secondary motion\n- [ ] Test in game context",
                 "targetDeck": "1-art",
                 "priority": "a",
                 "effort": 5
               },
-              {"content": "Design Weapon SFX", "targetDeck": "2-audio", "priority": "a", "effort": 3},
               {
-                "content": "Implement Weapon Logic",
+                "content": "Design Weapon SFX\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "2-audio",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Implement Weapon Logic\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
                 "targetDeck": "3-coding",
                 "priority": "a",
                 "effort": 5
               },
               {
-                "content": "Balance & Tune Weapon Stats",
+                "content": "Balance & Tune Weapon Stats\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
                 "targetDeck": "4-game-design",
                 "priority": "b",
                 "effort": 3
               }
             ]
-          }
+          },
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/g3hbiWYwDw/weapons.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
         },
         {
           "name": "Enemies",
           "description": "Enemy units that the player will encounter. Add an enemy card, then start its journey.",
           "cards": [
             {
-              "content": "# Patrol Drone\n\n**Role:** Surveillance/Area Denial. **Behavior:** Follows set path, emits red light cone. If player enters cone, triggers alarm and fires weak lasers. **HP:** 25.",
-              "priority": "a"
+              "id": "drone-card",
+              "content": "Patrol Drone\n\nA surveillance enemy that alerts others to player presence.\n\n**Consider:**\n- Health amount\n- Patrol pattern behavior\n- Detection range and FOV cone\n- Attack damage if any\n- Alert radius when spotting player\n\nSurveillance enemies create tension - avoid them or deal with reinforcements.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 29
             },
             {
-              "content": "# The Screamer\n\n**Role:** Support/Harassment. **Behavior:** Retreats from player but stops to emit a disabling auditory scream that slows player and attracts other enemies. **HP:** 50.",
-              "priority": "b"
+              "id": "screamer-card",
+              "content": "The Screamer\n\nA support enemy that debuffs players and calls for help.\n\n**Consider:**\n- Health and movement behavior (flee vs attack)\n- Scream effect (slow? stun? damage?)\n- Scream range and duration\n- Cooldown between screams\n- What enemies does it attract?\n\nSupport enemies force players to prioritize targets strategically.",
+              "priority": "b",
+              "subCards": [],
+              "effort": 29
             },
             {
-              "content": "# Auto Turret\n\n**Role:** Fixed defense/map hazard. **Behavior:** Static position, 180-degree view cone. Rapidly fires low-damage projectiles when alerted. **HP:** 75.",
-              "priority": "b"
+              "content": "Auto Turret\n\nA stationary defensive emplacement.\n\n**Consider:**\n- Health and whether it can be destroyed\n- Field of view arc\n- Fire rate and damage\n- Projectile type\n- Can it be hacked or disabled?\n\nFixed defenses control map areas - rewarding players who find flanking routes.",
+              "priority": "b",
+              "subCards": [],
+              "effort": 29
             }
           ],
           "journey": {
@@ -120,19 +183,29 @@
                 "effort": 2
               },
               {
-                "content": "Create Enemy 3D Model & Textures",
+                "content": "Create Enemy 3D Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
                 "targetDeck": "1-art",
                 "priority": "a",
                 "effort": 8
               },
-              {"content": "Rig and Animate Enemy", "targetDeck": "1-art", "priority": "a", "effort": 3},
               {
-                "content": "Implement Enemy AI Behavior",
+                "content": "Rig and Animate Enemy\n\n- [ ] Plan animation keyframes\n- [ ] Block out motion\n- [ ] Refine timing and curves\n- [ ] Add secondary motion\n- [ ] Test in game context",
+                "targetDeck": "1-art",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Implement Enemy AI Behavior\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
                 "targetDeck": "3-coding",
                 "priority": "a",
                 "effort": 5
               },
-              {"content": "Design Enemy SFX", "targetDeck": "2-audio", "priority": "b", "effort": 1},
+              {
+                "content": "Design Enemy SFX\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "2-audio",
+                "priority": "b",
+                "effort": 1
+              },
               {
                 "content": "Place Enemy in Levels",
                 "targetDeck": "4-game-design",
@@ -140,19 +213,34 @@
                 "effort": 10
               }
             ]
-          }
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
         },
         {
           "name": "Maps",
           "description": "Repository for map concepts. Add a map card, then start its journey.",
           "cards": [
             {
-              "content": "# Map 1: Warehouse\n\nDesign goal: Encourage close-quarters combat. Must verify all jump puzzles are possible with current player metrics.",
-              "priority": "a"
+              "id": "training-map-card",
+              "content": "Training Ground\n\nThe tutorial map where players learn basic controls.\n\n**Purpose:**\n- Teach movement mechanics\n- Introduce weapon types\n- Safe environment for experimentation\n\n**Consider:**\n- Linear or open design?\n- How to communicate objectives without text?\n- Difficulty curve\n\nTutorials should teach without feeling like lessons.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 23
             },
             {
-              "content": "# Map 2: Badlands\n\nDesign goal: Long-range engagements and verticality. Map features open canyons and tall sniper perches. Key Challenge: Limiting flank routes in the canyons to prevent spawntrapping.",
-              "priority": "a"
+              "id": "urban-map-card",
+              "content": "Urban Combat Zone\n\nA close-quarters map with buildings and tight corridors.\n\n**Consider:**\n- Verticality (multiple floors?)\n- Sight lines and cover placement\n- Flanking routes\n- Spawn point balance\n- Lighting and visibility\n\nCQC maps favor shotguns and mobility over long-range weapons.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 23
+            },
+            {
+              "content": "Industrial Complex\n\nA mid-to-long range map with open areas and cover.\n\n**Consider:**\n- Balance between open and covered areas\n- Sniper positions and counter-play\n- Objective placement\n- Environmental hazards?\n\nLarger maps reward positioning and long-range weapons.",
+              "priority": "b",
+              "subCards": [],
+              "effort": 23
             }
           ],
           "journey": {
@@ -176,62 +264,152 @@
                 "effort": 6
               },
               {
-                "content": "Implement Map Logic and Spawns",
+                "content": "Implement Map Logic and Spawns\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
                 "targetDeck": "3-coding",
                 "priority": "a",
                 "effort": 2
               },
               {
-                "content": "Create Map-specific Audio Ambiance",
+                "content": "Create Map-specific Audio Ambiance\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
                 "targetDeck": "2-audio",
                 "priority": "b",
                 "effort": 2
               },
               {
-                "content": "Conduct Map Playtest and gather feedback",
+                "content": "Conduct Map Playtest and gather feedback\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
                 "targetDeck": "4-game-design",
                 "priority": "a",
                 "effort": 2
               }
             ]
-          }
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Design Notes",
+          "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
+          "deckType": "doc",
+          "cards": [
+            {
+              "id": "ads-design-note",
+              "content": "Design Meeting: ADS Mechanics\n\n**Date:** Week 2\n**Attendees:** Lead Designer, Combat Designer\n\n**Decisions:**\n- ADS will reduce movement speed by 40%\n- Zoom level: 1.5x for most weapons\n- Transition time: 200ms in, 150ms out\n\n**Rationale:** We want aiming to feel responsive but create a meaningful trade-off with mobility.\n\n**Related:** This informs the ADS mechanic implementation.",
+              "priority": "a",
+              "isDoc": true
+            },
+            {
+              "content": "Design Meeting: TTK (Time To Kill)\n\n**Date:** Week 3\n**Attendees:** Full design team\n\n**Target TTK:**\n- Close range: Define appropriate timing\n- Mid range: Define appropriate timing\n- Long range: Define appropriate timing\n\n**Rationale:** Longer TTK encourages tactical play and teamwork over twitch reflexes.",
+              "priority": "b",
+              "isDoc": true
+            },
+            {
+              "content": "Playtesting Notes: Map Flow\n\n**Session:** Week 5 - Urban Combat Zone\n**Issues Found:**\n- Players getting lost in building interiors\n- Too many camping spots\n- Spawns too close to objectives\n\n**Action Items:** Add more visual landmarks, reduce corner count, move spawns back.",
+              "priority": "b",
+              "isDoc": true
+            }
+          ],
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
         }
       ]
     },
     {
-      "name": "Work",
+      "name": "Production",
       "defaultDeckType": "task",
       "decks": [
         {
           "id": "3-coding",
           "name": "Coding",
           "description": "Programming tasks, engine work, and technical feature implementation.",
-          "preferredOrder": {"prop": "priority"}
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Coding Task\n\nThis is a placeholder for coding tasks that will be created by journeys. When you start a journey on a hero card in the GDD space, it will automatically create specific coding tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
         },
         {
           "id": "1-art",
           "name": "Art",
           "description": "2D/3D asset creation, environment modeling, and texturing.",
-          "preferredOrder": {"prop": "priority"}
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Art Task\n\nThis is a placeholder for art tasks. Journeys will populate this deck with specific art creation tasks for your assets.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
         },
         {
           "id": "2-audio",
           "name": "Audio",
           "description": "SFX design, music implementation, and audio mixing.",
-          "preferredOrder": {"prop": "priority"}
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. Sound effects and music tasks from journeys will appear here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
         },
         {
           "id": "4-game-design",
           "name": "Game Design",
           "description": "Documentation, feature specification, and balancing.",
-          "preferredOrder": {"prop": "priority"}
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Design Task\n\nThis is a placeholder for design tasks like balancing, tuning, and playtesting that journeys create.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
         },
         {
-          "name": "Bugs",
-          "description": "Central queue for all defects, exploits, and technical issues.",
-          "preferredOrder": {"prop": "priority"}
+          "name": "Bugs & QA",
+          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "a",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_QA.jpeg",
+          "autoTag": "bug"
         }
-      ]
+      ],
+      "icon": "tasks"
     }
   ]
 }

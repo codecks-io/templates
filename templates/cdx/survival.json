@@ -1,0 +1,414 @@
+{
+  "title": "Survival Game Project",
+  "description": "A template for survival games with crafting, resource gathering, base building, and threat management. Includes pipelines for resources, crafting recipes, threats, and world systems.",
+  "tags": [
+    {
+      "tag": "bug",
+      "description": "Bug or defect that needs fixing",
+      "emoji": "🐞"
+    },
+    {
+      "tag": "basic",
+      "description": "Basic tier resources/recipes",
+      "color": "#9E9E9E"
+    },
+    {
+      "tag": "advanced",
+      "description": "Advanced tier",
+      "color": "#4CAF50"
+    },
+    {
+      "tag": "rare",
+      "description": "Rare materials",
+      "color": "#2196F3"
+    },
+    {
+      "tag": "food",
+      "description": "Food and consumables",
+      "emoji": "🍖"
+    },
+    {
+      "tag": "tool",
+      "description": "Tools and equipment",
+      "emoji": "🔨"
+    },
+    {
+      "tag": "structure",
+      "description": "Buildable structures",
+      "emoji": "🏠"
+    }
+  ],
+  "spaces": [
+    {
+      "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
+      "defaultDeckType": "hero",
+      "decks": [
+        {
+          "name": "Resources",
+          "description": "Gatherable materials from the world. Add a resource card, start its journey.",
+          "cards": [
+            {
+              "id": "wood-card",
+              "content": "Wood\n\nBasic building material gathered from trees.\n\n**Gather Method:** Chop trees with axe\n**Stack Size:** 50\n**Respawn:** Trees regrow in 10 minutes\n**Used In:** Most basic crafting recipes\n\nThis card has the **#basic** tag to mark it as starter content. Use progression tags to organize when players encounter resources.\n\n> **Journey Note:** Resource cards use journeys to create all the tasks needed: gathering mechanics, item icon, sound effects, and placement in the world.",
+              "priority": "a",
+              "tags": [
+                "basic"
+              ],
+              "subCards": [],
+              "effort": 10
+            },
+            {
+              "content": "Iron Ore\n\nMetal ore found in caves and cliffs.\n\n**Gather Method:** Mine with pickaxe\n**Stack Size:** 30\n**Locations:** Underground caves, mountain areas\n**Used In:** Advanced tools and weapons\n\n**Requires:** Stone Pickaxe to harvest",
+              "priority": "b",
+              "tags": [
+                "advanced"
+              ],
+              "subCards": [],
+              "effort": 10
+            },
+            {
+              "id": "stone-card",
+              "content": "Stone\n\nBasic building material gathered from rocks.\n\n**Gather Method:** Mine with pickaxe\n**Stack Size:** 50\n**Used In:** Tools, structures, weapon crafting\n\n**Consider:** How common should stone be? Should it respawn?",
+              "priority": "a",
+              "tags": [
+                "basic"
+              ],
+              "subCards": [],
+              "effort": 10
+            },
+            {
+              "id": "fiber-card",
+              "content": "Plant Fiber\n\nFlexible material for crafting ropes and cloth.\n\n**Gather Method:** Harvest from bushes by hand\n**Stack Size:** 100\n**Used In:** Clothing, bags, basic structures\n\n**Consider:** Should fiber be renewable? Farming vs gathering?",
+              "priority": "b",
+              "tags": [
+                "basic"
+              ],
+              "subCards": [],
+              "effort": 10
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Resource Icon\n\nDesign inventory icon for this material.",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 1
+              },
+              {
+                "content": "Implement Gathering Mechanic\n\nCode how players harvest this resource from the world.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Place Resource in World\n\nAdd resource nodes to the game world with spawn logic.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Game Design",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Design Gathering SFX\n\nSounds for harvesting and collecting.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 1
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/dcpkkNgix6/resources.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Crafting Recipes",
+          "description": "Items players can craft from resources. Add a recipe card, start its journey.",
+          "cards": [
+            {
+              "content": "Stone Axe\n\nBasic tool for chopping trees faster.\n\n**Recipe:** 5 Wood + 3 Stone\n**Durability:** 100 uses\n**Effect:** Chop trees 2x faster than bare hands\n**Crafted At:** Inventory (no workbench needed)\n\n> **Effort Tip:** This card has 3 effort points. Simple items are quick to add, but items with special mechanics (durability, enchantments) need more work.",
+              "priority": "a",
+              "tags": [
+                "basic",
+                "tool"
+              ],
+              "effort": 14,
+              "subCards": []
+            },
+            {
+              "content": "Campfire\n\nCooking station and light source.\n\n**Recipe:** 10 Wood + 5 Stone\n**Function:** Cook food, provide warmth and light\n**Durability:** Permanent (needs fuel to stay lit)\n**Fuel:** Burns 1 wood per minute",
+              "priority": "a",
+              "tags": [
+                "basic",
+                "structure"
+              ],
+              "subCards": [],
+              "effort": 14
+            },
+            {
+              "id": "bandage-card",
+              "content": "Bandage\n\nBasic healing item crafted from fiber.\n\n**Recipe:** 5 Plant Fiber\n**Function:** Restores health over time\n**Durability:** Single use\n\n**Consider:** How much should it heal? Should crafting time matter?",
+              "priority": "a",
+              "tags": [
+                "basic"
+              ],
+              "subCards": [],
+              "effort": 14
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Item Icon & Model\n\nDesign icon and 3D model for this craftable item.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Implement Item Functionality\n\nCode what this item does when used/equipped.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Add Crafting Recipe\n\nDefine resource requirements and where it's crafted.",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Design Item SFX\n\nSounds for crafting, using, and breaking.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 2
+              },
+              {
+                "content": "Balance Recipe Cost\n\nTune resource requirements and durability.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 2
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/vw73SHu2Vt/craftable-items.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Threats",
+          "description": "Dangers that challenge player survival (enemies, weather, hunger). Add a threat card, start its journey.",
+          "cards": [
+            {
+              "content": "Wolf Pack\n\nAggressive predators that hunt at night.\n\n**Behavior:** Pack of 2-4 wolves that chase and surround player\n**Damage:** 15 per bite\n**HP:** 40 per wolf\n**Loot:** Meat, hide\n**Spawn:** Forest biomes, nighttime\n\n**Priority Note:** Marked 'a' because you need at least one threat to test your survival mechanics!",
+              "priority": "a",
+              "tags": [
+                "basic"
+              ],
+              "subCards": [],
+              "effort": 22
+            },
+            {
+              "content": "Hunger System\n\nPlayer must eat regularly to survive.\n\n**Mechanics:**\n- Hunger drains slowly over time\n- At 0 hunger, player starts losing health\n- Food items restore hunger\n- Different foods restore different amounts\n\nThis is a core survival mechanic, not a repeatable asset, so it has manually-created sub-cards instead of using a journey.",
+              "priority": "a",
+              "tags": [
+                "basic"
+              ],
+              "subCards": [],
+              "effort": 22
+            },
+            {
+              "id": "cold-system-card",
+              "content": "Cold/Temperature System\n\nPlayer must manage body temperature.\n\n**Mechanics:**\n- Temperature drops at night and in winter\n- Standing near fire increases temperature\n- Warm clothing provides insulation\n- At freezing, player loses health slowly\n\n**Consider:** How punishing should cold be? Balance risk vs reward for night exploration.",
+              "priority": "a",
+              "tags": [
+                "basic"
+              ],
+              "subCards": [],
+              "effort": 22
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Threat Model & Animations\n\nBuild 3D model and animate behaviors.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 8
+              },
+              {
+                "content": "Implement Threat AI\n\nCode behavior patterns and attack logic.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 8
+              },
+              {
+                "content": "Design Threat Audio\n\nSounds for idle, attack, and death.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 3
+              },
+              {
+                "content": "Balance Threat Difficulty\n\nTune damage, HP, and spawn rates.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 3
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/pK7x3Nz2lv/threats.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "World Systems",
+          "description": "Environmental systems and biomes. Each is a unique system requiring custom implementation.",
+          "cards": [
+            {
+              "content": "Day/Night Cycle\n\nTime progression affecting gameplay.\n\n**Day Length:** 20 minutes real-time (10 min day, 10 min night)\n**Effects:**\n- Night: Reduced visibility, more dangerous enemies spawn\n- Day: Safe, easier resource gathering\n**Temperature:** Colder at night, warmer at day\n\n**Linked Systems:** Temperature, Enemy Spawning, Visibility",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
+            },
+            {
+              "content": "Weather System\n\nDynamic weather affecting survival.\n\n**Weather Types:** Clear, Rain, Snow, Storm\n**Effects:**\n- Rain: Wets player (risk of cold), harder to light fires\n- Snow: Slows movement, drains temperature faster  \n- Storm: High danger, reduced visibility\n\n**Frequency:** Weather changes every 15-30 minutes",
+              "priority": "b",
+              "subCards": [],
+              "effort": 8
+            }
+          ],
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/cWYkAlWBL1/world-systems.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Design Notes",
+          "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
+          "deckType": "doc",
+          "cards": [
+            {
+              "content": "Design Meeting: Threat Escalation\n\n**Date:** Sprint 2\n**Attendees:** Game Designer, AI Programmer\n\n**Decisions:**\n- Early game: environmental threats (hunger, cold)\n- Mid game: wildlife threats increase\n- Late game: weather events and rare boss creatures\n\n**Rationale:** Gradual threat escalation maintains tension throughout playthrough.",
+              "priority": "a",
+              "isDoc": true
+            },
+            {
+              "content": "Playtesting Notes: Crafting Progression\n\n**Session:** Week 4 playtest\n**Findings:**\n- Players enjoyed discovering recipes\n- Confusion about which resources unlock which tiers\n\n**Changes:** Added crafting tech tree UI, recipe hints system.",
+              "priority": "b",
+              "isDoc": true
+            }
+          ],
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Production",
+      "icon": "tasks",
+      "defaultDeckType": "task",
+      "decks": [
+        {
+          "name": "Coding",
+          "description": "Crafting systems, inventory management, survival mechanics, and world generation.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Coding Task\n\nThis is a placeholder for coding tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+        },
+        {
+          "name": "Art",
+          "description": "Resource models, item icons, creature models, and environment art.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Art Task\n\nThis is a placeholder for art tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+        },
+        {
+          "name": "Game Design",
+          "description": "Resource spawn rates, crafting balance, difficulty curves, and world layout.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Game Design Task\n\nThis is a placeholder for game design tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+        },
+        {
+          "name": "Audio",
+          "description": "Crafting sounds, environmental ambiance, creature audio, and weather effects.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+        },
+        {
+          "name": "Bugs & QA",
+          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "autoTag": "bug",
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

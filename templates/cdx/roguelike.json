@@ -1,30 +1,417 @@
 {
-  "title": "Roguelike / Roguelite",
-  "description": "For games with procedural generation, permadeath, and run-based systems.",
+  "title": "Roguelike / Roguelite Project",
+  "description": "A template for roguelike/roguelite games with procedural generation, permadeath, and run-based progression. Includes asset pipelines for items, enemies, rooms, and meta-progression systems.",
+  "tags": [
+    {
+      "tag": "bug",
+      "description": "Bug or defect that needs fixing",
+      "emoji": "🐞"
+    },
+    {
+      "tag": "common",
+      "description": "Common rarity items/enemies",
+      "color": "#9E9E9E"
+    },
+    {
+      "tag": "uncommon",
+      "description": "Uncommon rarity",
+      "color": "#4CAF50"
+    },
+    {
+      "tag": "rare",
+      "description": "Rare rarity",
+      "color": "#2196F3"
+    },
+    {
+      "tag": "legendary",
+      "description": "Legendary rarity",
+      "color": "#FF9800"
+    },
+    {
+      "tag": "meta-progression",
+      "description": "Persists between runs",
+      "emoji": "⭐"
+    },
+    {
+      "tag": "run-modifier",
+      "description": "Modifies the current run",
+      "emoji": "🎲"
+    }
+  ],
   "spaces": [
     {
-      "name": "Systems Design",
+      "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
+      "defaultDeckType": "hero",
       "decks": [
         {
-          "name": "Procedural Generation",
-          "description": "Algorithms and rules for generating levels, loot, and encounters."
-        },
-        {
           "name": "Items & Power-ups",
-          "description": "All discoverable items and their effects on a run."
+          "description": "All discoverable items and their effects. Add an item card, then start its journey to create production tasks.",
+          "cards": [
+            {
+              "id": "fire-sword-card",
+              "content": "Fire Sword\n\nA weapon that deals fire damage and can ignite enemies.\n\n**Effect:** Bonus damage, chance to inflict burn damage over time\n**Rarity:** Uncommon\n\nThis card has the **#uncommon** tag. Use rarity tags to control how often items appear in runs and to organize your loot tables.\n\n> **Sub-Cards:** The tasks below were created by this card's journey. Each journey step creates a production task automatically - this is how Codecks helps you stay organized!",
+              "priority": "a",
+              "tags": [
+                "uncommon"
+              ],
+              "subCards": [],
+              "effort": 14
+            },
+            {
+              "content": "Health Potion\n\nInstant heal consumable.\n\n**Effect:** Restores health immediately\n**Rarity:** Common\n**Stack Size:** Up to 3\n\nCommon items like this should appear frequently to give players consistent options during runs.",
+              "priority": "a",
+              "tags": [
+                "common"
+              ],
+              "subCards": [],
+              "effort": 14
+            },
+            {
+              "content": "Wings of Icarus\n\nGrants temporary flight ability.\n\n**Effect:** Can fly over pits and obstacles for 10 seconds\n**Rarity:** Legendary\n**Cooldown:** 60 seconds\n\n> **Effort:** Estimated at 8 points because flight requires significant physics and level design considerations. Use higher effort estimates for complex features!",
+              "priority": "b",
+              "tags": [
+                "legendary"
+              ],
+              "effort": 14,
+              "subCards": []
+            },
+            {
+              "id": "shield-card",
+              "content": "Iron Shield\n\nDefensive equipment that blocks incoming damage.\n\n**Effect:** Block next attack completely (breaks after 3 blocks)\n**Rarity:** Common\n\nThis demonstrates defensive item design - should encourage aggressive play by providing safety net.",
+              "priority": "a",
+              "tags": [
+                "common"
+              ],
+              "subCards": [],
+              "effort": 14
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Item Icon & Description\n\nDesign the inventory icon and write the in-game description text.",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Implement Item Effect Logic\n\nCode what happens when the player uses/equips this item.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Create Item VFX\n\nAdd visual effects for using the item (particles, glows, etc.).",
+                "targetDeck": "Art",
+                "priority": "b",
+                "effort": 3
+              },
+              {
+                "content": "Design Item SFX\n\nCreate sound effects for pickup and use.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 2
+              },
+              {
+                "content": "Balance Item Power Level\n\nPlaytest and adjust stats to ensure it's fun but not overpowered.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 2
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/GVeKuhuQv2/items-power-ups.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
         },
         {
-          "name": "Player Progression",
-          "description": "Meta-progression systems that persist between runs."
+          "name": "Enemies",
+          "description": "Enemy types that players encounter during runs. Add an enemy card, start its journey.",
+          "cards": [
+            {
+              "id": "goblin-card",
+              "content": "Goblin\n\nBasic melee enemy that charges at the player.\n\n**HP:** 20\n**Damage:** 5\n**Behavior:** Chases player when in range, attacks on contact\n**Loot:** 50% chance to drop common item\n\n**Appears in:** Early floors (1-3)",
+              "priority": "a",
+              "tags": [
+                "common"
+              ],
+              "subCards": [],
+              "effort": 18
+            },
+            {
+              "content": "Necromancer\n\nRanged enemy that summons skeleton minions.\n\n**HP:** 40\n**Damage:** 8 (projectile)\n**Behavior:** Keeps distance, summons skeletons every 10 seconds\n**Loot:** 80% chance rare item\n\n> **Priority:** This is marked priority 'b' since you should have basic enemies working before adding complex summoner mechanics.",
+              "priority": "b",
+              "tags": [
+                "rare"
+              ],
+              "subCards": [],
+              "effort": 18
+            },
+            {
+              "id": "boss-card",
+              "content": "Floor Boss\n\nPowerful enemy guarding the exit to next floor.\n\n**HP:** 200\n**Damage:** 15-20\n**Behavior:** Multi-phase fight with pattern changes\n**Loot:** Guaranteed rare item\n\n**Appears in:** Every 5th floor",
+              "priority": "a",
+              "tags": [
+                "rare"
+              ],
+              "subCards": [],
+              "effort": 18
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Enemy Sprite/Model\n\nDesign the enemy's visual appearance and animations (idle, walk, attack, death).\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Implement Enemy AI\n\nCode movement, attack patterns, and special abilities.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 8
+              },
+              {
+                "content": "Design Enemy SFX\n\nCreate sounds for movement, attacks, and death.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 2
+              },
+              {
+                "content": "Balance Enemy Stats\n\nTune HP, damage, and spawn rates to create fair challenge.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 3
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Room Types",
+          "description": "Procedurally placed room templates. Add a room card, start its journey to build it.",
+          "cards": [
+            {
+              "content": "Combat Arena\n\nA room focused on enemy encounters.\n\n**Size:** Medium (15x15 tiles)\n**Spawns:** 3-6 enemies based on floor depth\n**Exits:** 2-3 doors\n**Loot:** Always contains 1 chest\n\nCombat rooms are the backbone of roguelike pacing - make sure they're varied and interesting!",
+              "priority": "a",
+              "tags": [
+                "common"
+              ],
+              "subCards": [],
+              "effort": 15
+            },
+            {
+              "content": "Treasure Vault\n\nA rare room with no enemies but high-value loot.\n\n**Size:** Small (8x8 tiles)\n**Spawns:** No enemies, but may have traps\n**Loot:** 2-3 high-rarity chests\n**Frequency:** 5% chance per floor\n\n**Linked to:** Wings of Icarus (might need flight to access)",
+              "priority": "b",
+              "tags": [
+                "rare"
+              ],
+              "subCards": [],
+              "effort": 15
+            },
+            {
+              "id": "shop-room-card",
+              "content": "Shop Room\n\nMerchant offering items for gold.\n\n**Size:** Small (10x10 tiles)\n**Spawns:** Friendly NPC merchant\n**Stock:** 3-5 random items\n**Frequency:** 15% chance per floor\n\nShops create interesting resource management decisions.",
+              "priority": "a",
+              "tags": [
+                "uncommon"
+              ],
+              "subCards": [],
+              "effort": 15
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Design Room Layout\n\nSketch the room shape, door placements, and key features on grid paper.",
+                "targetDeck": "Game Design",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Build Room Template\n\nCreate the room in your level editor with tiles and props.",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Create Room Art Assets\n\nBuild unique props, decorations, or tile variations for this room type.",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Add Room Ambiance\n\nCreate atmospheric sounds or music stingers for entering this room.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 2
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/qQpfkwlYjp/room-types.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Meta-Progression",
+          "description": "Permanent upgrades that persist between runs. These systems change how players approach future attempts.",
+          "cards": [
+            {
+              "content": "Skill Tree System\n\nPermanent unlockable abilities purchased with currency earned across runs.\n\n**Currency:** Soul Gems (earned on death based on floor reached)\n**Skills:** 20-30 nodes offering stat boosts and new abilities\n**Reset:** Never (permanent upgrades)\n\nThis is the **#meta-progression** tag in action - content that stays with the player even after permadeath. This is what makes roguelites more accessible than pure roguelikes!",
+              "priority": "a",
+              "tags": [
+                "meta-progression"
+              ],
+              "subCards": [],
+              "effort": 8
+            },
+            {
+              "content": "Starting Loadout Unlocks\n\nNew character classes or starting items unlocked through achievements.\n\n**Examples:**\n- Warrior: Unlocked by default\n- Mage: Unlocked by reaching floor 5\n- Assassin: Unlocked by completing a run without taking damage in 10 rooms\n\n**Why this matters:** Gives players goals beyond just \"reach the end\" and adds replayability.",
+              "priority": "b",
+              "tags": [
+                "meta-progression"
+              ],
+              "subCards": [],
+              "effort": 8
+            }
+          ],
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Map5J0obIA/meta-progression.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Design Notes",
+          "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
+          "deckType": "doc",
+          "cards": [
+            {
+              "content": "Design Meeting: Meta-Progression Balance\n\n**Date:** Week 5\n**Attendees:** Full design team\n\n**Decisions:**\n- Permanent upgrades should provide 10-15% power boost max\n- Focus on unlocking variety (new items/characters) over raw power\n- First clear should be achievable without any meta-progression\n\n**Rationale:** We want roguelite accessibility without removing roguelike challenge.",
+              "priority": "a",
+              "isDoc": true
+            },
+            {
+              "content": "Playtesting Notes: Room Generation\n\n**Session:** Week 6 playtest\n**Issues:**\n- Dead-end rooms felt punishing\n- Too many empty rooms diluted pacing\n\n**Changes:** Guaranteed reward in dead-ends, reduced empty room spawn rate.",
+              "priority": "b",
+              "isDoc": true
+            }
+          ],
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
         }
       ]
     },
     {
-      "name": "Tasks",
+      "name": "Production",
+      "icon": "tasks",
+      "defaultDeckType": "task",
       "decks": [
-        {"name": "Core Loop Programming"},
-        {"name": "Art (Tilesets & Sprites)"},
-        {"name": "UI/UX"}
+        {
+          "name": "Coding",
+          "description": "Programming procedural generation, item systems, AI, and game logic.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Coding Task\n\nThis is a placeholder for coding tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+        },
+        {
+          "name": "Art",
+          "description": "Sprites, animations, VFX, and tileset creation.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Art Task\n\nThis is a placeholder for art tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+        },
+        {
+          "name": "Game Design",
+          "description": "Balancing, procedural generation rules, and difficulty tuning.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Game Design Task\n\nThis is a placeholder for game design tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+        },
+        {
+          "name": "Audio",
+          "description": "Sound effects, music loops, and audio ambiance.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+        },
+        {
+          "name": "Bugs & QA",
+          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "autoTag": "bug",
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        }
       ]
     }
   ]

@@ -1,24 +1,367 @@
 {
-  "title": "Sports",
-  "description": "For games simulating real-world or fantasy sports.",
+  "title": "Sports Game Project",
+  "description": "A template for sports simulation games. Includes asset pipelines for teams, players, stadiums, and game modes with season/tournament management.",
+  "tags": [
+    {
+      "tag": "bug",
+      "description": "Bug or defect that needs fixing",
+      "emoji": "🐞"
+    },
+    {
+      "tag": "offense",
+      "description": "Offensive tactics and plays",
+      "color": "#FF5722"
+    },
+    {
+      "tag": "defense",
+      "description": "Defensive tactics and plays",
+      "color": "#2196F3"
+    },
+    {
+      "tag": "starter",
+      "description": "Starting lineup players",
+      "emoji": "⭐"
+    },
+    {
+      "tag": "substitute",
+      "description": "Bench players",
+      "emoji": "🔄"
+    }
+  ],
   "spaces": [
     {
-      "name": "Design",
+      "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
+      "defaultDeckType": "hero",
       "decks": [
-        {"name": "Game Rules & Logic", "description": "The core rulebook for the sport."},
         {
-          "name": "Teams & Players",
-          "description": "Rosters, stats, and attributes for all teams and players."
+          "name": "Game Rules & Mechanics",
+          "description": "Core sport rules and gameplay systems. Each card defines a unique rule or mechanic - add sub-cards manually for implementation.",
+          "cards": [
+            {
+              "id": "scoring-system-card",
+              "content": "Scoring System\n\nDefine how points are scored in your sport.\n\n**Examples to consider:**\n- What actions award points? (Goals, touchdowns, baskets, etc.)\n- Are there different point values? (2-point vs 3-point shots)\n- How do overtimes/tiebreakers work?\n- What ends a match? (Time limit, score limit, set count)\n\n> **About This Deck:** Unlike repeatable assets (teams, players), game rules are unique systems. That's why this deck has no journey - you'll create custom implementation tasks as sub-cards for each rule.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
+            },
+            {
+              "content": "Player Stamina System\n\nHow fatigue affects player performance during matches.\n\n**Consider:**\n- Does stamina drain over time or per action?\n- How does low stamina affect stats? (Speed, accuracy, strength)\n- How do players recover? (Substitutions, timeouts, halftime)\n- Do different positions have different stamina pools?",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
+            },
+            {
+              "id": "stamina-card",
+              "content": "Stamina System\n\nPlayers have limited stamina for sprinting and special moves.\n\n**Consider:**\n- How fast does stamina regenerate?\n- Penalty for depleted stamina?\n- Does it affect all actions or just some?\n\n**Why:** Adds tactical depth to movement and ability usage.",
+              "priority": "a",
+              "subCards": [],
+              "effort": 8
+            },
+            {
+              "id": "foul-card",
+              "content": "Foul & Penalty System\n\nDefine when fouls occur and their consequences.\n\n**Consider:**\n- What actions trigger fouls?\n- Yellow/red card system or simpler?\n- Free kick/penalty mechanics\n\n**Why:** Enforces fair play and adds strategic risk.",
+              "priority": "b",
+              "subCards": [],
+              "effort": 8
+            }
+          ],
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/tmPl1DivHa/game-rules-mechanics.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
         },
-        {"name": "Stadiums & Venues"}
+        {
+          "name": "Teams",
+          "description": "All teams in your game. Add a team card, then start its journey to create it.",
+          "cards": [
+            {
+              "id": "team-card",
+              "content": "Hometown Heroes\n\nYour starter team with balanced stats.\n\n**Team Stats:**\n- Overall Rating: 75/100\n- Playstyle: Balanced\n- Strengths: Versatile roster\n- Weaknesses: No standout stars\n\nThis card uses the **#starter** tag to mark it as a default team. Use tags to organize teams by league, division, or unlock status.\n\n> **Priority:** This is marked 'a' priority because you need at least one complete team before you can test your game!",
+              "priority": "a",
+              "tags": [
+                "starter"
+              ],
+              "subCards": [],
+              "effort": 18
+            },
+            {
+              "content": "Thunder Strikers\n\nAn aggressive offensive powerhouse team.\n\n**Team Stats:**\n- Overall Rating: 82/100  \n- Playstyle: Offensive\n- Strengths: High scoring potential\n- Weaknesses: Weak defense",
+              "priority": "b",
+              "tags": [
+                "offense"
+              ],
+              "subCards": [],
+              "effort": 18
+            },
+            {
+              "id": "team-c-card",
+              "content": "Team C: The Defenders\n\nDefensive-focused team with strong goalkeeping.\n\n**Strengths:** High defense stats, goalkeeper bonuses\n**Weaknesses:** Slower movement, lower shooting accuracy\n**Playstyle:** Counter-attack and solid defense\n\n**Consider:** How to make defensive play fun and rewarding?",
+              "priority": "a",
+              "tags": [
+                "team"
+              ],
+              "subCards": [],
+              "effort": 18
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Design Team Logo & Colors\n\nCreate the team's visual identity (logo, primary/secondary colors, patterns).",
+                "targetDeck": "Art & UI",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Create Team Uniforms\n\nDesign home and away jerseys/uniforms using team colors.",
+                "targetDeck": "Art & UI",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Generate Team Roster\n\nCreate player list with names, positions, and stats that match team's playstyle.",
+                "targetDeck": "Game Design",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Implement Team Stats & AI\n\nCode team behavior, formation preferences, and tactical AI.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Programming",
+                "priority": "b",
+                "effort": 5
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ntet9RsgQ4/teams.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Players",
+          "description": "Individual player profiles and stats. Add a player card, start its journey.",
+          "cards": [
+            {
+              "content": "Star Forward\n\nA high-value offensive player.\n\n**Position:** Forward/Striker\n**Key Stats:** Speed 85, Shooting 90, Passing 75\n**Special Ability:** \"Power Shot\" - 20% chance for unstoppable shot\n\n**Effort Tip:** Notice this has 3 effort points. Quick player additions should be low effort, but stars with special abilities need more implementation work.",
+              "priority": "b",
+              "effort": 9,
+              "subCards": []
+            },
+            {
+              "id": "midfielder-card",
+              "content": "Midfielder\n\nBalanced player controlling the center of the field.\n\n**Stats:**\n- Passing: High\n- Shooting: Medium\n- Speed: Medium\n- Defense: Medium\n\n**Role:** Link defense to offense, distribute ball",
+              "priority": "a",
+              "tags": [
+                "player-type"
+              ],
+              "subCards": [],
+              "effort": 9
+            },
+            {
+              "id": "goalkeeper-card",
+              "content": "Goalkeeper\n\nDefends the goal with specialized mechanics.\n\n**Stats:**\n- Reflexes: Very High\n- Positioning: High\n- Speed: Low\n- Shooting: Very Low\n\n**Special:** Unique controls for diving and catching",
+              "priority": "a",
+              "tags": [
+                "player-type"
+              ],
+              "subCards": [],
+              "effort": 9
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Player Portrait/Photo\n\nDesign headshot or portrait for menus and commentary.",
+                "targetDeck": "Art & UI",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Assign Player Stats\n\nDefine all stats (physical, technical, mental) based on position and role.",
+                "targetDeck": "Game Design",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Implement Special Abilities\n\nCode unique player skills or signature moves.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Programming",
+                "priority": "b",
+                "effort": 5
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/AO1GMHp1b5/players.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Stadiums & Venues",
+          "description": "Playable arenas and fields. Add a stadium card, start its journey.",
+          "cards": [
+            {
+              "content": "Central Arena\n\nA standard indoor/outdoor venue for regular matches.\n\n**Capacity:** 20,000\n**Surface Type:** Grass/Court/Ice (your sport)\n**Weather:** Can be affected by rain/wind\n**Features:** Standard lighting, no special gimmicks\n\n**Linked Teams:** Hometown Heroes (home stadium)",
+              "priority": "a",
+              "subCards": [],
+              "effort": 21
+            },
+            {
+              "content": "Championship Stadium\n\nThe premium venue for finals and special events.\n\n**Capacity:** 50,000\n**Features:** Enhanced lighting, fireworks, VIP sections\n**Unlock Condition:** Reach finals in career mode",
+              "priority": "b",
+              "subCards": [],
+              "effort": 21
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Design Stadium Layout\n\nCreate field/court dimensions, seating arrangement, and camera angles.",
+                "targetDeck": "Game Design",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Model Stadium 3D Environment\n\nBuild the playing surface, stands, and surrounding architecture.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "targetDeck": "Art & UI",
+                "priority": "a",
+                "effort": 13
+              },
+              {
+                "content": "Add Stadium Atmosphere\n\nCrowd sounds, announcer calls, and ambient audio for this venue.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 5
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Jv8XXpkA96/stadiums-venues.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Design Notes",
+          "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
+          "deckType": "doc",
+          "cards": [
+            {
+              "content": "Design Meeting: Accessibility vs Depth\n\n**Date:** Week 2\n**Attendees:** Full team\n\n**Decisions:**\n- Simple controls (2-button inputs max)\n- Depth through positioning and timing, not combos\n- Single-player mode teaches mechanics gradually\n\n**Rationale:** Easy to learn, hard to master creates broad appeal.",
+              "priority": "a",
+              "isDoc": true
+            },
+            {
+              "content": "Playtesting Notes: Multiplayer Balance\n\n**Session:** Week 6 playtest\n**Issues:**\n- Team A stats overpowered in current build\n- Special moves too easy to spam\n\n**Changes:** Nerfed Team A shooting, added cooldown to specials.",
+              "priority": "b",
+              "isDoc": true
+            }
+          ],
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+        }
       ]
     },
     {
-      "name": "Tasks",
+      "name": "Production",
+      "icon": "tasks",
+      "defaultDeckType": "task",
       "decks": [
-        {"name": "Physics & Animation"},
-        {"name": "AI Opponents"},
-        {"name": "UI (Scoreboards, Menus)"}
+        {
+          "name": "Programming",
+          "description": "Gameplay physics, AI opponents, match logic, and career mode systems.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Programming Task\n\nThis is a placeholder for programming tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Production.jpeg"
+        },
+        {
+          "name": "Art & UI",
+          "description": "Player models, team branding, stadium environments, and interface design.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Art & UI Task\n\nThis is a placeholder for art & ui tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+        },
+        {
+          "name": "Game Design",
+          "description": "Stat balancing, team composition, tournament structures, and difficulty tuning.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Game Design Task\n\nThis is a placeholder for game design tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+        },
+        {
+          "name": "Audio",
+          "description": "Commentary, crowd reactions, sound effects, and music.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. Sound effects and music tasks from journeys will appear here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+        },
+        {
+          "name": "Bugs & QA",
+          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "autoTag": "bug",
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        }
       ]
     }
   ]

@@ -1,0 +1,446 @@
+{
+  "title": "Adventure Game Project",
+  "description": "A template for story-driven adventure games with exploration, puzzles, dialogue, and narrative progression. Includes pipelines for locations, characters, puzzles, and story beats.",
+  "tags": [
+    {
+      "tag": "bug",
+      "description": "Bug or defect that needs fixing",
+      "emoji": "🐞"
+    },
+    {
+      "tag": "act-1",
+      "description": "First act content",
+      "emoji": "1️⃣"
+    },
+    {
+      "tag": "act-2",
+      "description": "Second act content",
+      "emoji": "2️⃣"
+    },
+    {
+      "tag": "act-3",
+      "description": "Final act content",
+      "emoji": "3️⃣"
+    },
+    {
+      "tag": "main-path",
+      "description": "Critical path story content",
+      "color": "#FF5722"
+    },
+    {
+      "tag": "optional",
+      "description": "Optional side content",
+      "color": "#4CAF50"
+    }
+  ],
+  "spaces": [
+    {
+      "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
+      "defaultDeckType": "hero",
+      "decks": [
+        {
+          "name": "Locations",
+          "description": "Explorable areas and scenes. Add a location card, start its journey to build it.",
+          "cards": [
+            {
+              "id": "village-card",
+              "content": "Starting Village\n\nThe peaceful hometown where the adventure begins.\n\n**Act:** Act 1\n**Exits:** Forest Path (north), Player's House (east)\n**NPCs:** 5-7 villagers with dialogue\n**Key Events:** Meet mentor, receive quest, learn basic mechanics\n\nThis card uses **#act-1** and **#main-path** tags. Use act tags to organize narrative progression and path tags to distinguish critical vs optional content.\n\n> **Sub-Cards:** These were created by the journey! Each location needs art, coding for interactions, dialogue writing, and audio ambiance.",
+              "priority": "a",
+              "tags": [
+                "act-1",
+                "main-path"
+              ],
+              "subCards": [],
+              "effort": 29
+            },
+            {
+              "content": "Ancient Temple\n\nA mysterious ruin hiding secrets.\n\n**Act:** Act 2\n**Contains:** 3 puzzle rooms, hidden treasure\n**Atmosphere:** Dark, mysterious, slightly dangerous\n**Purpose:** Optional dungeon for side quest",
+              "priority": "b",
+              "tags": [
+                "act-2",
+                "optional"
+              ],
+              "id": "location-2",
+              "subCards": [],
+              "effort": 29
+            },
+            {
+              "content": "Location 3\n\nAnother area to explore. Define what makes this location unique.",
+              "priority": "b",
+              "tags": [
+                "act-1"
+              ],
+              "id": "location-3",
+              "subCards": [],
+              "effort": 29
+            },
+            {
+              "content": "Location 4\n\nAnother area to explore. Define what makes this location unique.",
+              "priority": "b",
+              "tags": [
+                "act-1"
+              ],
+              "subCards": [],
+              "effort": 29
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Location Art & Layout\n\nDesign and build the environment art and scene layout.",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 13
+              },
+              {
+                "content": "Implement Location Code\n\nSet up scene transitions, interactions, and triggers.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Write Location Dialogue\n\nCreate NPC conversations and ambient text for this area.",
+                "targetDeck": "Writing",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Add Location Ambiance\n\nBackground music and environmental sounds.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 3
+              },
+              {
+                "content": "Playtest Location Flow\n\nTest navigation, pacing, and ensure no softlocks.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 3
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/DDdum4GS4f/locations.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Characters",
+          "description": "NPCs and companions with dialogue and personality. Add a character card, start its journey.",
+          "cards": [
+            {
+              "content": "The Mentor\n\nWise old guide who sets you on your quest.\n\n**Role:** Tutorial NPC, quest giver\n**Personality:** Patient, mysterious, knows more than they say\n**Appears In:** Starting Village, Act 1 finale\n**Key Dialogue:** 3-4 conversations throughout Act 1\n\n> **Priority:** This is marked 'a' priority because tutorial characters are critical for onboarding players!",
+              "priority": "a",
+              "tags": [
+                "act-1",
+                "main-path"
+              ],
+              "id": "char-1",
+              "subCards": [],
+              "effort": 23
+            },
+            {
+              "content": "Quirky Shopkeeper\n\nComic relief merchant who sells items.\n\n**Role:** Shop vendor, provides hints for secrets\n**Personality:** Cheerful, greedy, friendly\n**Appears In:** Multiple locations throughout game\n**Special:** Remembers previous purchases in dialogue\n\n**Effort Note:** This has 3 effort - simpler than major story characters but still needs personality!",
+              "priority": "b",
+              "tags": [
+                "optional"
+              ],
+              "effort": 23,
+              "id": "char-2",
+              "subCards": []
+            },
+            {
+              "content": "Character 3\n\nAnother NPC. Define their role and personality.",
+              "priority": "b",
+              "tags": [
+                "act-2"
+              ],
+              "subCards": [],
+              "effort": 23
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Design Character Art\n\nCreate character sprite/model and portrait for dialogue.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Write Character Dialogue\n\nAll conversations, barks, and personality-defining text.",
+                "targetDeck": "Writing",
+                "priority": "a",
+                "effort": 8
+              },
+              {
+                "content": "Implement Character System\n\nDialogue triggers, quest flags, and behavior logic.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Record Character Voice\n\nVoice acting or key vocal sounds (optional).\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 5
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/oQGmP1a4bP/characters.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Puzzles",
+          "description": "Environmental puzzles and challenges. Add a puzzle card, start its journey.",
+          "cards": [
+            {
+              "content": "Color Crystal Puzzle\n\nMatch colored crystals to open a door.\n\n**Location:** Ancient Temple\n**Mechanic:** Rotate crystals until all match target pattern\n**Difficulty:** Medium\n**Hint System:** NPC nearby can give clues if player is stuck\n\n**Linked Location:** Ancient Temple",
+              "priority": "b",
+              "tags": [
+                "act-2",
+                "optional"
+              ],
+              "id": "puzzle-1",
+              "subCards": [],
+              "effort": 17
+            },
+            {
+              "content": "Puzzle 2\n\nA challenge for players. Define the mechanics and solution.",
+              "priority": "b",
+              "tags": [
+                "act-2"
+              ],
+              "id": "puzzle-2",
+              "subCards": [],
+              "effort": 17
+            },
+            {
+              "content": "Puzzle 3\n\nA challenge for players. Define the mechanics and solution.",
+              "priority": "b",
+              "tags": [
+                "act-2"
+              ],
+              "subCards": [],
+              "effort": 17
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Design Puzzle Solution\n\nPlan the logic, steps to solve, and potential fail states.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Game Design",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Create Puzzle Art Assets\n\nBuild interactive objects and visual feedback.",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Implement Puzzle Logic\n\nCode the puzzle mechanics and solution checking.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Add Puzzle Audio Feedback\n\nSounds for interactions and solving.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 2
+              },
+              {
+                "content": "Playtest Puzzle Difficulty\n\nEnsure it's challenging but not frustrating.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 2
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sJljUPWuO3/puzzles.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Story Beats",
+          "description": "Major narrative moments and cutscenes. These are unique events, not repeatable assets.",
+          "cards": [
+            {
+              "content": "Opening Cutscene\n\nIntroduces the world and inciting incident.\n\n**Type:** Non-interactive cutscene\n**Length:** 2-3 minutes\n**Purpose:** Set tone, introduce protagonist, show problem\n**Technical:** May use in-engine cinematics or pre-rendered video\n\n**Story beats are unique, so this deck doesn't use journeys.** Create custom sub-cards for each beat's specific needs (storyboarding, voice recording, animation, etc.).",
+              "priority": "a",
+              "tags": [
+                "act-1",
+                "main-path"
+              ],
+              "id": "story-beat-1",
+              "subCards": [],
+              "effort": 8
+            },
+            {
+              "content": "Act 1 Finale: Village Attack\n\nClimactic event forcing the hero to leave home.\n\n**Type:** Interactive sequence\n**Gameplay:** Defend villagers, make moral choice\n**Outcome:** Village destroyed, mentor dies/leaves\n**Emotion:** Loss, determination\n\n**Branches:** Player choice affects Act 2 dialogue",
+              "priority": "a",
+              "tags": [
+                "act-1",
+                "main-path"
+              ],
+              "subCards": [],
+              "effort": 8
+            }
+          ],
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/FMsdZ8RTJG/story-beats.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Design Notes",
+          "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
+          "deckType": "doc",
+          "cards": [
+            {
+              "id": "narrative-design-note",
+              "content": "Design Meeting: Narrative Pacing\n\n**Date:** Week 2\n**Attendees:** Writer, Lead Designer\n\n**Decisions:**\n- Story beats will be gated by exploration, not combat\n- Player choices should affect character relationships, not plot outcomes\n- Environmental storytelling takes priority over exposition\n\n**Rationale:** We want players to feel immersed in the world without being lectured.",
+              "priority": "a",
+              "isDoc": true
+            },
+            {
+              "content": "Playtesting Notes: Puzzle Difficulty\n\n**Session:** Week 4 playtest\n**Issues:**\n- 40% of players stuck on the water puzzle for >10 minutes\n- Most didn't notice the visual clue in the mural\n\n**Changes Made:** Added subtle audio cue, made mural slightly brighter.",
+              "priority": "b",
+              "isDoc": true
+            }
+          ],
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Production",
+      "icon": "tasks",
+      "defaultDeckType": "task",
+      "decks": [
+        {
+          "name": "Coding",
+          "description": "Scene management, dialogue systems, puzzle logic, and save/load functionality.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Coding Task\n\nThis is a placeholder for coding tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+        },
+        {
+          "name": "Art",
+          "description": "Environment art, character designs, UI elements, and cutscene storyboards.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Art Task\n\nThis is a placeholder for art tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+        },
+        {
+          "name": "Writing",
+          "description": "Dialogue, character development, story outlines, and narrative design.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Writing Task\n\nThis is a placeholder for writing tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+        },
+        {
+          "name": "Audio",
+          "description": "Voice acting, music composition, ambient sounds, and sound effects.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+        },
+        {
+          "name": "Game Design",
+          "description": "Pacing, puzzle design, difficulty balance, and playtesting.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Design Task\n\nThis is a placeholder for design tasks like balancing, tuning, and playtesting that journeys create.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+        },
+        {
+          "name": "Bugs & QA",
+          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "autoTag": "bug",
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

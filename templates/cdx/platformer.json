@@ -1,0 +1,477 @@
+{
+  "title": "Platformer Project",
+  "description": "A template for 2D/3D platformer games featuring movement mechanics, level design, enemies, and collectibles. Includes asset pipelines for movement abilities, levels, enemies, and power-ups.",
+  "tags": [
+    {
+      "tag": "bug",
+      "description": "Bug or defect that needs fixing",
+      "emoji": "🐞"
+    },
+    {
+      "tag": "tier-1",
+      "description": "Early game content",
+      "emoji": "1️⃣"
+    },
+    {
+      "tag": "tier-2",
+      "description": "Mid game content",
+      "emoji": "2️⃣"
+    },
+    {
+      "tag": "tier-3",
+      "description": "Late game content",
+      "emoji": "3️⃣"
+    },
+    {
+      "tag": "collectible",
+      "description": "Items to collect",
+      "color": "#FFD700"
+    },
+    {
+      "tag": "hazard",
+      "description": "Environmental dangers",
+      "color": "#FF4444"
+    },
+    {
+      "tag": "boss",
+      "description": "Boss enemies",
+      "color": "#9B30FF"
+    }
+  ],
+  "spaces": [
+    {
+      "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
+      "defaultDeckType": "hero",
+      "decks": [
+        {
+          "name": "Movement Abilities",
+          "description": "Individual movement mechanics and abilities. Add a new movement type as a card, then start its journey to create implementation tasks.",
+          "cards": [
+            {
+              "id": "basic-jump-card",
+              "content": "Basic Jump\n\nThe player's standard jump ability. Define the jump height and whether it's fixed or variable based on button hold duration.\n\n> **About Sub-Cards:** Notice the sub-cards attached below? These were created automatically by starting this card's journey. Each sub-card represents a production task (coding, animation, audio, etc.) needed to bring this mechanic to life.\n\n> **Priority:** This card is marked as priority 'a' - the highest priority. Use priority to signal what's most important to work on first.",
+              "priority": "a",
+              "tags": [
+                "tier-1"
+              ],
+              "subCards": [],
+              "effort": 13
+            },
+            {
+              "id": "double-jump-card",
+              "content": "Double Jump\n\nA second jump the player can perform while in mid-air. Decide if this is available from the start or unlocked later as a progression reward.\n\n**Unlocked by:** Double Jump Boots\n\nThis card has the **#tier-2** tag, meaning it's mid-game content. Tags help you filter and organize cards - define your own tag system that fits your project!",
+              "priority": "b",
+              "tags": [
+                "tier-2"
+              ],
+              "subCards": [],
+              "effort": 13
+            },
+            {
+              "id": "wall-slide-card",
+              "content": "Wall Slide\n\nPlayer slows their fall when touching a wall. Often paired with wall-jump. Consider: Does it drain stamina? How much does it slow the fall?\n\n> **Effort:** This card could be estimated at 5 effort points. Use effort to estimate how much work a feature will take - helpful for planning sprints!",
+              "priority": "b",
+              "tags": [
+                "tier-2"
+              ],
+              "effort": 13,
+              "subCards": []
+            },
+            {
+              "id": "dash-card",
+              "content": "Dash\n\nA quick horizontal burst of speed. Consider: Can it be used in mid-air? Does it have a cooldown? Can it pass through enemies?\n\n**Unlocked by:** Speed Boots\n\nDash is great for speedrunning and adds skill expression to movement.",
+              "priority": "b",
+              "tags": [
+                "tier-2"
+              ],
+              "effort": 13,
+              "subCards": []
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Implement Mechanic Logic\n\nCode the core functionality of this movement ability.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Create Animations\n\nAnimate the player performing this movement.\n\n- [ ] Plan animation keyframes\n- [ ] Block out motion\n- [ ] Refine timing and curves\n- [ ] Add secondary motion\n- [ ] Test in game context",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Tune Feel & Responsiveness\n\nPlaytest and adjust timing, speed, and feel until it's satisfying.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 3
+              },
+              {
+                "content": "Add Audio Feedback\n\nCreate sound effects for the movement.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 2
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/M6tie3dyjX/movement-abilities.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Levels",
+          "description": "All game levels. Add a level card, then start its journey to create production tasks.",
+          "cards": [
+            {
+              "id": "tutorial-level-card",
+              "content": "Tutorial Level\n\nThe first level where players learn the basic controls. Introduce one mechanic at a time in a safe environment. Consider: What's the minimum they need to know to start playing?\n\n**Teaches:** Basic Jump",
+              "priority": "a",
+              "tags": [
+                "tier-1"
+              ],
+              "subCards": [],
+              "effort": 24
+            },
+            {
+              "content": "Level 1: Grasslands\n\nThe first real level after the tutorial. Build on what was taught and add light challenge. This sets the tone for your game's difficulty curve.",
+              "priority": "a",
+              "tags": [
+                "tier-1"
+              ],
+              "subCards": [],
+              "effort": 24
+            },
+            {
+              "id": "level-2-card",
+              "content": "Level 2: Crystal Caves\n\nIntroduce a new mechanic or enemy type here. Consider: What's the next challenge after players master Level 1?",
+              "priority": "b",
+              "tags": [
+                "tier-2"
+              ],
+              "subCards": [],
+              "effort": 24
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Level Layout & Blockout\n\nDesign the level flow, challenge progression, and placement of enemies/collectibles.",
+                "targetDeck": "Game Design",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Create Level Art Assets\n\nBuild environment art, props, and visual themes for this level.",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 8
+              },
+              {
+                "content": "Implement Level Mechanics & Scripting\n\nCode level-specific mechanics, triggers, and events.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Design Level Music & Ambiance\n\nCreate the music track and ambient sounds for this level.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 3
+              },
+              {
+                "content": "Playtest & Balance Level Difficulty\n\nTest the level and adjust difficulty, pacing, and challenge.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 3
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/93tdITKjjq/levels.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Enemies",
+          "description": "Enemy types and behaviors. Add an enemy, start its journey to create production tasks.",
+          "cards": [
+            {
+              "id": "slime-card",
+              "content": "Slime\n\nYour basic enemy type. Simple, predictable behavior that teaches players the combat basics. Consider: How does the player defeat it? Jump on it? Attack button?\n\n**First appears in:** Level 1: Grasslands",
+              "priority": "a",
+              "tags": [
+                "tier-1"
+              ],
+              "subCards": [],
+              "effort": 16
+            },
+            {
+              "id": "bat-card",
+              "content": "Flying Bat\n\nAn aerial enemy that requires different tactics than ground enemies. Consider: Does it patrol or chase? How fast? Can players jump on it?",
+              "priority": "b",
+              "tags": [
+                "tier-2"
+              ],
+              "subCards": [],
+              "effort": 16
+            },
+            {
+              "id": "spike-trap-card",
+              "content": "Spike Trap\n\nA stationary hazard that teaches players to watch where they land. Consider: Always active or periodic? How much damage? Can it be destroyed?\n\n**First appears in:** Level 1: Grasslands",
+              "priority": "a",
+              "tags": [
+                "tier-1"
+              ],
+              "subCards": [],
+              "effort": 16
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Enemy Concept Art\n\nDraw concept art exploring the enemy's visual design.",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Create Enemy Sprite/Model & Animations\n\nBuild the enemy's model and animate its behaviors (idle, attack, death, etc.).\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Implement Enemy AI & Behavior\n\nCode the enemy's movement patterns, attack logic, and reactions.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 5
+              },
+              {
+                "content": "Design Enemy SFX\n\nCreate sound effects for movement, attacks, and death.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 2
+              },
+              {
+                "content": "Balance Enemy Stats & Placement\n\nTune health, damage, speed, and decide where this enemy appears in levels.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 2
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Power-ups",
+          "description": "Collectibles and abilities. Add a power-up, start its journey to create production tasks.",
+          "cards": [
+            {
+              "id": "double-jump-boots-card",
+              "content": "Double Jump Boots\n\nA permanent upgrade that unlocks the double jump ability.\n\n**Unlocks:** Double Jump\n**Found in:** Level 2: Crystal Caves\n\nThis shows how power-ups can gate progression - players return to earlier levels with new abilities to reach previously inaccessible areas.",
+              "priority": "a",
+              "tags": [
+                "tier-1",
+                "collectible"
+              ],
+              "subCards": [],
+              "effort": 8
+            },
+            {
+              "content": "Health Potion\n\nA consumable that restores player health. Decide: How much does it heal? Is it instant or over time? Does it drop from enemies or sit in the world?",
+              "priority": "b",
+              "tags": [
+                "tier-2",
+                "collectible"
+              ],
+              "subCards": [],
+              "effort": 8
+            }
+          ],
+          "journey": {
+            "steps": [
+              {
+                "content": "Create Power-up Icon/Model\n\nDesign the visual representation of this power-up.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "targetDeck": "Art",
+                "priority": "a",
+                "effort": 2
+              },
+              {
+                "content": "Implement Power-up Logic\n\nCode what happens when the player collects this power-up.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "targetDeck": "Coding",
+                "priority": "a",
+                "effort": 3
+              },
+              {
+                "content": "Design Power-up SFX & VFX\n\nCreate the collection sound and any visual effects.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "targetDeck": "Audio",
+                "priority": "b",
+                "effort": 1
+              },
+              {
+                "content": "Balance Power-up Effect & Duration\n\nTune how powerful the effect is and how long it lasts (for temporary power-ups).\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "targetDeck": "Game Design",
+                "priority": "b",
+                "effort": 2
+              }
+            ]
+          },
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/HUo02kpjR3/power-ups.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+        },
+        {
+          "name": "Design Notes",
+          "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
+          "deckType": "doc",
+          "cards": [
+            {
+              "id": "jump-design-note",
+              "content": "Design Meeting: Jump Feel\n\n**Date:** Sprint 1\n**Attendees:** Lead Designer, Programmer\n\n**Key Decisions:**\n- Variable jump height based on button hold\n- Slight 'coyote time' (can jump shortly after leaving platform)\n- Reduced gravity on jump apex for 'floaty' feel\n\n**Rationale:** We want jumping to feel responsive and forgiving while still requiring skill for precise platforming.\n\n**Related to:** Basic Jump card",
+              "priority": "a",
+              "isDoc": true
+            },
+            {
+              "content": "Playtesting Notes: Tutorial Level\n\n**Session:** Week 3 playtest\n**Findings:**\n- 80% of players understood jump without instruction\n- 30% didn't realize they could control jump height\n- First enemy encounter too early\n\n**Changes Made:** Added floating text hint for variable jump, moved first slime encounter later.",
+              "priority": "b",
+              "isDoc": true
+            }
+          ],
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Production",
+      "icon": "tasks",
+      "defaultDeckType": "task",
+      "decks": [
+        {
+          "name": "Coding",
+          "description": "Programming tasks, gameplay systems, and physics implementation.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Coding Task\n\nThis is a placeholder for coding tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+        },
+        {
+          "name": "Art",
+          "description": "2D sprites/3D models, animations, and environment art.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Art Task\n\nThis is a placeholder for art tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+        },
+        {
+          "name": "Game Design",
+          "description": "Level layout, balancing, difficulty tuning, and playtesting.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Game Design Task\n\nThis is a placeholder for game design tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+        },
+        {
+          "name": "Audio",
+          "description": "SFX design, music composition, and audio mixing.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+        },
+        {
+          "name": "UI/UX",
+          "description": "Menus, HUD elements, and user interface polish.",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "cards": [
+            {
+              "content": "Example UI Task\n\nThis is a placeholder for user interface and UX tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2
+            }
+          ],
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_UI.jpeg",
+          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_UI.jpeg"
+        },
+        {
+          "name": "Bugs & QA",
+          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": {
+            "prop": "priority"
+          },
+          "autoTag": "bug",
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
