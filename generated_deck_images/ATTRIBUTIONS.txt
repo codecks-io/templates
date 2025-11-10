@@ -1,0 +1,60 @@
+Deck Image Attributions
+==================================================
+
+All icons are from Game-Icons.net (https://game-icons.net)
+Licensed under Creative Commons 3.0 BY or CC0
+
+Icon authors:
+
+Icons by caro-asercion:
+  - Items & Power-ups (round-potion)
+
+Icons by darkzaitzev:
+  - Enemies (skull-sabertooth)
+  - Power-ups (north-star-shuriken)
+
+Icons by delapouite:
+  - Buildings (castle)
+  - Characters (character)
+  - Creatures (dragon-orb)
+  - Design Notes (notebook)
+  - Game Rules & Mechanics (whistle)
+  - Items (chest)
+  - Levels (castle)
+  - Maps (dungeon-gate)
+  - Movement Abilities (jump-across)
+  - Players (american-football-player)
+  - Puzzle Elements (boss-key)
+  - Puzzle Mechanics (puzzle)
+  - Puzzles (boss-key)
+  - Resources (wood-pile)
+  - Room Types (dungeon-gate)
+  - Story Beats (book-cover)
+  - Teams (team-idea)
+  - Tutorial System (book-cover)
+  - Weapons (ancient-sword)
+
+Icons by lorc:
+  - Core Mechanics (gears)
+  - Core Systems (gears)
+  - Craftable Items (anvil-impact)
+  - Crafting Recipes (anvil-impact)
+  - Events (time-bomb)
+  - Game Mechanics (gears)
+  - Locations (treasure-map)
+  - Puzzle Levels (maze-cornea)
+  - Quests (scroll-unfurled)
+  - Technologies (enlightenment)
+  - Threats (wolf-howl)
+  - Units (swords-emblem)
+  - World Systems (world)
+
+Icons by sbed:
+  - Meta-Progression (level-four-advanced)
+  - Stadiums & Venues (arena)
+
+
+Original license file: icons/license.txt
+
+Please include: 'Icons made by {author}' in derivative works.
+More info at https://game-icons.net
