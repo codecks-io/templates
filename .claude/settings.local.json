@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/add_deck_images.py)",
+      "Bash(python3 scripts/validate-templates.py)",
+      "Bash(python3 -c \"\nimport json\n\nwith open(''templates/cdx/action.json'', ''r'') as f:\n    data = json.load(f)\n\nfor space in data.get(''spaces'', []):\n    if space.get(''icon'') == ''gdd'':\n        for deck in space.get(''decks'', []):\n            if deck.get(''deckType'') == ''hero'':\n                print(f\"\"\\n{deck.get(''name'')}:\"\")\n                for card in deck.get(''cards'', []):\n                    has_effort = ''effort'' in card\n                    print(f\"\"  - {card.get(''id'', ''no-id'')}: effort={card.get(''effort'', ''MISSING'')}\"\")\n\")",
+      "Bash(python3 scripts/fix_effort_values.py)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
