@@ -5,6 +5,7 @@ on:
     paths:
       - "templates/**/*.json"
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 permissions:
   contents: read
