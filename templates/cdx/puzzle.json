@@ -1,31 +1,14 @@
 {
-  "title": "Puzzle Game Project",
-  "description": "A template for puzzle games centered around logic, mechanics, and level progression. Includes asset pipelines for puzzle mechanics, puzzle elements, levels, and tutorial design.",
+  "org": "cdx-templates",
+  "name": "Template Puzzle",
+  "description": "Export",
+  "title": "Template Puzzle",
   "tags": [
     {
       "tag": "bug",
-      "description": "Bug or defect that needs fixing",
+      "description": null,
+      "color": null,
       "emoji": "🐞"
-    },
-    {
-      "tag": "easy",
-      "description": "Beginner difficulty puzzles",
-      "color": "#4CAF50"
-    },
-    {
-      "tag": "medium",
-      "description": "Intermediate difficulty puzzles",
-      "color": "#FF9800"
-    },
-    {
-      "tag": "hard",
-      "description": "Advanced difficulty puzzles",
-      "color": "#F44336"
-    },
-    {
-      "tag": "tutorial",
-      "description": "Tutorial or teaching content",
-      "emoji": "📚"
     }
   ],
   "spaces": [
@@ -35,205 +18,280 @@
       "defaultDeckType": "hero",
       "decks": [
         {
+          "id": "43",
           "name": "Puzzle Mechanics",
-          "description": "Core puzzle mechanics and interactions. Each mechanic is a unique system - add a mechanic card to define its rules and behavior.",
+          "description": "Core puzzle mechanics and interactions. Each mechanic is a unique system. Add a mechanic card to define its rules and behavior.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sUvgRWoYJn/puzzle-mechanics.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
           "cards": [
             {
-              "id": "color-switch-card",
+              "id": "111",
               "content": "Color Switch Mechanic\n\nA mechanic where players can change their color and must match gates/platforms to pass through them.\n\n> **About Journeys:** Unlike repeatable assets (like levels or items), each puzzle mechanic is unique and needs custom implementation. That's why this deck doesn't use a journey - you'll manually create sub-cards for each mechanic's specific needs.\n\n**Core Rules:**\n- How do players change color? (Button press, walking over pads, etc.)\n- What happens when colors don't match? (Block passage, damage, reset?)\n- How many colors exist in your game?",
               "priority": "a",
-              "tags": ["tutorial"],
-              "subCards": [],
-              "effort": 8
-            },
-            {
-              "content": "Push Block Mechanic\n\nBlocks that players can push (but not pull) to solve puzzles.\n\n**Consider:**\n- Can blocks fall off edges?\n- What happens if a block gets stuck?\n- Can blocks be pushed onto buttons/switches?\n- Should there be different block types (heavy, light, ice, etc.)?",
-              "priority": "a",
-              "tags": ["easy"],
-              "subCards": [],
-              "effort": 8
-            },
-            {
-              "id": "undo-card",
-              "content": "Undo System\n\nAllow players to rewind their last N moves. Consider: How many undos? Unlimited? Does it cost points?\n\n**Why:** Reduces frustration while maintaining challenge.",
-              "priority": "a",
-              "subCards": [],
-              "effort": 8
-            },
-            {
-              "id": "hint-card",
-              "content": "Hint System\n\nProvide hints when players are stuck. Consider: Progressive hints? Penalty for using? Time-gated?\n\n**Why:** Keeps players engaged without giving away solutions.",
-              "priority": "b",
-              "subCards": [],
-              "effort": 8
-            }
-          ],
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sUvgRWoYJn/puzzle-mechanics.png"
-        },
-        {
-          "name": "Puzzle Elements",
-          "description": "Reusable puzzle objects and obstacles. Add an element card, then start its journey to create production tasks.",
-          "cards": [
-            {
-              "id": "pressure-plate-card",
-              "content": "Pressure Plate\n\nA switch that activates when something heavy is placed on it.\n\n**Unlocks:** Doors, bridges, or other mechanisms\n**Used in:** Training levels and throughout the game\n\nThis card uses the **#easy** tag since pressure plates are intuitive for players to understand. Use difficulty tags to organize which elements appear when.",
-              "priority": "a",
-              "tags": ["easy", "tutorial"],
-              "subCards": [],
-              "effort": 12
-            },
-            {
-              "content": "Laser & Mirror\n\nLasers that must be redirected using mirrors to hit targets.\n\n> **Priority Tip:** This is marked priority 'b' because it's more complex than basic elements. Introduce advanced mechanics after players master the basics!",
-              "priority": "b",
-              "tags": ["medium"],
-              "id": "switch-card",
-              "subCards": [],
-              "effort": 12
-            },
-            {
-              "id": "portal-card",
-              "content": "Portal\n\nTeleports objects/player to paired portal. Consider: One-way or two-way? What can go through?\n\n**Introduces:** Spatial puzzles",
-              "priority": "a",
-              "tags": ["mechanic"],
-              "subCards": [],
-              "effort": 12
-            }
-          ],
-          "journey": {
-            "steps": [
-              {
-                "content": "Create Element 3D Model/Sprite\n\nDesign the visual appearance of this puzzle element.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
-                "targetDeck": "Art & VFX",
-                "priority": "a",
-                "effort": 3
-              },
-              {
-                "content": "Implement Element Logic\n\nCode how this element behaves and interacts with the player and other objects.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "Programming",
-                "priority": "a",
-                "effort": 5
-              },
-              {
-                "content": "Create Visual & Audio Feedback\n\nAdd VFX and SFX for activation, deactivation, and interaction states.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
-                "targetDeck": "Art & VFX",
-                "priority": "b",
-                "effort": 2
-              },
-              {
-                "content": "Design Element SFX\n\nCreate sound effects for interactions.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
-                "targetDeck": "Audio",
-                "priority": "b",
-                "effort": 2
-              }
-            ]
-          },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ppggDw9XLB/puzzle-elements.png"
-        },
-        {
-          "name": "Puzzle Levels",
-          "description": "Individual puzzle levels. Add a level card, then start its journey to create the level.",
-          "cards": [
-            {
-              "id": "level-1-card",
-              "content": "Level 1: Color Basics\n\nThe first puzzle that teaches the color switching mechanic in isolation.\n\n**Teaches:** Color Switch Mechanic\n**Solution Steps:** 3-4 moves\n**New Concepts:** Colored gates\n\n> **Effort Estimation:** Notice this card has an effort estimate of 3 points. Effort helps you plan how long content will take to create - useful when planning what fits in a sprint or milestone!",
-              "priority": "a",
-              "tags": ["tutorial", "easy"],
-              "effort": 18,
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
               "subCards": []
             },
             {
-              "content": "Level 2: Push and Switch\n\nCombines push blocks with pressure plates.\n\n**Teaches:** How blocks can activate switches\n**Requires:** Understanding of push blocks and pressure plates\n**Solution Steps:** 5-7 moves",
+              "id": "112",
+              "content": "Push Block Mechanic\n\nBlocks that players can push (but not pull) to solve puzzles.\n\n**Consider:**\n- Can blocks fall off edges?\n- What happens if a block gets stuck?\n- Can blocks be pushed onto buttons/switches?\n- Should there be different block types (heavy, light, ice, etc.)?",
               "priority": "a",
-              "tags": ["easy"],
-              "subCards": [],
-              "effort": 18
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "content": "Level 10: Mirror Maze\n\nComplex laser redirection puzzle with multiple mirrors.\n\n**Requires:** Laser & Mirror understanding\n**Solution Steps:** 12+ moves\n**Difficulty Spike:** First truly challenging puzzle",
+              "id": "113",
+              "content": "Undo System\n\nAllow players to rewind their last N moves. Consider: How many undos? Unlimited? Does it cost points?\n\n**Why:** Reduces frustration while maintaining challenge.",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "114",
+              "content": "Hint System\n\nProvide hints when players are stuck. Consider: Progressive hints? Penalty for using? Time-gated?\n\n**Why:** Keeps players engaged without giving away solutions.",
               "priority": "b",
-              "tags": ["hard"],
-              "subCards": [],
-              "effort": 18
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
+          ]
+        },
+        {
+          "id": "44",
+          "name": "Puzzle Elements",
+          "description": "Reusable puzzle objects and obstacles. Add an element card, then start its journey to create production tasks.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ppggDw9XLB/puzzle-elements.png",
+          "preferredOrder": null,
           "journey": {
             "steps": [
               {
-                "content": "Design Puzzle Solution & Layout\n\nCreate the puzzle design on paper/whiteboard. Define the solution path and ensure it's solvable.",
-                "targetDeck": "Game Design",
+                "targetDeck": "49",
+                "content": "Create Element 3D Model/Sprite\n\nDesign the visual appearance of this puzzle element.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
                 "priority": "a",
-                "effort": 3
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
               },
               {
-                "content": "Build Level in Editor\n\nConstruct the level geometry and place all puzzle elements.",
-                "targetDeck": "Programming",
+                "targetDeck": "48",
+                "content": "Implement Element Logic\n\nCode how this element behaves and interacts with the player and other objects.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
                 "priority": "a",
-                "effort": 5
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
               },
               {
-                "content": "Create Level Art & Theme\n\nAdd visual theme, lighting, and decorative elements.",
-                "targetDeck": "Art & VFX",
-                "priority": "a",
-                "effort": 5
-              },
-              {
-                "content": "Add Level Audio\n\nBackground music and ambient sounds for this level.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
-                "targetDeck": "Audio",
+                "targetDeck": "49",
+                "content": "Create Visual Feedback\n\nAdd VFX for activation, deactivation, and interaction states.\n\n- [ ] Record or source base sounds\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
                 "priority": "b",
-                "effort": 2
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
               },
               {
-                "content": "Playtest & Tune Difficulty\n\nWatch players solve it. Is it too hard? Too easy? Adjust accordingly.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
-                "targetDeck": "Game Design",
+                "targetDeck": "51",
+                "content": "Design Element SFX\n\nCreate sound effects for interactions.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
                 "priority": "b",
-                "effort": 3
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
               }
             ]
           },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/CCrtFkaKKW/puzzle-levels.png"
-        },
-        {
-          "name": "Tutorial System",
-          "description": "Tutorial prompts, hints, and teaching moments. Each card represents how you teach a specific concept.",
           "cards": [
             {
-              "content": "Teaching Color Switching\n\nHow do we teach players they can change colors?\n\n**Approach Ideas:**\n- Visual: Highlight the color switch button when near a colored gate\n- Contextual: Force players to use it to progress (can't fail)\n- Feedback: Show color change with screen tint and particle effects\n\n**Linked Levels:** Level 1: Color Basics",
-              "priority": "a",
-              "tags": ["tutorial"],
-              "subCards": [],
-              "effort": 8
+              "id": "116",
+              "content": "Laser & Mirror\n\nLasers that must be redirected using mirrors to hit targets.\n\n> **Priority Tip:** This is marked priority 'b' because it's more complex than basic elements. Introduce advanced mechanics after players master the basics!",
+              "priority": "b",
+              "effort": 12,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "content": "Hint System Design\n\nHow do we help stuck players without spoiling the puzzle?\n\n**Consider:**\n- Timer-based? (Show hint after 2 minutes)\n- Request-based? (Press button for hint)\n- Tiered hints? (Start vague, get more specific)\n- Visual hints? (Glow the next object to interact with)",
-              "priority": "b",
-              "tags": ["tutorial"],
-              "subCards": [],
-              "effort": 8
+              "id": "117",
+              "content": "Portal\n\nTeleports objects/player to paired portal. Consider: One-way or two-way? What can go through?\n\n**Introduces:** Spatial puzzles",
+              "priority": "a",
+              "effort": 12,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "115",
+              "content": "Pressure Plate\n\nA switch that activates when something heavy is placed on it.\n\n**Unlocks:** Doors, bridges, or other mechanisms\n**Used in:** Training levels and throughout the game\n\nThis card uses the **#easy** tag since pressure plates are intuitive for players to understand. Use difficulty tags to organize which elements appear when.",
+              "priority": "a",
+              "effort": 12,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "391",
+                "392",
+                "393",
+                "394"
+              ]
             }
-          ],
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/PzzUS4dcCl/tutorial-system.png"
+          ]
         },
         {
+          "id": "45",
+          "name": "Puzzle Levels",
+          "description": "Individual puzzle levels. Add a level card, then start its journey to create the level.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/CCrtFkaKKW/puzzle-levels.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": [
+              {
+                "targetDeck": "50",
+                "content": "Design Puzzle Solution & Layout\n\nCreate the puzzle design on paper/whiteboard. Define the solution path and ensure it's solvable.",
+                "priority": "a",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "50",
+                "content": "Build Level in Editor\n\nConstruct the level geometry and place all puzzle elements.",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "49",
+                "content": "Create Level Art & Theme\n\nAdd visual theme, lighting, and decorative elements.",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "51",
+                "content": "Add Level Audio\n\nBackground music and ambient sounds for this level.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "priority": "b",
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "50",
+                "content": "Playtest & Tune Difficulty\n\nWatch players solve it. Is it too hard? Too easy? Adjust accordingly.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "priority": "b",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              }
+            ]
+          },
+          "cards": [
+            {
+              "id": "119",
+              "content": "Level 2: Push and Switch\n\nCombines push blocks with pressure plates.\n\n**Teaches:** How blocks can activate switches\n**Requires:** Understanding of push blocks and pressure plates\n**Solution Steps:** 5-7 moves",
+              "priority": "a",
+              "effort": 18,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "120",
+              "content": "Level 10: Mirror Maze\n\nComplex laser redirection puzzle with multiple mirrors.\n\n**Requires:** Laser & Mirror understanding\n**Solution Steps:** 12+ moves\n**Difficulty Spike:** First truly challenging puzzle",
+              "priority": "b",
+              "effort": 18,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "118",
+              "content": "Level 1: Color Basics\n\nThe first puzzle that teaches the color switching mechanic in isolation.\n\n**Teaches:** Color Switch Mechanic\n**Solution Steps:** 3-4 moves\n**New Concepts:** Colored gates\n\n> **Effort Estimation:** Notice this card has an effort estimate of 3 points. Effort helps you plan how long content will take to create - useful when planning what fits in a sprint or milestone!",
+              "priority": "a",
+              "effort": 18,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "395",
+                "396",
+                "397",
+                "398",
+                "399"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "46",
+          "name": "Tutorial System",
+          "description": "Tutorial prompts, hints, and teaching moments. Each card represents how you teach a specific concept.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/PzzUS4dcCl/tutorial-system.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "121",
+              "content": "Teaching Color Switching\n\nHow do we teach players they can change colors?\n\n**Approach Ideas:**\n- Visual: Highlight the color switch button when near a colored gate\n- Contextual: Force players to use it to progress (can't fail)\n- Feedback: Show color change with screen tint and particle effects\n\n**Linked Levels:** Level 1: Color Basics",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "122",
+              "content": "Hint System Design\n\nHow do we help stuck players without spoiling the puzzle?\n\n**Consider:**\n- Timer-based? (Show hint after 2 minutes)\n- Request-based? (Press button for hint)\n- Tiered hints? (Start vague, get more specific)\n- Visual hints? (Glow the next object to interact with)",
+              "priority": "b",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "47",
           "name": "Design Notes",
           "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
           "deckType": "doc",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
           "cards": [
             {
+              "id": "123",
               "content": "Design Meeting: Difficulty Curve\n\n**Date:** Sprint 2\n**Attendees:** Lead Designer, UX Designer\n\n**Decisions:**\n- Introduce one new mechanic every 5 levels\n- Early levels should be completable in <2 minutes\n- Level 10+ can require 5-10 minute solve times\n\n**Rationale:** Gradual difficulty ramp keeps players engaged without overwhelming them.",
               "priority": "a",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             },
             {
+              "id": "124",
               "content": "Playtesting Notes: Undo System\n\n**Session:** Week 3 playtest\n**Findings:**\n- 90% of players used undo frequently\n- Unlimited undo reduced challenge significantly\n- Players appreciated being able to experiment\n\n**Decision:** Implement 10-move undo buffer as compromise.",
               "priority": "b",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             }
-          ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
+          ]
         }
       ]
     },
@@ -243,99 +301,193 @@
       "defaultDeckType": "task",
       "decks": [
         {
+          "id": "48",
           "name": "Programming",
           "description": "Coding puzzle logic, mechanics, and level systems.",
-          "preferredOrder": {
-            "prop": "priority"
-          },
-          "cards": [
-            {
-              "content": "Example Programming Task\n\nThis is a placeholder for programming tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
-              "priority": "b",
-              "effort": 2,
-              "tags": [],
-              "isDoc": false,
-              "subCards": []
-            }
-          ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
-        },
-        {
-          "name": "Art & VFX",
-          "description": "Visual design, UI elements, particle effects, and level aesthetics.",
-          "preferredOrder": {
-            "prop": "priority"
-          },
-          "cards": [
-            {
-              "content": "Example Art & VFX Task\n\nThis is a placeholder for art & vfx tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
-              "priority": "b",
-              "effort": 2,
-              "tags": [],
-              "isDoc": false,
-              "subCards": []
-            }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
-        },
-        {
-          "name": "Game Design",
-          "description": "Puzzle design, difficulty balancing, and playtesting.",
-          "preferredOrder": {
-            "prop": "priority"
-          },
-          "cards": [
-            {
-              "content": "Example Game Design Task\n\nThis is a placeholder for game design tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
-              "priority": "b",
-              "effort": 2,
-              "tags": [],
-              "isDoc": false,
-              "subCards": []
-            }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
-        },
-        {
-          "name": "Audio",
-          "description": "Sound effects, music, and audio feedback.",
-          "preferredOrder": {
-            "prop": "priority"
-          },
-          "cards": [
-            {
-              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
-              "priority": "b",
-              "effort": 2,
-              "tags": [],
-              "isDoc": false,
-              "subCards": []
-            }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
-        },
-        {
-          "name": "Bugs & QA",
-          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
-          "preferredOrder": {
-            "prop": "priority"
-          },
-          "autoTag": "bug",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "preferredOrder": null,
           "journey": {
             "steps": []
           },
           "cards": [
             {
-              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
-              "priority": "a",
+              "id": "125",
+              "content": "Example Programming Task\n\nThis is a placeholder for programming tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
+              "priority": "b",
               "effort": 2,
               "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "392",
+              "content": "Implement Element Logic\n\nCode how this element behaves and interacts with the player and other objects.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "49",
+          "name": "Art & VFX",
+          "description": "Visual design, UI elements, particle effects, and level aesthetics.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "126",
+              "content": "Example Art & VFX Task\n\nThis is a placeholder for art & vfx tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "391",
+              "content": "Create Element 3D Model/Sprite\n\nDesign the visual appearance of this puzzle element.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "393",
+              "content": "Create Visual Feedback\n\nAdd VFX for activation, deactivation, and interaction states.\n\n- [ ] Record or source base sounds\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "397",
+              "content": "Create Level Art & Theme\n\nAdd visual theme, lighting, and decorative elements.",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "50",
+          "name": "Game Design",
+          "description": "Puzzle design, difficulty balancing, and playtesting.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "395",
+              "content": "Design Puzzle Solution & Layout\n\nCreate the puzzle design on paper/whiteboard. Define the solution path and ensure it's solvable.",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "127",
+              "content": "Example Game Design Task\n\nThis is a placeholder for game design tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "396",
+              "content": "Build Level in Editor\n\nConstruct the level geometry and place all puzzle elements.",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "399",
+              "content": "Playtest & Tune Difficulty\n\nWatch players solve it. Is it too hard? Too easy? Adjust accordingly.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "51",
+          "name": "Audio",
+          "description": "Sound effects, music, and audio feedback.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "128",
+              "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "394",
+              "content": "Design Element SFX\n\nCreate sound effects for interactions.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "398",
+              "content": "Add Level Audio\n\nBackground music and ambient sounds for this level.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "52",
+          "name": "Bugs & QA",
+          "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "129",
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
+              "priority": "a",
+              "effort": 2,
+              "tags": [
+                "bug"
+              ],
               "isDoc": false,
               "subCards": []
             }

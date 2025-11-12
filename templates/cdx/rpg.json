@@ -1,413 +1,647 @@
 {
-  "title": "Fantasy RPG Project",
-  "description": "A starter template for a fantasy RPG. Includes asset decks for Quests, Items, and Creatures, with pre-built production pipelines using Journeys. This template separates game design (GDD) from production (Work).",
+  "org": "cdx-templates",
+  "name": "Template RPG",
+  "description": "Export",
+  "title": "Template RPG",
   "tags": [
     {
       "tag": "bug",
-      "description": "Bug or defect that needs fixing",
+      "description": null,
+      "color": null,
       "emoji": "🐞"
-    },
-    {
-      "tag": "main-quest",
-      "description": "A critical path, story-driven quest",
-      "emoji": "👑"
-    },
-    {
-      "tag": "side-quest",
-      "description": "An optional quest",
-      "emoji": "📜"
-    },
-    {
-      "tag": "common",
-      "description": "A common-tier item or resource",
-      "color": "#AAAAAA"
-    },
-    {
-      "tag": "rare",
-      "description": "A rare-tier item",
-      "color": "#0070DD"
-    },
-    {
-      "tag": "epic",
-      "description": "An epic-tier item",
-      "color": "#A335EE"
     }
   ],
   "spaces": [
     {
       "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
       "defaultDeckType": "hero",
       "decks": [
         {
+          "id": "65",
           "name": "Core Mechanics",
           "description": "Defines fundamental rules: combat, progression, dialogue, etc. These are hero cards, not task cards.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/F3DZPKlj4o/core-mechanics.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
           "cards": [
             {
+              "id": "171",
               "content": "Player Stats (STR, DEX, INT)\n\nDefines the primary attributes for the player character.\n\n- **STR (Strength):** Affects melee damage and carry weight.\n- **DEX (Dexterity):** Affects ranged damage and chance to dodge.\n- **INT (Intelligence):** Affects magic damage and mana pool.",
               "priority": "a",
-              "id": "core-mechanics-card-1",
-              "subCards": [],
-              "effort": 8
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "id": "combat-card",
+              "id": "172",
               "content": "Combat System (Turn-Based)\n\nCore spec for the combat loop.\n\n- **System:** Turn-Based, initiative order decided by DEX.\n- **Action Points:** Each unit has 4 AP per turn.\n- **Actions:** Move (1 AP), Attack (2 AP), Use Skill (2-3 AP), Use Item (1 AP).",
               "priority": "a",
-              "subCards": [],
-              "effort": 8
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "id": "dialogue-card",
+              "id": "173",
               "content": "Dialogue System\n\nSpec for player conversations.\n\n- **System:** Branching dialogue tree.\n- **Checks:** Must support stat-based checks (e.g., [INT 10] Persuade).\n- **Flags:** Must be able to set and check quest flags.",
               "priority": "a",
-              "subCards": [],
-              "effort": 8
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "id": "xp-card",
+              "id": "174",
               "content": "XP & Leveling\n\nDefines the player progression curve. Reference 'XP_Curve.csv' (link).",
               "priority": "a",
-              "subCards": [],
-              "effort": 8
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/F3DZPKlj4o/core-mechanics.png"
+          ]
         },
         {
+          "id": "66",
           "name": "Quests",
           "description": "The central quest log. Add a new quest as a card, then start its journey to create all production tasks.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/80ixNg4oIJ/quests.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": [
+              {
+                "targetDeck": "72",
+                "content": "Write Quest Dialogue & Journal Text",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "70",
+                "content": "Script Quest Logic (Triggers, Objectives, Flags)\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "priority": "a",
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "74",
+                "content": "Design & Populate Quest Location",
+                "priority": "a",
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "74",
+                "content": "Implement Quest Rewards\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "priority": "a",
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "75",
+                "content": "Test Quest (Start to Finish)",
+                "priority": "b",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              }
+            ]
+          },
           "cards": [
             {
-              "content": "MQ1: The Dragon's Lair\n\n**Goal:** Player must defeat the dragon in the Burning Peaks.\n**Giver:** King Alistair in the capital.\n**Steps:**\n1. Find the hidden map.\n2. Speak to the Hermit.\n3. Slay the dragon.",
-              "priority": "a",
-              "tags": ["main-quest"],
-              "id": "quests-card-1",
-              "subCards": [],
-              "effort": 26
-            },
-            {
-              "id": "mq2-card",
+              "id": "176",
               "content": "MQ2: The Shadow's Heart\n\n**Goal:** Stop the Shadow Cult from completing their dark ritual in the sunken temple.\n**Giver:** Varis the Royal Mage, after completing 'MQ1: The Dragon's Lair'.\n**Steps:**\n1. Find the key to the Sunken Temple.\n2. Survive the temple's water traps.\n3. Interrupt the ritual by defeating the 3 Cultist Lieutenants.\n4. Confront the Cult's leader, Malakor.",
               "priority": "a",
-              "tags": ["main-quest"],
-              "subCards": [],
-              "effort": 26
+              "effort": 26,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
+              "id": "177",
               "content": "SQ1: The Lost Miner\n\n**Goal:** Find the miner lost in the Crystal Caves.\n**Giver:** Worried Wife in Boulder Town.\n**Reward:** 500 Gold, 2x Health Potion.",
               "priority": "b",
-              "tags": ["side-quest"],
-              "subCards": [],
-              "effort": 26
+              "effort": 26,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "175",
+              "content": "MQ1: The Dragon's Lair\n\n**Goal:** Player must defeat the dragon in the Burning Peaks.\n**Giver:** King Alistair in the capital.\n**Steps:**\n1. Find the hidden map.\n2. Speak to the Hermit.\n3. Slay the dragon.",
+              "priority": "a",
+              "effort": 26,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "413",
+                "414",
+                "415",
+                "416",
+                "417"
+              ]
             }
-          ],
-          "journey": {
-            "steps": [
-              {
-                "content": "Write Quest Dialogue & Journal Text",
-                "targetDeck": "3-writing",
-                "priority": "a",
-                "effort": 5
-              },
-              {
-                "content": "Script Quest Logic (Triggers, Objectives, Flags)\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "1-coding",
-                "priority": "a",
-                "effort": 8
-              },
-              {
-                "content": "Design & Populate Quest Location",
-                "targetDeck": "5-game-design",
-                "priority": "a",
-                "effort": 8
-              },
-              {
-                "content": "Implement Quest Rewards\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "5-game-design",
-                "priority": "a",
-                "effort": 2
-              },
-              {
-                "content": "Test Quest (Start to Finish)",
-                "targetDeck": "6-qa",
-                "priority": "b",
-                "effort": 3
-              }
-            ]
-          },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/80ixNg4oIJ/quests.png"
+          ]
         },
         {
+          "id": "67",
           "name": "Items",
           "description": "Database for all items: weapons, armor, potions, and quest objects. Add an item, then start its journey.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IJgQGPNRjt/items.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": [
+              {
+                "targetDeck": "71",
+                "content": "Create Item Concept Art / Icon",
+                "priority": "a",
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "71",
+                "content": "Create Item 3D Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "priority": "a",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "70",
+                "content": "Implement Item Logic\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "priority": "a",
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "73",
+                "content": "Design Item SFX\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "priority": "b",
+                "effort": 1,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "74",
+                "content": "Balancing",
+                "priority": "b",
+                "effort": 1,
+                "tags": [],
+                "zoneLabel": null
+              }
+            ]
+          },
           "cards": [
             {
+              "id": "179",
+              "content": "Health Potion\n\n**Type:** Consumable\n**Effect:** Restores health over time.\n**Cost:** 25 Gold",
+              "priority": "a",
+              "effort": 9,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "180",
+              "content": "Shadowfang Mail\n\n**Type:** Chest Armor (Medium)\n**Defense:** 25\n**Stats:** +2 DEX, +10 Stealth\n**Cost:** 800 Gold",
+              "priority": "a",
+              "effort": 9,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "178",
               "content": "Iron Sword\n\n**Type:** 1H Weapon\n**Damage:** 8-12 Physical\n**Stats:** +1 STR\n**Cost:** 50 Gold",
               "priority": "a",
-              "tags": ["common"],
-              "isDoc": true,
-              "id": "items-card-1",
-              "subCards": [],
-              "effort": 9
-            },
-            {
-              "id": "health-potion-card",
-              "content": "Health Potion\n\n**Type:** Consumable\n**Effect:** Restores health over time.\n**Cost:** 25 Gold",
-              "priority": "b",
-              "tags": ["common"],
-              "isDoc": true,
-              "subCards": [],
-              "effort": 9
-            },
-            {
-              "content": "Shadowfang Mail\n\n**Type:** Chest Armor (Medium)\n**Defense:** 25\n**Stats:** +2 DEX, +10 Stealth\n**Cost:** 800 Gold",
-              "priority": "c",
-              "tags": ["rare"],
-              "isDoc": true,
-              "subCards": [],
-              "effort": 9
+              "effort": 9,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "418",
+                "419",
+                "420",
+                "421",
+                "422"
+              ]
             }
-          ],
-          "journey": {
-            "steps": [
-              {
-                "content": "Create Item Concept Art / Icon",
-                "targetDeck": "2-art",
-                "priority": "a",
-                "effort": 2
-              },
-              {
-                "content": "Create Item 3D Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
-                "targetDeck": "2-art",
-                "priority": "a",
-                "effort": 3
-              },
-              {
-                "content": "Implement Item Logic\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "1-coding",
-                "priority": "a",
-                "effort": 2
-              },
-              {
-                "content": "Design Item SFX\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
-                "targetDeck": "4-audio",
-                "priority": "b",
-                "effort": 1
-              },
-              {
-                "content": "Balancing",
-                "targetDeck": "5-game-design",
-                "priority": "b",
-                "effort": 1
-              }
-            ]
-          },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IJgQGPNRjt/items.png"
+          ]
         },
         {
+          "id": "68",
           "name": "Creatures",
           "description": "Bestiary of all enemies, monsters, and neutral NPCs. Add a creature, then start its journey.",
-          "cards": [
-            {
-              "content": "Goblin Skirmisher\n\n**Role:** Weak melee attacker.\n**HP:** 30\n**Behavior:** Rushes the player in groups. Flees at 10% HP.\n**Loot Table:** `LT_Goblin_Common`",
-              "priority": "a",
-              "isDoc": true,
-              "id": "creatures-card-1",
-              "subCards": [],
-              "effort": 40
-            },
-            {
-              "id": "shadow-stalker-card",
-              "content": "Shadow Stalker\n\n**Role:** High-damage 'rogue' enemy.\n**HP:** 75\n**Behavior:** Stays in shadows, attempts to backstab. Applies 'Poison' DoT.\n**Loot Table:** `LT_Shadow_Rare`",
-              "priority": "b",
-              "isDoc": true,
-              "subCards": [],
-              "effort": 40
-            }
-          ],
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/YDDZWpYl5L/creatures.png",
+          "preferredOrder": null,
           "journey": {
             "steps": [
               {
+                "targetDeck": "71",
                 "content": "Create Creature Concept Art",
-                "targetDeck": "2-art",
                 "priority": "a",
-                "effort": 5
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "71",
                 "content": "Create Creature Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
-                "targetDeck": "2-art",
                 "priority": "a",
-                "effort": 8
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "71",
                 "content": "Animate Creature\n\n- [ ] Idle\n- [ ] Attack\n- [ ] Flinch\n- [ ] Death)",
-                "targetDeck": "2-art",
                 "priority": "a",
-                "effort": 8
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "70",
                 "content": "Implement Creature AI & Abilities\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "1-coding",
                 "priority": "a",
-                "effort": 13
+                "effort": 13,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "73",
                 "content": "Design Creature SFX\n\n- [ ] Attack\n- [ ] Voice)",
-                "targetDeck": "4-audio",
                 "priority": "b",
-                "effort": 3
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "74",
                 "content": "Place Creature in World",
-                "targetDeck": "5-game-design",
                 "priority": "b",
-                "effort": 3
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
               }
             ]
           },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/YDDZWpYl5L/creatures.png"
+          "cards": [
+            {
+              "id": "182",
+              "content": "Shadow Stalker\n\n**Role:** High-damage 'rogue' enemy.\n**HP:** 75\n**Behavior:** Stays in shadows, attempts to backstab. Applies 'Poison' DoT.\n**Loot Table:** `LT_Shadow_Rare`",
+              "priority": "a",
+              "effort": 40,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "181",
+              "content": "Goblin Skirmisher\n\n**Role:** Weak melee attacker.\n**HP:** 30\n**Behavior:** Rushes the player in groups. Flees at 10% HP.\n**Loot Table:** `LT_Goblin_Common`",
+              "priority": "a",
+              "effort": 40,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "423",
+                "424",
+                "425",
+                "426",
+                "427",
+                "428"
+              ]
+            }
+          ]
         },
         {
+          "id": "69",
           "name": "Design Notes",
           "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
           "deckType": "doc",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
           "cards": [
             {
+              "id": "183",
               "content": "Design Meeting: Combat Pacing\n\n**Date:** Week 3\n**Attendees:** Combat Designer, Lead Designer\n\n**Decisions:**\n- Turn-based combat allows for strategic depth\n- Action Points create meaningful choices per turn\n- Combat encounters should last 3-5 turns average\n\n**Rationale:** Quick combat prevents tedium while allowing tactical play.",
               "priority": "a",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             },
             {
+              "id": "184",
               "content": "Playtesting Notes: Quest Structure\n\n**Session:** Week 5 playtest\n**Findings:**\n- Players confused about quest prerequisites\n- Quest journal UI needs clearer step tracking\n\n**Actions:** Added prerequisite display, improved journal UX.",
               "priority": "b",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             }
-          ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
+          ]
         }
-      ],
-      "icon": "gdd"
+      ]
     },
     {
       "name": "Production",
+      "icon": "tasks",
       "defaultDeckType": "task",
       "decks": [
         {
-          "id": "1-coding",
+          "id": "70",
           "name": "Coding",
           "description": "Programming tasks, engine work, and systems implementation.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "coding-task-1",
-              "content": "Example Coding Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "id": "185",
+              "content": "Example Coding Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "420",
+              "content": "Implement Item Logic\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "426",
+              "content": "Implement Creature AI & Abilities\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "414",
+              "content": "Script Quest Logic (Triggers, Objectives, Flags)\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
+          ]
         },
         {
-          "id": "2-art",
+          "id": "71",
           "name": "Art",
           "description": "2D, 3D, Animation, and VFX tasks.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "art-task-1",
+              "id": "186",
               "content": "Example Art Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "425",
+              "content": "Animate Creature\n\n- [ ] Idle\n- [ ] Attack\n- [ ] Flinch\n- [ ] Death)",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "423",
+              "content": "Create Creature Concept Art",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "424",
+              "content": "Create Creature Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "418",
+              "content": "Create Item Concept Art / Icon",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "419",
+              "content": "Create Item 3D Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
+          ]
         },
         {
-          "id": "3-writing",
+          "id": "72",
           "name": "Writing",
           "description": "Quest dialogue, item descriptions, and lore.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "writing-task-1",
+              "id": "413",
+              "content": "Write Quest Dialogue & Journal Text",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "187",
               "content": "Example Writing Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg"
+          ]
         },
         {
-          "id": "4-audio",
+          "id": "73",
           "name": "Audio",
           "description": "SFX design, music implementation, and audio mixing.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "audio-task-1",
+              "id": "188",
               "content": "Example Audio Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "421",
+              "content": "Design Item SFX\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
               "priority": "b",
-              "effort": 2
+              "effort": 1,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "427",
+              "content": "Design Creature SFX\n\n- [ ] Attack\n- [ ] Voice)",
+              "priority": "b",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
+          ]
         },
         {
-          "id": "5-game-design",
+          "id": "74",
           "name": "Game Design",
           "description": "Documentation, level design, and balancing.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "game-design-task-1",
-              "content": "Example Game Design Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "id": "415",
+              "content": "Design & Populate Quest Location",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "416",
+              "content": "Implement Quest Rewards\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "422",
+              "content": "Balancing",
               "priority": "b",
-              "effort": 2
+              "effort": 1,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "428",
+              "content": "Place Creature in World",
+              "priority": "b",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "189",
+              "content": "Example Game Design Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
+          ]
         },
         {
-          "id": "6-qa",
+          "id": "75",
           "name": "Bugs & QA",
           "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "qa-task-1",
-              "content": "Example QA Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "id": "417",
+              "content": "Test Quest (Start to Finish)",
               "priority": "b",
-              "effort": 2
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "190",
+              "content": "Example QA Task\n\nThis is a placeholder. Journeys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
-
-          "autoTag": "bug"
+          ]
         }
-      ],
-      "icon": "tasks"
+      ]
     }
   ]
 }

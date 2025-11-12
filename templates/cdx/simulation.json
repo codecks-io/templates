@@ -1,395 +1,577 @@
 {
-  "title": "Simulation Project",
-  "description": "A starter template for a management simulation game. Includes asset decks for Buildings, Items, and Events, with pre-built production pipelines using Journeys. This template separates game design (GDD) from production (Work).",
+  "org": "cdx-templates",
+  "name": "Template Simulation",
+  "description": "Export",
+  "title": "Template Simulation",
   "tags": [
     {
       "tag": "bug",
-      "description": "Bug or defect that needs fixing",
+      "description": null,
+      "color": null,
       "emoji": "🐞"
-    },
-    {
-      "tag": "tier-1",
-      "description": "Early-game content (Unlock 0-1h)",
-      "emoji": "1️⃣"
-    },
-    {
-      "tag": "tier-2",
-      "description": "Mid-game content (Unlock 1-3h)",
-      "emoji": "2️⃣"
-    },
-    {
-      "tag": "production",
-      "description": "A building that produces resources",
-      "color": "#A335EE"
-    },
-    {
-      "tag": "housing",
-      "description": "A building for colonist needs",
-      "color": "#0070DD"
-    },
-    {
-      "tag": "economy",
-      "description": "Related to balancing or the core economy",
-      "emoji": "💰"
     }
   ],
   "spaces": [
     {
       "name": "Game Design Documents (GDD)",
+      "icon": "gdd",
       "defaultDeckType": "hero",
       "decks": [
         {
+          "id": "77",
           "name": "Core Systems",
           "description": "Defines fundamental rules: economy, colonist needs, time, etc. These are hero cards, not task cards.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/zJoNxdJ3QX/core-systems.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
           "cards": [
             {
-              "content": "Economy Loop\n\nDefines the core resource loop.\n\n- **Primary Resource (In):** `Wood`, `Stone`\n- **Secondary Resource (Processed):** `Planks`, `Tools`\n- **Currency:** `Gold Coins` (Earned by selling processed goods).",
-              "priority": "a",
-              "id": "core-systems-card-1",
-              "subCards": [],
-              "effort": 8
-            },
-            {
-              "id": "worker-needs-card",
-              "content": "Worker Needs System\n\nCore spec for colonist AI behavior.\n\n- **Hunger:** Must eat 1x `Food` every 8 hours. If 0, work speed -50%.\n- **Energy:** Must sleep in a `Bed` for 4 hours a day. If 0, collapses.\n- **Fun:** Must use a `Recreation` item 1x per day.",
-              "priority": "a",
-              "subCards": [],
-              "effort": 8
-            },
-            {
-              "id": "time-cycle-card",
+              "id": "209",
               "content": "Day/Night & Season Cycle\n\nSpec for game time.\n\n- **Day Length:** 12 minutes real-time.\n- **Work Day:** 06:00 - 18:00 (Colonists work).\n- **Seasons:** 4 seasons, 10 days each. `Winter` season halves all `Farm` output.",
               "priority": "a",
-              "subCards": [],
-              "effort": 8
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "id": "mood-system-card",
+              "id": "207",
+              "content": "Economy Loop\n\nDefines the core resource loop.\n\n- **Primary Resource (In):** `Wood`, `Stone`\n- **Secondary Resource (Processed):** `Planks`, `Tools`\n- **Currency:** `Gold Coins` (Earned by selling processed goods).",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "208",
+              "content": "Worker Needs System\n\nCore spec for colonist AI behavior.\n\n- **Hunger:** Must eat 1x `Food` every 8 hours. If 0, work speed -50%.\n- **Energy:** Must sleep in a `Bed` for 4 hours a day. If 0, collapses.\n- **Fun:** Must use a `Recreation` item 1x per day.",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "210",
               "content": "Colonist Mood System\n\nDefines how colonist happiness affects productivity.\n\n- **Mood Scale:** 0-100\n- **Effects:** Below 50 = work speed penalty, below 25 = may leave colony\n- **Influences:** Met needs increase mood, unmet needs decrease it\n- **Recreation:** +20 mood when using recreation items",
               "priority": "a",
-              "subCards": [],
-              "effort": 8
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/zJoNxdJ3QX/core-systems.png"
+          ]
         },
         {
+          "id": "78",
           "name": "Buildings",
           "description": "Database for all placeable structures. Add a building, then start its journey.",
-          "cards": [
-            {
-              "content": "Colonist Tent\n\n**Tier:** 1\n**Cost:** 10 Wood, 5 Fiber\n**Function:** Provides 1 `Bed` to satisfy `Energy` need.",
-              "priority": "a",
-              "tags": ["tier-1", "housing"],
-              "id": "buildings-card-1",
-              "subCards": [],
-              "effort": 17
-            },
-            {
-              "id": "lumber-mill-card",
-              "content": "Lumber Mill\n\n**Tier:** 1\n**Cost:** 20 Wood, 10 Stone\n**Function:** Converts 1 `Wood` -> 2 `Planks`. Requires 1 Colonist to operate.",
-              "priority": "a",
-              "tags": ["tier-1", "production"],
-              "subCards": [],
-              "effort": 17
-            },
-            {
-              "content": "Research Bench\n\n**Tier:** 2\n**Cost:** 50 Planks, 5 Tools\n**Function:** Unlocks Tier 2 technology. Generates `Research Points`.",
-              "priority": "b",
-              "tags": ["tier-2", "production"],
-              "subCards": [],
-              "effort": 17
-            }
-          ],
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png",
+          "preferredOrder": null,
           "journey": {
             "steps": [
               {
+                "targetDeck": "83",
                 "content": "Create Concept Art",
-                "targetDeck": "2-art",
                 "priority": "a",
-                "effort": 3
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "83",
                 "content": "Create 3D Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
-                "targetDeck": "2-art",
                 "priority": "a",
-                "effort": 5
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "82",
                 "content": "Implement Logic (Cost, Function)\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "1-coding",
                 "priority": "a",
-                "effort": 5
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "85",
                 "content": "Design SFX\n\n- [ ] Placement\n- [ ] Active Loop)",
-                "targetDeck": "4-audio",
-                "priority": "b",
-                "effort": 2
-              },
-              {
-                "content": "Balance Building Cost & Output\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
-                "targetDeck": "5-game-design",
                 "priority": "b",
                 "effort": 2,
-                "tags": ["economy"]
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "86",
+                "content": "Balance Building Cost & Output\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "priority": "b",
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
               }
             ]
           },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png"
+          "cards": [
+            {
+              "id": "212",
+              "content": "Lumber Mill\n\n**Tier:** 1\n**Cost:** 20 Wood, 10 Stone\n**Function:** Converts 1 `Wood` -> 2 `Planks`. Requires 1 Colonist to operate.",
+              "priority": "a",
+              "effort": 17,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "213",
+              "content": "Research Bench\n\n**Tier:** 2\n**Cost:** 50 Planks, 5 Tools\n**Function:** Unlocks Tier 2 technology. Generates `Research Points`.",
+              "priority": "b",
+              "effort": 17,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "211",
+              "content": "Colonist Tent\n\n**Tier:** 1\n**Cost:** 10 Wood, 5 Fiber\n**Function:** Provides 1 `Bed` to satisfy `Energy` need.",
+              "priority": "a",
+              "effort": 17,
+              "tags": [],
+              "isDoc": false,
+              "subCards": ["429", "430", "431", "432", "433"]
+            }
+          ]
         },
         {
+          "id": "79",
           "name": "Craftable Items",
           "description": "All items craftable by colonists (tools, food, resources). Add an item, then start its journey.",
-          "cards": [
-            {
-              "content": "Stone Axe\n\n**Tier:** 1\n**Recipe:** 5 Stone, 5 Wood\n**Function:** Allows Colonist to chop `Wood` 50% faster.",
-              "priority": "a",
-              "tags": ["tier-1"],
-              "isDoc": true,
-              "id": "craftable-items-card-1",
-              "subCards": [],
-              "effort": 5
-            },
-            {
-              "id": "bread-card",
-              "content": "Bread\n\n**Tier:** 1\n**Recipe:** 2 Wheat (at `Bakery`)\n**Function:** `Food` item. Restores 50 `Hunger`.",
-              "priority": "b",
-              "tags": ["tier-1"],
-              "isDoc": true,
-              "subCards": [],
-              "effort": 5
-            },
-            {
-              "id": "planks-card",
-              "content": "Planks\n\n**Tier:** 1\n**Recipe:** 1 Wood (at `Lumber Mill`)\n**Function:** Processed building material. Used in most Tier 2 construction.",
-              "priority": "a",
-              "tags": ["tier-1"],
-              "isDoc": true,
-              "subCards": [],
-              "effort": 5
-            }
-          ],
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/vw73SHu2Vt/craftable-items.png",
+          "preferredOrder": null,
           "journey": {
             "steps": [
               {
+                "targetDeck": "83",
                 "content": "Create Item Icon",
-                "targetDeck": "2-art",
                 "priority": "a",
-                "effort": 1
+                "effort": 1,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "82",
                 "content": "Implement Item Recipe & Stats\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "1-coding",
                 "priority": "a",
-                "effort": 2
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "85",
                 "content": "Design Item SFX (Craft, Use)\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
-                "targetDeck": "4-audio",
-                "priority": "b",
-                "effort": 1
-              },
-              {
-                "content": "Balance Item Recipe\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
-                "targetDeck": "5-game-design",
                 "priority": "b",
                 "effort": 1,
-                "tags": ["economy"]
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "86",
+                "content": "Balance Item Recipe\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "priority": "b",
+                "effort": 1,
+                "tags": [],
+                "zoneLabel": null
               }
             ]
           },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/vw73SHu2Vt/craftable-items.png"
-        },
-        {
-          "name": "Events",
-          "description": "Random and milestone events (replaces 'Quests'). Add an event, then start its journey.",
           "cards": [
             {
-              "content": "Random Event: Heatwave\n\n**Trigger:** 10% chance every day in `Summer`.\n**Effect:** `Energy` and `Hunger` needs drain 2x as fast for 1 day.\n**Player Choice:** 'Provide water' (Cost 50 `Water`) or 'Tough it out' (Risk 20% colonist mood drop).",
-              "priority": "b",
-              "id": "events-card-1",
-              "subCards": [],
-              "effort": 12
+              "id": "216",
+              "content": "Planks\n\n**Tier:** 1\n**Recipe:** 1 Wood (at `Lumber Mill`)\n**Function:** Processed building material. Used in most Tier 2 construction.",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "content": "Milestone: New Colonist Arrives\n\n**Trigger:** When `Total Housing` > `Total Colonists`.\n**Effect:** A new colonist (with random stats) arrives at the town center.",
+              "id": "215",
+              "content": "Bread\n\n**Tier:** 1\n**Recipe:** 2 Wheat (at `Bakery`)\n**Function:** `Food` item. Restores 50 `Hunger`.",
               "priority": "a",
-              "subCards": [],
-              "effort": 12
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "214",
+              "content": "Stone Axe\n\n**Tier:** 1\n**Recipe:** 5 Stone, 5 Wood\n**Function:** Allows Colonist to chop `Wood` 50% faster.",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": ["434", "435", "436", "437"]
             }
-          ],
+          ]
+        },
+        {
+          "id": "80",
+          "name": "Events",
+          "description": "Random and milestone events (replaces 'Quests'). Add an event, then start its journey.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/M47vUfwXN6/events.png",
+          "preferredOrder": null,
           "journey": {
             "steps": [
               {
+                "targetDeck": "84",
                 "content": "Write Event Text (Description & Choices)",
-                "targetDeck": "3-writing",
                 "priority": "a",
-                "effort": 2
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "82",
                 "content": "Implement Event Logic (Triggers, Effects)\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "1-coding",
                 "priority": "a",
-                "effort": 5
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "83",
                 "content": "Create Event UI Popup Art",
-                "targetDeck": "2-art",
                 "priority": "b",
-                "effort": 2
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
               },
               {
+                "targetDeck": "87",
                 "content": "Test Event Triggers & Outcomes",
-                "targetDeck": "6-qa",
                 "priority": "b",
-                "effort": 3
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
               }
             ]
           },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/M47vUfwXN6/events.png"
+          "cards": [
+            {
+              "id": "217",
+              "content": "Random Event: Heatwave\n\n**Trigger:** 10% chance every day in `Summer`.\n**Effect:** `Energy` and `Hunger` needs drain 2x as fast for 1 day.\n**Player Choice:** 'Provide water' (Cost 50 `Water`) or 'Tough it out' (Risk 20% colonist mood drop).",
+              "priority": "b",
+              "effort": 12,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "218",
+              "content": "Milestone: New Colonist Arrives\n\n**Trigger:** When `Total Housing` > `Total Colonists`.\n**Effect:** A new colonist (with random stats) arrives at the town center.",
+              "priority": "a",
+              "effort": 12,
+              "tags": [],
+              "isDoc": false,
+              "subCards": ["438", "439", "440", "441"]
+            }
+          ]
         },
         {
+          "id": "81",
           "name": "Design Notes",
           "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
           "deckType": "doc",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
           "cards": [
             {
+              "id": "219",
               "content": "Design Meeting: Economy Balance\n\n**Date:** Sprint 3\n**Attendees:** Game Designer, Systems Designer\n\n**Decisions:**\n- Early game should feel resource-scarce\n- Mid-game transitions to efficiency optimization\n- Late-game focuses on complex production chains\n\n**Rationale:** Progression from survival to optimization creates satisfying arc.",
               "priority": "a",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             },
             {
+              "id": "220",
               "content": "Playtesting Notes: Colonist AI\n\n**Session:** Week 4 playtest\n**Issues:**\n- Colonists getting stuck on pathfinding\n- Needs prioritization unclear to players\n\n**Changes:** Improved pathfinding, added thought bubbles showing current need.",
               "priority": "b",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             }
-          ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
+          ]
         }
-      ],
-      "icon": "gdd"
+      ]
     },
     {
       "name": "Production",
+      "icon": "tasks",
       "defaultDeckType": "task",
       "decks": [
         {
-          "id": "1-coding",
+          "id": "82",
           "name": "Coding",
           "description": "Programming tasks, systems logic, and AI.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "coding-task-1",
+              "id": "221",
               "content": "Example Coding Task\n\nJourneys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "431",
+              "content": "Implement Logic (Cost, Function)\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "435",
+              "content": "Implement Item Recipe & Stats\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "439",
+              "content": "Implement Event Logic (Triggers, Effects)\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
+          ]
         },
         {
-          "id": "2-art",
+          "id": "83",
           "name": "Art",
           "description": "2D Icons, 3D Models, UI Art, and Animation.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "art-task-1",
+              "id": "429",
+              "content": "Create Concept Art",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "434",
+              "content": "Create Item Icon",
+              "priority": "a",
+              "effort": 1,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "222",
               "content": "Example Art Task\n\nJourneys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "440",
+              "content": "Create Event UI Popup Art",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "430",
+              "content": "Create 3D Model & Textures\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
+          ]
         },
         {
-          "id": "3-writing",
+          "id": "84",
           "name": "Writing",
           "description": "Event text, item descriptions, and tutorials.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "writing-task-1",
+              "id": "223",
               "content": "Example Writing Task\n\nJourneys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "438",
+              "content": "Write Event Text (Description & Choices)",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg"
+          ]
         },
         {
-          "id": "4-audio",
+          "id": "85",
           "name": "Audio",
           "description": "SFX design, music implementation, and audio mixing.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "audio-task-1",
+              "id": "224",
               "content": "Example Audio Task\n\nJourneys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "432",
+              "content": "Design SFX\n\n- [ ] Placement\n- [ ] Active Loop)",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "436",
+              "content": "Design Item SFX (Craft, Use)\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+              "priority": "b",
+              "effort": 1,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
+          ]
         },
         {
-          "id": "5-game-design",
+          "id": "86",
           "name": "Game Design",
           "description": "Documentation, systems balancing, and economy tuning.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "game-design-task-1",
+              "id": "225",
               "content": "Example Game Design Task\n\nJourneys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "433",
+              "content": "Balance Building Cost & Output\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
               "priority": "b",
-              "effort": 2
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "437",
+              "content": "Balance Item Recipe\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+              "priority": "b",
+              "effort": 1,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
+          ]
         },
         {
-          "id": "6-qa",
+          "id": "87",
           "name": "Bugs & QA",
           "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "id": "qa-task-1",
-              "content": "Example QA Task\n\nJourneys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "id": "441",
+              "content": "Test Event Triggers & Outcomes",
               "priority": "b",
-              "effort": 2
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "226",
+              "content": "Example QA Task\n\nJourneys will populate this deck with specific tasks.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
-
-          "autoTag": "bug"
+          ]
         }
-      ],
-      "icon": "tasks"
+      ]
     }
   ]
 }

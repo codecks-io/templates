@@ -1,36 +1,14 @@
 {
-  "title": "Strategy Game Project",
-  "description": "A template for real-time or turn-based strategy games. Includes asset pipelines for units, buildings, technologies, and maps with resource management systems.",
+  "org": "cdx-templates",
+  "name": "Template Strategy",
+  "description": "Export",
+  "title": "Template Strategy",
   "tags": [
     {
       "tag": "bug",
-      "description": "Bug or defect that needs fixing",
+      "description": null,
+      "color": null,
       "emoji": "🐞"
-    },
-    {
-      "tag": "early-game",
-      "description": "Available in early game",
-      "emoji": "🌱"
-    },
-    {
-      "tag": "mid-game",
-      "description": "Mid-game content",
-      "emoji": "⚔️"
-    },
-    {
-      "tag": "late-game",
-      "description": "End-game content",
-      "emoji": "👑"
-    },
-    {
-      "tag": "melee",
-      "description": "Close combat units",
-      "color": "#F44336"
-    },
-    {
-      "tag": "ranged",
-      "description": "Ranged attack units",
-      "color": "#2196F3"
     }
   ],
   "spaces": [
@@ -40,257 +18,347 @@
       "defaultDeckType": "hero",
       "decks": [
         {
+          "id": "100",
           "name": "Units",
           "description": "Military and civilian units. Add a unit card, start its journey to create it.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IBrUvfUpGH/units.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": [
+              {
+                "targetDeck": "106",
+                "content": "Create Unit 3D Model\n\nModel the unit's appearance.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "106",
+                "content": "Animate Unit\n\nCreate animations: idle, move, attack, death.\n\n- [ ] Plan animation keyframes\n- [ ] Block out motion\n- [ ] Refine timing and curves\n- [ ] Add secondary motion\n- [ ] Test in game context",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "105",
+                "content": "Implement Unit Logic\n\nCode combat behavior, movement, and abilities.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+                "priority": "a",
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "108",
+                "content": "Design Unit SFX\n\nCreate sounds for movement and combat.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+                "priority": "b",
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "107",
+                "content": "Balance Unit Stats\n\nTune cost, HP, damage for fair gameplay.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "priority": "b",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              }
+            ]
+          },
           "cards": [
             {
-              "id": "warrior-card",
-              "content": "Warrior\n\nBasic melee infantry unit.\n\n**Cost:** 50 gold, 1 population\n**Stats:** Define HP, damage, and armor values\n**Strong vs:** Light units\n**Weak vs:** Ranged units\n\nThis card uses the **#early-game** and **#melee** tags. Use progression tags to organize your tech tree and unit tags for counter-systems.\n\n> **Sub-Cards Below:** These production tasks were auto-created by the journey when you started this card. Journeys save you from manually creating the same tasks over and over!",
-              "priority": "a",
-              "tags": ["early-game", "melee"],
-              "subCards": [],
-              "effort": 23
-            },
-            {
+              "id": "270",
               "content": "Archer\n\nRanged attack unit.\n\n**Cost:** 60 gold, 20 wood, 1 population\n**Stats:** Define HP, damage, armor, and range values\n**Strong vs:** Melee units\n**Weak vs:** Cavalry\n\n**Requires:** Archery Range building",
               "priority": "a",
-              "tags": ["early-game", "ranged"],
-              "subCards": [],
-              "effort": 23
-            },
-            {
-              "id": "archer-card",
-              "content": "Archer\n\nRanged infantry unit effective against air and melee.\n\n**Cost:** Consider resource costs\n**Strengths:** Range, anti-air capability\n**Weaknesses:** Weak in melee, low HP\n**Counter:** Cavalry charges\n\n**Why:** Provides ranged option in rock-paper-scissors balance.",
-              "priority": "a",
-              "tags": ["basic-unit"],
-              "subCards": [],
-              "effort": 23
-            },
-            {
-              "id": "siege-card",
-              "content": "Siege Engine\n\nHeavy unit for destroying buildings.\n\n**Cost:** High resources, slow production\n**Strengths:** Massive damage to structures\n**Weaknesses:** Slow, vulnerable to units\n**Counter:** Fast cavalry\n\n**Consider:** Should it require setup time? Pack/unpack mechanic?",
-              "priority": "b",
-              "tags": ["advanced-unit"],
-              "subCards": [],
-              "effort": 23
-            }
-          ],
-          "journey": {
-            "steps": [
-              {
-                "content": "Create Unit 3D Model\n\nModel the unit's appearance.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
-                "targetDeck": "Art",
-                "priority": "a",
-                "effort": 5
-              },
-              {
-                "content": "Animate Unit\n\nCreate animations: idle, move, attack, death.\n\n- [ ] Plan animation keyframes\n- [ ] Block out motion\n- [ ] Refine timing and curves\n- [ ] Add secondary motion\n- [ ] Test in game context",
-                "targetDeck": "Art",
-                "priority": "a",
-                "effort": 5
-              },
-              {
-                "content": "Implement Unit Logic\n\nCode combat behavior, movement, and abilities.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "Coding",
-                "priority": "a",
-                "effort": 8
-              },
-              {
-                "content": "Design Unit SFX\n\nCreate sounds for movement and combat.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
-                "targetDeck": "Audio",
-                "priority": "b",
-                "effort": 2
-              },
-              {
-                "content": "Balance Unit Stats\n\nTune cost, HP, damage for fair gameplay.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
-                "targetDeck": "Game Design",
-                "priority": "b",
-                "effort": 3
-              }
-            ]
-          },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IBrUvfUpGH/units.png"
-        },
-        {
-          "name": "Buildings",
-          "description": "Structures that produce units, research tech, or gather resources. Add a building card, start its journey.",
-          "cards": [
-            {
-              "content": "Town Center\n\nMain base building that trains workers.\n\n**Cost:** Starting building (free)\n**Trains:** Worker units\n**HP:** 2000\n**Special:** Serves as dropoff point for resources\n\n> **Priority:** Marked 'a' because this is your core building - everything depends on it working!",
-              "priority": "a",
-              "tags": ["early-game"],
-              "subCards": [],
-              "effort": 21
-            },
-            {
-              "content": "Barracks\n\nProduces military infantry units.\n\n**Cost:** 150 wood\n**Trains:** Warrior, Spearman, Swordsman\n**HP:** 1200\n**Build Time:** 45 seconds",
-              "priority": "a",
-              "tags": ["early-game"],
-              "subCards": [],
-              "effort": 21
-            },
-            {
-              "id": "barracks-card",
-              "content": "Barracks\n\nMilitary building for training infantry units.\n\n**Cost:** Define resource requirements\n**Function:** Unlocks and produces infantry\n**Upgrade Path:** Can upgrade for stronger units\n\n**Consider:** Train time per unit? Queue system?",
-              "priority": "a",
-              "tags": ["military"],
-              "subCards": [],
-              "effort": 21
-            }
-          ],
-          "journey": {
-            "steps": [
-              {
-                "content": "Create Building 3D Model\n\nModel the structure and any animated parts.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
-                "targetDeck": "Art",
-                "priority": "a",
-                "effort": 8
-              },
-              {
-                "content": "Implement Building Logic\n\nCode production queues, tech unlocks, and building placement.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "Coding",
-                "priority": "a",
-                "effort": 8
-              },
-              {
-                "content": "Design Building SFX\n\nConstruction sounds, ambient loops, and completion sounds.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
-                "targetDeck": "Audio",
-                "priority": "b",
-                "effort": 2
-              },
-              {
-                "content": "Balance Building Cost & Output\n\nTune build cost, HP, and production rates.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
-                "targetDeck": "Game Design",
-                "priority": "b",
-                "effort": 3
-              }
-            ]
-          },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png"
-        },
-        {
-          "name": "Technologies",
-          "description": "Researchable upgrades. Add a tech card, start its journey.",
-          "cards": [
-            {
-              "content": "Iron Weapons\n\nUpgrade that boosts all melee unit damage.\n\n**Cost:** 200 gold, 100 iron\n**Research Time:** 60 seconds\n**Effect:** Increases damage for all melee units\n**Requires:** Blacksmith building\n\n**Effort Note:** Technologies are quick to add once your research system exists - just 2 effort points!",
-              "priority": "b",
-              "tags": ["mid-game"],
-              "effort": 6,
+              "effort": 23,
+              "tags": [],
+              "isDoc": false,
               "subCards": []
             },
             {
-              "id": "melee-tech-card",
-              "content": "Melee Weapons Research\n\nUpgrade improving melee unit damage.\n\n**Cost:** Research time and resources\n**Effect:** +20% damage for all melee units\n**Prerequisites:** Barracks built\n\n**Consider:** Should there be multiple tiers? Diminishing returns?",
+              "id": "271",
+              "content": "Archer\n\nRanged infantry unit effective against air and melee.\n\n**Cost:** Consider resource costs\n**Strengths:** Range, anti-air capability\n**Weaknesses:** Weak in melee, low HP\n**Counter:** Cavalry charges\n\n**Why:** Provides ranged option in rock-paper-scissors balance.",
               "priority": "a",
-              "tags": ["military-tech"],
-              "subCards": [],
-              "effort": 6
+              "effort": 23,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "id": "econ-tech-card",
-              "content": "Advanced Economy\n\nImproves resource gathering efficiency.\n\n**Cost:** High research investment\n**Effect:** +15% gather rate for all resources\n**Prerequisites:** Market built\n\n**Why:** Rewards economic investment, enables late-game strategies.",
+              "id": "272",
+              "content": "Siege Engine\n\nHeavy unit for destroying buildings.\n\n**Cost:** High resources, slow production\n**Strengths:** Massive damage to structures\n**Weaknesses:** Slow, vulnerable to units\n**Counter:** Fast cavalry\n\n**Consider:** Should it require setup time? Pack/unpack mechanic?",
               "priority": "b",
-              "tags": ["economy-tech"],
-              "subCards": [],
-              "effort": 6
+              "effort": 23,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "269",
+              "content": "Warrior\n\nBasic melee infantry unit.\n\n**Cost:** 50 gold, 1 population\n**Stats:** Define HP, damage, and armor values\n**Strong vs:** Light units\n**Weak vs:** Ranged units\n\nThis card uses the **#early-game** and **#melee** tags. Use progression tags to organize your tech tree and unit tags for counter-systems.\n\n> **Sub-Cards Below:** These production tasks were auto-created by the journey when you started this card. Journeys save you from manually creating the same tasks over and over!",
+              "priority": "a",
+              "effort": 23,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "452",
+                "453",
+                "454",
+                "455",
+                "456"
+              ]
             }
-          ],
+          ]
+        },
+        {
+          "id": "101",
+          "name": "Buildings",
+          "description": "Structures that produce units, research tech, or gather resources. Add a building card, start its journey.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png",
+          "preferredOrder": null,
           "journey": {
             "steps": [
               {
-                "content": "Create Tech Icon\n\nDesign icon for research menu.",
-                "targetDeck": "Art",
+                "targetDeck": "106",
+                "content": "Create Building 3D Model\n\nModel the structure and any animated parts.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
                 "priority": "a",
-                "effort": 1
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
               },
               {
-                "content": "Implement Tech Effect\n\nCode the stat modifications or unlocks.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
-                "targetDeck": "Coding",
+                "targetDeck": "105",
+                "content": "Implement Building Logic\n\nCode production queues, tech unlocks, and building placement.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
                 "priority": "a",
-                "effort": 3
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
               },
               {
-                "content": "Balance Tech Cost & Effect\n\nTune research cost and power level.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
-                "targetDeck": "Game Design",
+                "targetDeck": "108",
+                "content": "Design Building SFX\n\nConstruction sounds, ambient loops, and completion sounds.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
                 "priority": "b",
-                "effort": 2
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "107",
+                "content": "Balance Building Cost & Output\n\nTune build cost, HP, and production rates.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "priority": "b",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
               }
             ]
           },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gSnM2SAVNs/technologies.png"
-        },
-        {
-          "name": "Maps",
-          "description": "Playable maps with terrain and resources. Add a map card, start its journey.",
           "cards": [
             {
-              "content": "Grasslands 1v1\n\nBasic map for learning the game.\n\n**Size:** Small (2 players)\n**Starting Resources:** Balanced, nearby\n**Terrain:** Mostly flat with small hills\n**Features:** Mirror symmetry for fairness",
-              "priority": "a",
-              "tags": ["early-game"],
-              "subCards": [],
-              "effort": 24
+              "id": "275",
+              "content": "Barracks\n\nMilitary building for training infantry units.\n\n**Cost:** Define resource requirements\n**Function:** Unlocks and produces infantry\n**Upgrade Path:** Can upgrade for stronger units\n\n**Consider:** Train time per unit? Queue system?",
+              "priority": "b",
+              "effort": 21,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             },
             {
-              "id": "highlands-map-card",
-              "content": "Highland Valleys\n\nMap with elevation differences and chokepoints.\n\n**Features:**\n- High ground provides combat bonuses\n- Narrow passes create defensive positions\n- Central control point\n\n**Playstyle:** Rewards positional play and map control",
+              "id": "274",
+              "content": "Barracks\n\nProduces military infantry units.\n\n**Cost:** 150 wood\n**Trains:** Warrior, Spearman, Swordsman\n**HP:** 1200\n**Build Time:** 45 seconds",
+              "priority": "b",
+              "effort": 21,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "273",
+              "content": "Town Center\n\nMain base building that trains workers.\n\n**Cost:** Starting building (free)\n**Trains:** Worker units\n**HP:** 2000\n**Special:** Serves as dropoff point for resources\n\n> **Priority:** Marked 'High' because this is your core building - everything depends on it working!",
               "priority": "a",
-              "tags": ["map"],
-              "subCards": [],
-              "effort": 24
+              "effort": 21,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "457",
+                "458",
+                "459",
+                "460"
+              ]
             }
-          ],
+          ]
+        },
+        {
+          "id": "102",
+          "name": "Technologies",
+          "description": "Researchable upgrades. Add a tech card, start its journey.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gSnM2SAVNs/technologies.png",
+          "preferredOrder": null,
           "journey": {
             "steps": [
               {
-                "content": "Design Map Layout\n\nSketch resource placement, spawn points, and key terrain.",
-                "targetDeck": "Game Design",
+                "targetDeck": "106",
+                "content": "Create Tech Icon\n\nDesign icon for research menu.",
                 "priority": "a",
-                "effort": 5
+                "effort": 1,
+                "tags": [],
+                "zoneLabel": null
               },
               {
-                "content": "Build Map Terrain\n\nCreate heightmap, place resources, and set boundaries.",
-                "targetDeck": "Coding",
+                "targetDeck": "105",
+                "content": "Implement Tech Effect\n\nCode the stat modifications or unlocks.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
                 "priority": "a",
-                "effort": 8
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
               },
               {
-                "content": "Create Map Visuals\n\nTextures, vegetation, and environmental props.",
-                "targetDeck": "Art",
-                "priority": "a",
-                "effort": 8
-              },
-              {
-                "content": "Test Map Balance\n\nPlaytest for fairness and pacing.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
-                "targetDeck": "Game Design",
+                "targetDeck": "107",
+                "content": "Balance Tech Cost & Effect\n\nTune research cost and power level.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
                 "priority": "b",
-                "effort": 3
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
               }
             ]
           },
-          "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png"
+          "cards": [
+            {
+              "id": "276",
+              "content": "Iron Weapons\n\nUpgrade that boosts all melee unit damage.\n\n**Cost:** 200 gold, 100 iron\n**Research Time:** 60 seconds\n**Effect:** Increases damage for all melee units\n**Requires:** Blacksmith building\n\n**Effort Note:** Technologies are quick to add once your research system exists - just 2 effort points!",
+              "priority": "b",
+              "effort": 6,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "278",
+              "content": "Advanced Economy\n\nImproves resource gathering efficiency.\n\n**Cost:** High research investment\n**Effect:** +15% gather rate for all resources\n**Prerequisites:** Market built\n\n**Why:** Rewards economic investment, enables late-game strategies.",
+              "priority": "b",
+              "effort": 6,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "277",
+              "content": "Melee Weapons Research\n\nUpgrade improving melee unit damage.\n\n**Cost:** Research time and resources\n**Effect:** +20% damage for all melee units\n**Prerequisites:** Barracks built\n\n**Consider:** Should there be multiple tiers? Diminishing returns?",
+              "priority": "a",
+              "effort": 6,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "461",
+                "462",
+                "463"
+              ]
+            }
+          ]
         },
         {
+          "id": "103",
+          "name": "Maps",
+          "description": "Playable maps with terrain and resources. Add a map card, start its journey.",
+          "deckType": "hero",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": [
+              {
+                "targetDeck": "107",
+                "content": "Design Map Layout\n\nSketch resource placement, spawn points, and key terrain.",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "107",
+                "content": "Build Map Terrain\n\nCreate heightmap, place resources, and set boundaries.",
+                "priority": "a",
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "106",
+                "content": "Create Map Visuals\n\nTextures, vegetation, and environmental props.",
+                "priority": "a",
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "109",
+                "content": "Test Map Balance\n\nPlaytest for fairness and pacing.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+                "priority": "b",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              }
+            ]
+          },
+          "cards": [
+            {
+              "id": "280",
+              "content": "Highland Valleys\n\nMap with elevation differences and chokepoints.\n\n**Features:**\n- High ground provides combat bonuses\n- Narrow passes create defensive positions\n- Central control point\n\n**Playstyle:** Rewards positional play and map control",
+              "priority": "a",
+              "effort": 24,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "279",
+              "content": "Grasslands 1v1\n\nBasic map for learning the game.\n\n**Size:** Small (2 players)\n**Starting Resources:** Balanced, nearby\n**Terrain:** Mostly flat with small hills\n**Features:** Mirror symmetry for fairness",
+              "priority": "a",
+              "effort": 24,
+              "tags": [],
+              "isDoc": false,
+              "subCards": [
+                "464",
+                "465",
+                "466",
+                "467"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "104",
           "name": "Design Notes",
           "description": "Design documentation, meeting notes, and playtesting findings. Use this deck to capture design decisions and their rationale.",
           "deckType": "doc",
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
           "cards": [
             {
+              "id": "281",
               "content": "Design Meeting: Rock-Paper-Scissors Balance\n\n**Date:** Week 3\n**Attendees:** Lead Designer, Balance Designer\n\n**Decisions:**\n- Each unit type should have clear counters\n- No single unit composition should dominate\n- Tech tree creates strategic variety\n\n**Rationale:** Counter-play creates strategic depth and replayability.",
               "priority": "a",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             },
             {
+              "id": "282",
               "content": "Playtesting Notes: Early Rush Strategy\n\n**Session:** Week 5 playtest\n**Issues:**\n- Fast military rush too strong\n- Economic players can't defend early aggression\n\n**Changes:** Increased starting resources, added cheap early defense tower.",
               "priority": "b",
-              "isDoc": true
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
             }
-          ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
+          ]
         }
       ]
     },
@@ -300,96 +368,258 @@
       "defaultDeckType": "task",
       "decks": [
         {
+          "id": "105",
           "name": "Coding",
           "description": "Unit AI, building systems, pathfinding, and multiplayer networking.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
+              "id": "283",
               "content": "Example Coding Task\n\nThis is a placeholder for coding tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "b",
               "effort": 2,
               "tags": [],
               "isDoc": false,
               "subCards": []
+            },
+            {
+              "id": "454",
+              "content": "Implement Unit Logic\n\nCode combat behavior, movement, and abilities.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "458",
+              "content": "Implement Building Logic\n\nCode production queues, tech unlocks, and building placement.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "462",
+              "content": "Implement Tech Effect\n\nCode the stat modifications or unlocks.\n\n- [ ] Design implementation approach\n- [ ] Write core logic\n- [ ] Add edge case handling\n- [ ] Write unit tests\n- [ ] Code review",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
+          ]
         },
         {
+          "id": "106",
           "name": "Art",
           "description": "Unit models, building models, terrain textures, and UI elements.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
+              "id": "466",
+              "content": "Create Map Visuals\n\nTextures, vegetation, and environmental props.",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "284",
               "content": "Example Art Task\n\nThis is a placeholder for art tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "b",
               "effort": 2,
               "tags": [],
               "isDoc": false,
               "subCards": []
+            },
+            {
+              "id": "452",
+              "content": "Create Unit 3D Model\n\nModel the unit's appearance.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "453",
+              "content": "Animate Unit\n\nCreate animations: idle, move, attack, death.\n\n- [ ] Plan animation keyframes\n- [ ] Block out motion\n- [ ] Refine timing and curves\n- [ ] Add secondary motion\n- [ ] Test in game context",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "457",
+              "content": "Create Building 3D Model\n\nModel the structure and any animated parts.\n\n- [ ] Block out basic shapes\n- [ ] Refine high-poly details\n- [ ] Create low-poly version\n- [ ] UV unwrap\n- [ ] Texture and materials\n- [ ] Test in engine",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "461",
+              "content": "Create Tech Icon\n\nDesign icon for research menu.",
+              "priority": "a",
+              "effort": 1,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
+          ]
         },
         {
+          "id": "107",
           "name": "Game Design",
           "description": "Economy balancing, unit counters, tech trees, and map design.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
-              "content": "Example Design Task\n\nThis is a placeholder for design tasks like balancing, tuning, and playtesting that journeys create.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "id": "464",
+              "content": "Design Map Layout\n\nSketch resource placement, spawn points, and key terrain.",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "465",
+              "content": "Build Map Terrain\n\nCreate heightmap, place resources, and set boundaries.",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "460",
+              "content": "Balance Building Cost & Output\n\nTune build cost, HP, and production rates.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
               "priority": "b",
-              "effort": 2
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "285",
+              "content": "Example Design Task\n\nThis is a placeholder for design tasks like balancing, tuning, and playtesting that journeys create.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "463",
+              "content": "Balance Tech Cost & Effect\n\nTune research cost and power level.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "456",
+              "content": "Balance Unit Stats\n\nTune cost, HP, damage for fair gameplay.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+              "priority": "b",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
+          ]
         },
         {
+          "id": "108",
           "name": "Audio",
           "description": "Unit sounds, building ambiance, music, and UI feedback.",
-          "preferredOrder": {
-            "prop": "priority"
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
           },
           "cards": [
             {
+              "id": "286",
               "content": "Example Audio Task\n\nThis is a placeholder for audio tasks. When you start a journey on a hero card in the GDD space, it will automatically create specific tasks here.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "455",
+              "content": "Design Unit SFX\n\nCreate sounds for movement and combat.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "459",
+              "content": "Design Building SFX\n\nConstruction sounds, ambient loops, and completion sounds.\n\n- [ ] Record or source base sounds\n- [ ] Edit and layer audio\n- [ ] Add variations\n- [ ] Integrate in engine\n- [ ] Test in game context",
               "priority": "b",
               "effort": 2,
               "tags": [],
               "isDoc": false,
               "subCards": []
             }
-          ],
-          "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
+          ]
         },
         {
+          "id": "109",
           "name": "Bugs & QA",
           "description": "Bug reports, defects, and quality assurance tasks. All cards automatically tagged with 🐞.",
           "deckType": "task",
           "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
-          "preferredOrder": {
-            "prop": "priority"
-          },
-          "autoTag": "bug",
+          "preferredOrder": null,
           "journey": {
             "steps": []
           },
           "cards": [
             {
+              "id": "287",
               "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
-              "priority": "a",
+              "priority": "c",
               "effort": 2,
-              "tags": [],
+              "tags": [
+                "bug"
+              ],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "467",
+              "content": "Test Map Balance\n\nPlaytest for fairness and pacing.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
+              "priority": "b",
+              "effort": 3,
+              "tags": [
+                "bug"
+              ],
               "isDoc": false,
               "subCards": []
             }
