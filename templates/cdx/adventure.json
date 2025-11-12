@@ -47,20 +47,14 @@
               "id": "village-card",
               "content": "Starting Village\n\nThe peaceful hometown where the adventure begins.\n\n**Act:** Act 1\n**Exits:** Forest Path (north), Player's House (east)\n**NPCs:** 5-7 villagers with dialogue\n**Key Events:** Meet mentor, receive quest, learn basic mechanics\n\nThis card uses **#act-1** and **#main-path** tags. Use act tags to organize narrative progression and path tags to distinguish critical vs optional content.\n\n> **Sub-Cards:** These were created by the journey! Each location needs art, coding for interactions, dialogue writing, and audio ambiance.",
               "priority": "a",
-              "tags": [
-                "act-1",
-                "main-path"
-              ],
+              "tags": ["act-1", "main-path"],
               "subCards": [],
               "effort": 29
             },
             {
               "content": "Ancient Temple\n\nA mysterious ruin hiding secrets.\n\n**Act:** Act 2\n**Contains:** 3 puzzle rooms, hidden treasure\n**Atmosphere:** Dark, mysterious, slightly dangerous\n**Purpose:** Optional dungeon for side quest",
               "priority": "b",
-              "tags": [
-                "act-2",
-                "optional"
-              ],
+              "tags": ["act-2", "optional"],
               "id": "location-2",
               "subCards": [],
               "effort": 29
@@ -68,9 +62,7 @@
             {
               "content": "Location 3\n\nAnother area to explore. Define what makes this location unique.",
               "priority": "b",
-              "tags": [
-                "act-1"
-              ],
+              "tags": ["act-1"],
               "id": "location-3",
               "subCards": [],
               "effort": 29
@@ -78,9 +70,7 @@
             {
               "content": "Location 4\n\nAnother area to explore. Define what makes this location unique.",
               "priority": "b",
-              "tags": [
-                "act-1"
-              ],
+              "tags": ["act-1"],
               "subCards": [],
               "effort": 29
             }
@@ -120,8 +110,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/DDdum4GS4f/locations.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/DDdum4GS4f/locations.png"
         },
         {
           "name": "Characters",
@@ -130,10 +119,7 @@
             {
               "content": "The Mentor\n\nWise old guide who sets you on your quest.\n\n**Role:** Tutorial NPC, quest giver\n**Personality:** Patient, mysterious, knows more than they say\n**Appears In:** Starting Village, Act 1 finale\n**Key Dialogue:** 3-4 conversations throughout Act 1\n\n> **Priority:** This is marked 'a' priority because tutorial characters are critical for onboarding players!",
               "priority": "a",
-              "tags": [
-                "act-1",
-                "main-path"
-              ],
+              "tags": ["act-1", "main-path"],
               "id": "char-1",
               "subCards": [],
               "effort": 23
@@ -141,9 +127,7 @@
             {
               "content": "Quirky Shopkeeper\n\nComic relief merchant who sells items.\n\n**Role:** Shop vendor, provides hints for secrets\n**Personality:** Cheerful, greedy, friendly\n**Appears In:** Multiple locations throughout game\n**Special:** Remembers previous purchases in dialogue\n\n**Effort Note:** This has 3 effort - simpler than major story characters but still needs personality!",
               "priority": "b",
-              "tags": [
-                "optional"
-              ],
+              "tags": ["optional"],
               "effort": 23,
               "id": "char-2",
               "subCards": []
@@ -151,9 +135,7 @@
             {
               "content": "Character 3\n\nAnother NPC. Define their role and personality.",
               "priority": "b",
-              "tags": [
-                "act-2"
-              ],
+              "tags": ["act-2"],
               "subCards": [],
               "effort": 23
             }
@@ -187,8 +169,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/oQGmP1a4bP/characters.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/oQGmP1a4bP/characters.png"
         },
         {
           "name": "Puzzles",
@@ -197,10 +178,7 @@
             {
               "content": "Color Crystal Puzzle\n\nMatch colored crystals to open a door.\n\n**Location:** Ancient Temple\n**Mechanic:** Rotate crystals until all match target pattern\n**Difficulty:** Medium\n**Hint System:** NPC nearby can give clues if player is stuck\n\n**Linked Location:** Ancient Temple",
               "priority": "b",
-              "tags": [
-                "act-2",
-                "optional"
-              ],
+              "tags": ["act-2", "optional"],
               "id": "puzzle-1",
               "subCards": [],
               "effort": 17
@@ -208,9 +186,7 @@
             {
               "content": "Puzzle 2\n\nA challenge for players. Define the mechanics and solution.",
               "priority": "b",
-              "tags": [
-                "act-2"
-              ],
+              "tags": ["act-2"],
               "id": "puzzle-2",
               "subCards": [],
               "effort": 17
@@ -218,9 +194,7 @@
             {
               "content": "Puzzle 3\n\nA challenge for players. Define the mechanics and solution.",
               "priority": "b",
-              "tags": [
-                "act-2"
-              ],
+              "tags": ["act-2"],
               "subCards": [],
               "effort": 17
             }
@@ -260,8 +234,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sJljUPWuO3/puzzles.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sJljUPWuO3/puzzles.png"
         },
         {
           "name": "Story Beats",
@@ -270,10 +243,7 @@
             {
               "content": "Opening Cutscene\n\nIntroduces the world and inciting incident.\n\n**Type:** Non-interactive cutscene\n**Length:** 2-3 minutes\n**Purpose:** Set tone, introduce protagonist, show problem\n**Technical:** May use in-engine cinematics or pre-rendered video\n\n**Story beats are unique, so this deck doesn't use journeys.** Create custom sub-cards for each beat's specific needs (storyboarding, voice recording, animation, etc.).",
               "priority": "a",
-              "tags": [
-                "act-1",
-                "main-path"
-              ],
+              "tags": ["act-1", "main-path"],
               "id": "story-beat-1",
               "subCards": [],
               "effort": 8
@@ -281,17 +251,13 @@
             {
               "content": "Act 1 Finale: Village Attack\n\nClimactic event forcing the hero to leave home.\n\n**Type:** Interactive sequence\n**Gameplay:** Defend villagers, make moral choice\n**Outcome:** Village destroyed, mentor dies/leaves\n**Emotion:** Loss, determination\n\n**Branches:** Player choice affects Act 2 dialogue",
               "priority": "a",
-              "tags": [
-                "act-1",
-                "main-path"
-              ],
+              "tags": ["act-1", "main-path"],
               "subCards": [],
               "effort": 8
             }
           ],
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/FMsdZ8RTJG/story-beats.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/FMsdZ8RTJG/story-beats.png"
         },
         {
           "name": "Design Notes",
@@ -310,8 +276,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ]
     },
@@ -337,8 +302,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "name": "Art",
@@ -357,8 +321,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "name": "Writing",
@@ -377,8 +340,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg"
         },
         {
           "name": "Audio",
@@ -397,8 +359,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "name": "Game Design",
@@ -414,8 +375,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "name": "Bugs & QA",

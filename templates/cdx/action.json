@@ -73,8 +73,7 @@
               "effort": 8
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/28UpfvFwYg/game-mechanics.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/28UpfvFwYg/game-mechanics.png"
         },
         {
           "name": "Weapons",
@@ -86,9 +85,7 @@
               "content": "Crossbow\n\nA basic projectile weapon to start players with.\n\n**Consider:**\n- Damage per bolt\n- Draw/charge time\n- Projectile speed and arc\n- Ammo capacity\n\nProjectile weapons require leading targets - good for teaching players aim prediction.\n\n> **Sub-Cards:** These tasks were created by starting this weapon's journey. Each journey step becomes a production task automatically!",
               "priority": "a",
               "effort": 24,
-              "tags": [
-                "projectile"
-              ],
+              "tags": ["projectile"],
               "subCards": []
             },
             {
@@ -96,9 +93,7 @@
               "content": "Rifle\n\nA versatile all-purpose weapon for mid-range combat.\n\n**Consider:**\n- Fire mode (full-auto, burst, semi-auto?)\n- Damage per shot\n- Rate of fire\n- Magazine size and reload time\n- Recoil pattern\n- Hitscan vs projectile\n\nRifles are workhorses - reliable in most situations but not specialized.",
               "priority": "a",
               "effort": 24,
-              "tags": [
-                "hitscan"
-              ],
+              "tags": ["hitscan"],
               "subCards": []
             },
             {
@@ -106,9 +101,7 @@
               "content": "Shotgun\n\nA close-quarters weapon with spread damage.\n\n**Consider:**\n- Pellet count and spread pattern\n- Damage per pellet\n- Effective range and damage falloff\n- Fire rate (pump action vs semi-auto?)\n- Reload method (shell by shell or magazine?)\n\nShotguns should dominate close range but be weak at distance.",
               "priority": "b",
               "effort": 24,
-              "tags": [
-                "hitscan"
-              ],
+              "tags": ["hitscan"],
               "subCards": []
             }
           ],
@@ -146,8 +139,7 @@
               }
             ]
           },
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/g3hbiWYwDw/weapons.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/g3hbiWYwDw/weapons.png"
         },
         {
           "name": "Enemies",
@@ -215,8 +207,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png"
         },
         {
           "name": "Maps",
@@ -284,8 +275,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png"
         },
         {
           "name": "Design Notes",
@@ -309,8 +299,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ]
     },
@@ -333,8 +322,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "id": "1-art",
@@ -351,8 +339,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "id": "2-audio",
@@ -369,8 +356,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "id": "4-game-design",
@@ -387,8 +373,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "name": "Bugs & QA",
@@ -405,7 +390,7 @@
           ],
           "deckType": "task",
           "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_QA.jpeg",
+
           "autoTag": "bug"
         }
       ],

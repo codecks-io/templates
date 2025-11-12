@@ -67,8 +67,7 @@
             }
           ],
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/tmPl1DivHa/game-rules-mechanics.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/tmPl1DivHa/game-rules-mechanics.png"
         },
         {
           "name": "Teams",
@@ -78,18 +77,14 @@
               "id": "team-card",
               "content": "Hometown Heroes\n\nYour starter team with balanced stats.\n\n**Team Stats:**\n- Overall Rating: 75/100\n- Playstyle: Balanced\n- Strengths: Versatile roster\n- Weaknesses: No standout stars\n\nThis card uses the **#starter** tag to mark it as a default team. Use tags to organize teams by league, division, or unlock status.\n\n> **Priority:** This is marked 'a' priority because you need at least one complete team before you can test your game!",
               "priority": "a",
-              "tags": [
-                "starter"
-              ],
+              "tags": ["starter"],
               "subCards": [],
               "effort": 18
             },
             {
               "content": "Thunder Strikers\n\nAn aggressive offensive powerhouse team.\n\n**Team Stats:**\n- Overall Rating: 82/100  \n- Playstyle: Offensive\n- Strengths: High scoring potential\n- Weaknesses: Weak defense",
               "priority": "b",
-              "tags": [
-                "offense"
-              ],
+              "tags": ["offense"],
               "subCards": [],
               "effort": 18
             },
@@ -97,9 +92,7 @@
               "id": "team-c-card",
               "content": "Team C: The Defenders\n\nDefensive-focused team with strong goalkeeping.\n\n**Strengths:** High defense stats, goalkeeper bonuses\n**Weaknesses:** Slower movement, lower shooting accuracy\n**Playstyle:** Counter-attack and solid defense\n\n**Consider:** How to make defensive play fun and rewarding?",
               "priority": "a",
-              "tags": [
-                "team"
-              ],
+              "tags": ["team"],
               "subCards": [],
               "effort": 18
             }
@@ -133,8 +126,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ntet9RsgQ4/teams.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ntet9RsgQ4/teams.png"
         },
         {
           "name": "Players",
@@ -150,9 +142,7 @@
               "id": "midfielder-card",
               "content": "Midfielder\n\nBalanced player controlling the center of the field.\n\n**Stats:**\n- Passing: High\n- Shooting: Medium\n- Speed: Medium\n- Defense: Medium\n\n**Role:** Link defense to offense, distribute ball",
               "priority": "a",
-              "tags": [
-                "player-type"
-              ],
+              "tags": ["player-type"],
               "subCards": [],
               "effort": 9
             },
@@ -160,9 +150,7 @@
               "id": "goalkeeper-card",
               "content": "Goalkeeper\n\nDefends the goal with specialized mechanics.\n\n**Stats:**\n- Reflexes: Very High\n- Positioning: High\n- Speed: Low\n- Shooting: Very Low\n\n**Special:** Unique controls for diving and catching",
               "priority": "a",
-              "tags": [
-                "player-type"
-              ],
+              "tags": ["player-type"],
               "subCards": [],
               "effort": 9
             }
@@ -190,8 +178,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/AO1GMHp1b5/players.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/AO1GMHp1b5/players.png"
         },
         {
           "name": "Stadiums & Venues",
@@ -233,8 +220,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Jv8XXpkA96/stadiums-venues.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Jv8XXpkA96/stadiums-venues.png"
         },
         {
           "name": "Design Notes",
@@ -252,8 +238,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ]
     },
@@ -279,8 +264,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Production.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "name": "Art & UI",
@@ -299,8 +283,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "name": "Game Design",
@@ -319,8 +302,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "name": "Audio",
@@ -336,8 +318,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "name": "Bugs & QA",

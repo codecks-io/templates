@@ -5,6 +5,7 @@ This guide teaches Claude (and humans) how to create high-quality Codecks game p
 ## Template Philosophy
 
 Codecks templates should provide **immediate value** to game developers by:
+
 1. Establishing a clear separation between **design/planning** (GDD space) and **production/execution** (Work/Production space)
 2. Pre-defining asset pipelines using **Journeys** that automatically create production tasks
 3. Including realistic example content that demonstrates best practices
@@ -19,6 +20,7 @@ Every high-quality template MUST have:
 ### 1. Two Spaces (Required)
 
 **Space 1: Game Design Documents (GDD)**
+
 - `icon: "gdd"` - Use the GDD icon
 - `defaultDeckType: "hero"` - This is crucial!
 - Contains 3-5 hero decks representing major asset types or design systems
@@ -29,6 +31,7 @@ Every high-quality template MUST have:
 - Doc deck contains design meeting notes and playtesting findings
 
 **Space 2: Production/Work**
+
 - `icon: "tasks"` - Use the tasks icon
 - `defaultDeckType: "task"`
 - Contains 4-7 task decks representing work departments
@@ -37,39 +40,27 @@ Every high-quality template MUST have:
 - Each deck should have `preferredOrder: { "prop": "priority" }`
 - These decks receive tasks from GDD journeys
 
-### 2. Deck Images (Required)
-
-**Every deck must have an `image` field** pointing to a visual representation.
-
-**Format:**
-```json
-{
-  "name": "Coding",
-  "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg",
-  "deckType": "task",
-  ...
-}
-```
-
 **Standard Codecks Deck Images:**
 
 Use these default images provided by Codecks for common deck types:
 
 **Production/Work Decks:**
-- **Coding:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg`
-- **Art:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg`
-- **Audio:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg`
-- **Game Design/LD:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg`
-- **QA/Bugs:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_QA.jpeg`
-- **UI/UX:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_UI.jpeg`
-- **Writing/Docs:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg`
-- **Marketing:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Marketing.jpeg`
-- **BizDev:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Bizdev.jpeg`
-- **Production/Scheduling:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Production.jpeg`
-- **Ideas/Brainstorming:** `https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg`
+
+- **Coding:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg`
+- **Art:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg`
+- **Audio:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg`
+- **Game Design/LD:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg`
+- **QA/Bugs:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg`
+- **UI/UX:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_UI.jpeg`
+- **Writing/Docs:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg`
+- **Marketing:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Marketing.jpeg`
+- **BizDev:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Bizdev.jpeg`
+- **Production/Scheduling:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Production.jpeg`
+- **Ideas/Brainstorming:** `https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Ideas.jpeg`
 
 **For Hero Decks (GDD):**
 Choose images that visually represent the asset type:
+
 - Weapons deck → image of iconic weapon
 - Characters deck → character portrait
 - Levels deck → environment/map view
@@ -79,6 +70,7 @@ Choose images that visually represent the asset type:
 Use a document/note-taking themed image to represent design documentation.
 
 **Best Practices:**
+
 - Images should be visually distinct and easily recognizable
 - Use thematic images that match the template's game genre
 - Maintain consistent visual style across all decks in a template
@@ -87,11 +79,13 @@ Use a document/note-taking themed image to represent design documentation.
 ### 3. Tags (Required)
 
 Tags serve multiple purposes:
+
 - Categorizing assets by tier/rarity/type
 - Visual organization using colors and emojis
 - Filtering and searching
 
 **Tag Format:**
+
 ```json
 {
   "tag": "tag-name",
@@ -102,6 +96,7 @@ Tags serve multiple purposes:
 ```
 
 Common patterns:
+
 - Tier tags: `tier-1`, `tier-2`, `tier-3` with emojis 1️⃣, 2️⃣, 3️⃣
 - Rarity: `common`, `rare`, `epic`, `legendary` with colors
 - Quest types: `main-quest`, `side-quest`, `daily-quest`
@@ -112,6 +107,7 @@ Common patterns:
 Every deck needs 2-4 example cards demonstrating:
 
 **For Hero Decks (GDD Space):**
+
 - Mix of complexity levels (at least one simple, one complex)
 - Content starts with the title as plain text (NOT `# Title` markdown heading)
 - Can include additional markdown content below the title
@@ -121,10 +117,12 @@ Every deck needs 2-4 example cards demonstrating:
 - Cards referenced in `subCards` must have `id` fields
 
 **For Task Decks (Production Space):**
+
 - Typically populated by journeys, not manually (can be empty)
 - Include descriptions explaining the department's role
 
 **For Doc/Mechanic Cards:**
+
 - Title as plain text, then markdown content
 - Use `isDoc: true` for reference materials
 - Include specifications, formulas, design rationale
@@ -158,6 +156,7 @@ Journeys are the **killer feature** of Codecks templates. They codify production
 ```
 
 **CRITICAL**:
+
 - `targetDeck` can reference either the deck's `id` OR `name` field
 - `content` should start with plain text title, NOT markdown heading `# Title`
 - Best practice: Use deck names like "Coding", "Art", "Audio" for clarity
@@ -165,35 +164,83 @@ Journeys are the **killer feature** of Codecks templates. They codify production
 ### Common Journey Patterns by Genre
 
 **Action/FPS - Weapon Journey:**
+
 ```json
 [
-  {"content": "Create Weapon 3D Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 8},
-  {"content": "Create Weapon Animations\n\n- Fire\n- Reload\n- Inspect", "targetDeck": "Art", "priority": "a", "effort": 5},
+  {
+    "content": "Create Weapon 3D Model & Textures",
+    "targetDeck": "Art",
+    "priority": "a",
+    "effort": 8
+  },
+  {
+    "content": "Create Weapon Animations\n\n- Fire\n- Reload\n- Inspect",
+    "targetDeck": "Art",
+    "priority": "a",
+    "effort": 5
+  },
   {"content": "Design Weapon SFX", "targetDeck": "Audio", "priority": "a", "effort": 3},
   {"content": "Implement Weapon Logic", "targetDeck": "Coding", "priority": "a", "effort": 5},
-  {"content": "Balance & Tune Weapon Stats", "targetDeck": "Game Design", "priority": "b", "effort": 3}
+  {
+    "content": "Balance & Tune Weapon Stats",
+    "targetDeck": "Game Design",
+    "priority": "b",
+    "effort": 3
+  }
 ]
 ```
 
 **RPG - Quest Journey:**
+
 ```json
 [
-  {"content": "Write Quest Dialogue & Journal Text", "targetDeck": "Writing", "priority": "a", "effort": 5},
-  {"content": "Script Quest Logic (Triggers, Objectives, Flags)", "targetDeck": "Coding", "priority": "a", "effort": 8},
-  {"content": "Design & Populate Quest Location", "targetDeck": "Game Design", "priority": "a", "effort": 8},
+  {
+    "content": "Write Quest Dialogue & Journal Text",
+    "targetDeck": "Writing",
+    "priority": "a",
+    "effort": 5
+  },
+  {
+    "content": "Script Quest Logic (Triggers, Objectives, Flags)",
+    "targetDeck": "Coding",
+    "priority": "a",
+    "effort": 8
+  },
+  {
+    "content": "Design & Populate Quest Location",
+    "targetDeck": "Game Design",
+    "priority": "a",
+    "effort": 8
+  },
   {"content": "Implement Quest Rewards", "targetDeck": "Game Design", "priority": "a", "effort": 2},
   {"content": "Test Quest (Start to Finish)", "targetDeck": "QA", "priority": "b", "effort": 3}
 ]
 ```
 
 **Simulation - Building Journey:**
+
 ```json
 [
   {"content": "Create Concept Art", "targetDeck": "Art", "priority": "a", "effort": 3},
   {"content": "Create 3D Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 5},
-  {"content": "Implement Logic (Cost, Function)", "targetDeck": "Coding", "priority": "a", "effort": 5},
-  {"content": "Design SFX\n\n- Placement\n- Active Loop", "targetDeck": "Audio", "priority": "b", "effort": 2},
-  {"content": "Balance Building Cost & Output", "targetDeck": "Game Design", "priority": "b", "effort": 2}
+  {
+    "content": "Implement Logic (Cost, Function)",
+    "targetDeck": "Coding",
+    "priority": "a",
+    "effort": 5
+  },
+  {
+    "content": "Design SFX\n\n- Placement\n- Active Loop",
+    "targetDeck": "Audio",
+    "priority": "b",
+    "effort": 2
+  },
+  {
+    "content": "Balance Building Cost & Output",
+    "targetDeck": "Game Design",
+    "priority": "b",
+    "effort": 2
+  }
 ]
 ```
 
@@ -202,11 +249,13 @@ Journeys are the **killer feature** of Codecks templates. They codify production
 ### Deck Descriptions
 
 Every deck needs a clear, concise description explaining:
+
 - What belongs in this deck
 - When to create cards here
 - (For hero decks) How the journey works
 
 **Examples:**
+
 - "The central quest log. Add a new quest as a card, then start its journey to create all production tasks."
 - "Programming tasks, engine work, and technical feature implementation."
 - "Database for all items: weapons, armor, potions, and quest objects. Add an item, then start its journey."
@@ -214,6 +263,7 @@ Every deck needs a clear, concise description explaining:
 ### Card Content
 
 Card content format:
+
 ```
 Title
 
@@ -230,6 +280,7 @@ Optional markdown content below the title describing what to consider:
 ```
 
 **CRITICAL - NO SPECIFIC METRICS:**
+
 - ❌ DON'T include specific numbers like "Damage: 80" or "Speed: 7.5 m/s"
 - ❌ DON'T include exact stats, costs, or measurements
 - ✅ DO describe what needs to be decided ("Define the damage value", "Determine movement speed")
@@ -237,6 +288,7 @@ Optional markdown content below the title describing what to consider:
 - ✅ DO reference what the card represents in general terms
 
 Include:
+
 - **Clear title**: Start with plain text title (not markdown heading)
 - **Guiding questions**: What needs to be decided/designed
 - **Behavior descriptions**: How it works conceptually
@@ -253,48 +305,56 @@ Include:
 ## Template-Specific Patterns
 
 ### Action/Shooter Games
+
 - Hero decks: Weapons, Enemies, Maps, Game Mechanics
 - Focus on feel/juice specifications (recoil, fire rate, damage)
 - Include movement specs in Core Mechanics
 - Map decks should have layout/flow descriptions
 
 ### RPG Games
+
 - Hero decks: Quests, Items, Creatures, Core Mechanics
 - Rich narrative content in quest cards
 - Item stats with tier/rarity tags
 - Creature behavior and loot tables
 
 ### Strategy Games
+
 - Hero decks: Units, Buildings, Technologies, Maps
 - Cost/benefit balance specifications
 - Tech trees and dependencies
 - Resource economy details
 
 ### Simulation Games
+
 - Hero decks: Buildings, Craftable Items, Events, Core Systems
 - Detailed economy specifications
 - Need/satisfaction systems
 - Time/calendar mechanics
 
 ### Platformer Games
+
 - Hero decks: Levels, Enemies, Power-ups, Core Mechanics
 - Movement specifications (jump height, speed, etc.)
 - Level flow and gating
 - Collectible types
 
 ### Puzzle Games
+
 - Hero decks: Mechanics, Levels, Puzzle Elements
 - Rule interactions
 - Difficulty curve planning
 - Tutorial progression
 
 ### Survival Games
+
 - Hero decks: Resources, Crafting Recipes, Threats, World Systems
 - Gathering and crafting chains
 - Threat escalation
 - Player progression systems
 
 ### Horror Games
+
 - Hero decks: Scares/Events, Environments, Enemies, Core Mechanics
 - Tension and pacing specifications
 - Resource scarcity design
@@ -305,6 +365,7 @@ Include:
 Before finalizing a template, verify:
 
 **Structure:**
+
 - [ ] Has 2 spaces (GDD + Production)
 - [ ] GDD space has `icon: "gdd"` and `defaultDeckType: "hero"`
 - [ ] Production space has `icon: "tasks"` and `defaultDeckType: "task"`
@@ -319,6 +380,7 @@ Before finalizing a template, verify:
 - [ ] All tags used in cards are defined in the `tags` array
 
 **Content Quality:**
+
 - [ ] Every deck has a clear description
 - [ ] Every deck has at least 1 example card (no empty decks!)
 - [ ] **GDD deck card counts follow pattern:** First deck ~4 cards, middle decks ~3 cards, last deck ~2 cards
@@ -330,6 +392,7 @@ Before finalizing a template, verify:
 - [ ] Effort estimates use Fibonacci numbers
 
 **Educational Elements (introduce once or twice across cards):**
+
 - [ ] At least one card explains tags (e.g., "This card has the #tier-1 tag...")
 - [ ] At least one card explains priority (e.g., in a blockquote: "> **Priority:** This is marked as 'a' priority...")
 - [ ] At least one card explains effort (e.g., "> **Effort:** Estimated at 5 points...")
@@ -338,6 +401,7 @@ Before finalizing a template, verify:
 - [ ] Cards use conversational, instructional tone for newcomers
 
 **Technical Validation:**
+
 - [ ] All required fields are present
 - [ ] No extra/invalid properties
 - [ ] `content` field starts with plain text title (not markdown heading)
@@ -375,12 +439,14 @@ Before finalizing a template, verify:
 Let's create a "Tower Defense" template step by step:
 
 ### 1. Identify Core Asset Types (GDD Hero Decks)
+
 - Towers (defensive units)
 - Enemies (waves/units)
 - Maps/Levels
 - Core Mechanics (rules/systems)
 
 ### 2. Identify Production Departments (Task Decks)
+
 - Coding
 - Art
 - Game Design
@@ -389,6 +455,7 @@ Let's create a "Tower Defense" template step by step:
 - UI/UX
 
 ### 3. Define Tags
+
 ```json
 [
   {"tag": "tier-1", "emoji": "1️⃣"},
@@ -401,11 +468,17 @@ Let's create a "Tower Defense" template step by step:
 ```
 
 ### 4. Create Tower Journey
+
 ```json
 {
   "steps": [
     {"content": "Create Tower Concept Art", "targetDeck": "Art", "priority": "a", "effort": 2},
-    {"content": "Create Tower 3D Model & Textures", "targetDeck": "Art", "priority": "a", "effort": 5},
+    {
+      "content": "Create Tower 3D Model & Textures",
+      "targetDeck": "Art",
+      "priority": "a",
+      "effort": 5
+    },
     {"content": "Animate Tower (Idle, Attack)", "targetDeck": "Art", "priority": "a", "effort": 3},
     {"content": "Implement Tower Logic", "targetDeck": "Coding", "priority": "a", "effort": 5},
     {"content": "Create Tower VFX", "targetDeck": "VFX", "priority": "b", "effort": 3},
@@ -416,6 +489,7 @@ Let's create a "Tower Defense" template step by step:
 ```
 
 ### 5. Write Example Tower Card
+
 ```json
 {
   "content": "Arrow Tower\n\n**Role:** Basic single-target anti-ground tower.\n\n**Stats:**\n- Damage: 20\n- Range: 5 tiles\n- Fire Rate: 1 attack/sec\n\n**Cost:** 100 Gold\n**Upgrades:** Yes (3 tiers)",
@@ -427,6 +501,7 @@ Let's create a "Tower Defense" template step by step:
 ## Maintenance and Updates
 
 When updating templates:
+
 1. Check that journeys still map to current Production decks
 2. Update example content to reflect best practices
 3. Add new asset types as genre conventions evolve
@@ -438,18 +513,21 @@ When updating templates:
 ## Quick Reference: Required Fields
 
 **Template Level:**
+
 - `title` (string, required)
 - `description` (string, required)
 - `tags` (array, optional but strongly recommended)
 - `spaces` (array, required - exactly 2)
 
 **Space Level:**
+
 - `name` (string, nullable)
 - `icon` (enum, optional: "default", "journey", "robot", "gdd", "tasks", "knowledge", "qa")
 - `decks` (array, required)
 - `defaultDeckType` (enum, optional: "task", "hero", "doc", "mixed")
 
 **Deck Level:**
+
 - `id` (string, optional but strongly recommended for production decks)
 - `name` (string, required)
 - `description` (string, optional but strongly recommended)
@@ -460,6 +538,7 @@ When updating templates:
 - `deckType` (enum, required: "hero", "task", or "doc")
 
 **Card Level:**
+
 - `id` (string, optional - required if referenced in subCards)
 - `content` (string, required - starts with title as plain text)
 - `priority` (enum, optional nullable: "a", "b", "c")
@@ -469,6 +548,7 @@ When updating templates:
 - `isDoc` (boolean, optional nullable)
 
 **Journey Step Level:**
+
 - `content` (string, required - starts with title as plain text)
 - `targetDeck` (string, nullable - must match deck id)
 - `priority` (enum, optional nullable: "a", "b", "c")

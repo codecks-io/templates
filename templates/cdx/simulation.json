@@ -72,8 +72,7 @@
             }
           ],
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/zJoNxdJ3QX/core-systems.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/zJoNxdJ3QX/core-systems.png"
         },
         {
           "name": "Buildings",
@@ -82,10 +81,7 @@
             {
               "content": "Colonist Tent\n\n**Tier:** 1\n**Cost:** 10 Wood, 5 Fiber\n**Function:** Provides 1 `Bed` to satisfy `Energy` need.",
               "priority": "a",
-              "tags": [
-                "tier-1",
-                "housing"
-              ],
+              "tags": ["tier-1", "housing"],
               "id": "buildings-card-1",
               "subCards": [],
               "effort": 17
@@ -94,20 +90,14 @@
               "id": "lumber-mill-card",
               "content": "Lumber Mill\n\n**Tier:** 1\n**Cost:** 20 Wood, 10 Stone\n**Function:** Converts 1 `Wood` -> 2 `Planks`. Requires 1 Colonist to operate.",
               "priority": "a",
-              "tags": [
-                "tier-1",
-                "production"
-              ],
+              "tags": ["tier-1", "production"],
               "subCards": [],
               "effort": 17
             },
             {
               "content": "Research Bench\n\n**Tier:** 2\n**Cost:** 50 Planks, 5 Tools\n**Function:** Unlocks Tier 2 technology. Generates `Research Points`.",
               "priority": "b",
-              "tags": [
-                "tier-2",
-                "production"
-              ],
+              "tags": ["tier-2", "production"],
               "subCards": [],
               "effort": 17
             }
@@ -143,15 +133,12 @@
                 "targetDeck": "5-game-design",
                 "priority": "b",
                 "effort": 2,
-                "tags": [
-                  "economy"
-                ]
+                "tags": ["economy"]
               }
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_UI.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png"
         },
         {
           "name": "Craftable Items",
@@ -160,9 +147,7 @@
             {
               "content": "Stone Axe\n\n**Tier:** 1\n**Recipe:** 5 Stone, 5 Wood\n**Function:** Allows Colonist to chop `Wood` 50% faster.",
               "priority": "a",
-              "tags": [
-                "tier-1"
-              ],
+              "tags": ["tier-1"],
               "isDoc": true,
               "id": "craftable-items-card-1",
               "subCards": [],
@@ -172,9 +157,7 @@
               "id": "bread-card",
               "content": "Bread\n\n**Tier:** 1\n**Recipe:** 2 Wheat (at `Bakery`)\n**Function:** `Food` item. Restores 50 `Hunger`.",
               "priority": "b",
-              "tags": [
-                "tier-1"
-              ],
+              "tags": ["tier-1"],
               "isDoc": true,
               "subCards": [],
               "effort": 5
@@ -183,9 +166,7 @@
               "id": "planks-card",
               "content": "Planks\n\n**Tier:** 1\n**Recipe:** 1 Wood (at `Lumber Mill`)\n**Function:** Processed building material. Used in most Tier 2 construction.",
               "priority": "a",
-              "tags": [
-                "tier-1"
-              ],
+              "tags": ["tier-1"],
               "isDoc": true,
               "subCards": [],
               "effort": 5
@@ -216,15 +197,12 @@
                 "targetDeck": "5-game-design",
                 "priority": "b",
                 "effort": 1,
-                "tags": [
-                  "economy"
-                ]
+                "tags": ["economy"]
               }
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/vw73SHu2Vt/craftable-items.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/vw73SHu2Vt/craftable-items.png"
         },
         {
           "name": "Events",
@@ -273,8 +251,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/M47vUfwXN6/events.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/M47vUfwXN6/events.png"
         },
         {
           "name": "Design Notes",
@@ -292,8 +269,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ],
       "icon": "gdd"
@@ -318,8 +294,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "id": "2-art",
@@ -337,8 +312,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "id": "3-writing",
@@ -356,8 +330,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg"
         },
         {
           "id": "4-audio",
@@ -375,8 +348,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "id": "5-game-design",
@@ -394,8 +366,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "id": "6-qa",
@@ -414,7 +385,7 @@
           ],
           "deckType": "task",
           "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_QA.jpeg",
+
           "autoTag": "bug"
         }
       ],

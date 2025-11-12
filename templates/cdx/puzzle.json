@@ -42,18 +42,14 @@
               "id": "color-switch-card",
               "content": "Color Switch Mechanic\n\nA mechanic where players can change their color and must match gates/platforms to pass through them.\n\n> **About Journeys:** Unlike repeatable assets (like levels or items), each puzzle mechanic is unique and needs custom implementation. That's why this deck doesn't use a journey - you'll manually create sub-cards for each mechanic's specific needs.\n\n**Core Rules:**\n- How do players change color? (Button press, walking over pads, etc.)\n- What happens when colors don't match? (Block passage, damage, reset?)\n- How many colors exist in your game?",
               "priority": "a",
-              "tags": [
-                "tutorial"
-              ],
+              "tags": ["tutorial"],
               "subCards": [],
               "effort": 8
             },
             {
               "content": "Push Block Mechanic\n\nBlocks that players can push (but not pull) to solve puzzles.\n\n**Consider:**\n- Can blocks fall off edges?\n- What happens if a block gets stuck?\n- Can blocks be pushed onto buttons/switches?\n- Should there be different block types (heavy, light, ice, etc.)?",
               "priority": "a",
-              "tags": [
-                "easy"
-              ],
+              "tags": ["easy"],
               "subCards": [],
               "effort": 8
             },
@@ -73,8 +69,7 @@
             }
           ],
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sUvgRWoYJn/puzzle-mechanics.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/sUvgRWoYJn/puzzle-mechanics.png"
         },
         {
           "name": "Puzzle Elements",
@@ -84,19 +79,14 @@
               "id": "pressure-plate-card",
               "content": "Pressure Plate\n\nA switch that activates when something heavy is placed on it.\n\n**Unlocks:** Doors, bridges, or other mechanisms\n**Used in:** Training levels and throughout the game\n\nThis card uses the **#easy** tag since pressure plates are intuitive for players to understand. Use difficulty tags to organize which elements appear when.",
               "priority": "a",
-              "tags": [
-                "easy",
-                "tutorial"
-              ],
+              "tags": ["easy", "tutorial"],
               "subCards": [],
               "effort": 12
             },
             {
               "content": "Laser & Mirror\n\nLasers that must be redirected using mirrors to hit targets.\n\n> **Priority Tip:** This is marked priority 'b' because it's more complex than basic elements. Introduce advanced mechanics after players master the basics!",
               "priority": "b",
-              "tags": [
-                "medium"
-              ],
+              "tags": ["medium"],
               "id": "switch-card",
               "subCards": [],
               "effort": 12
@@ -105,9 +95,7 @@
               "id": "portal-card",
               "content": "Portal\n\nTeleports objects/player to paired portal. Consider: One-way or two-way? What can go through?\n\n**Introduces:** Spatial puzzles",
               "priority": "a",
-              "tags": [
-                "mechanic"
-              ],
+              "tags": ["mechanic"],
               "subCards": [],
               "effort": 12
             }
@@ -141,8 +129,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ppggDw9XLB/puzzle-elements.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/ppggDw9XLB/puzzle-elements.png"
         },
         {
           "name": "Puzzle Levels",
@@ -152,28 +139,21 @@
               "id": "level-1-card",
               "content": "Level 1: Color Basics\n\nThe first puzzle that teaches the color switching mechanic in isolation.\n\n**Teaches:** Color Switch Mechanic\n**Solution Steps:** 3-4 moves\n**New Concepts:** Colored gates\n\n> **Effort Estimation:** Notice this card has an effort estimate of 3 points. Effort helps you plan how long content will take to create - useful when planning what fits in a sprint or milestone!",
               "priority": "a",
-              "tags": [
-                "tutorial",
-                "easy"
-              ],
+              "tags": ["tutorial", "easy"],
               "effort": 18,
               "subCards": []
             },
             {
               "content": "Level 2: Push and Switch\n\nCombines push blocks with pressure plates.\n\n**Teaches:** How blocks can activate switches\n**Requires:** Understanding of push blocks and pressure plates\n**Solution Steps:** 5-7 moves",
               "priority": "a",
-              "tags": [
-                "easy"
-              ],
+              "tags": ["easy"],
               "subCards": [],
               "effort": 18
             },
             {
               "content": "Level 10: Mirror Maze\n\nComplex laser redirection puzzle with multiple mirrors.\n\n**Requires:** Laser & Mirror understanding\n**Solution Steps:** 12+ moves\n**Difficulty Spike:** First truly challenging puzzle",
               "priority": "b",
-              "tags": [
-                "hard"
-              ],
+              "tags": ["hard"],
               "subCards": [],
               "effort": 18
             }
@@ -213,8 +193,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/CCrtFkaKKW/puzzle-levels.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/CCrtFkaKKW/puzzle-levels.png"
         },
         {
           "name": "Tutorial System",
@@ -223,25 +202,20 @@
             {
               "content": "Teaching Color Switching\n\nHow do we teach players they can change colors?\n\n**Approach Ideas:**\n- Visual: Highlight the color switch button when near a colored gate\n- Contextual: Force players to use it to progress (can't fail)\n- Feedback: Show color change with screen tint and particle effects\n\n**Linked Levels:** Level 1: Color Basics",
               "priority": "a",
-              "tags": [
-                "tutorial"
-              ],
+              "tags": ["tutorial"],
               "subCards": [],
               "effort": 8
             },
             {
               "content": "Hint System Design\n\nHow do we help stuck players without spoiling the puzzle?\n\n**Consider:**\n- Timer-based? (Show hint after 2 minutes)\n- Request-based? (Press button for hint)\n- Tiered hints? (Start vague, get more specific)\n- Visual hints? (Glow the next object to interact with)",
               "priority": "b",
-              "tags": [
-                "tutorial"
-              ],
+              "tags": ["tutorial"],
               "subCards": [],
               "effort": 8
             }
           ],
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/PzzUS4dcCl/tutorial-system.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/PzzUS4dcCl/tutorial-system.png"
         },
         {
           "name": "Design Notes",
@@ -259,8 +233,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ]
     },
@@ -286,8 +259,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Production.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "name": "Art & VFX",
@@ -306,8 +278,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "name": "Game Design",
@@ -326,8 +297,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "name": "Audio",
@@ -346,8 +316,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "name": "Bugs & QA",

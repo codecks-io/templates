@@ -47,20 +47,14 @@
               "id": "warrior-card",
               "content": "Warrior\n\nBasic melee infantry unit.\n\n**Cost:** 50 gold, 1 population\n**Stats:** Define HP, damage, and armor values\n**Strong vs:** Light units\n**Weak vs:** Ranged units\n\nThis card uses the **#early-game** and **#melee** tags. Use progression tags to organize your tech tree and unit tags for counter-systems.\n\n> **Sub-Cards Below:** These production tasks were auto-created by the journey when you started this card. Journeys save you from manually creating the same tasks over and over!",
               "priority": "a",
-              "tags": [
-                "early-game",
-                "melee"
-              ],
+              "tags": ["early-game", "melee"],
               "subCards": [],
               "effort": 23
             },
             {
               "content": "Archer\n\nRanged attack unit.\n\n**Cost:** 60 gold, 20 wood, 1 population\n**Stats:** Define HP, damage, armor, and range values\n**Strong vs:** Melee units\n**Weak vs:** Cavalry\n\n**Requires:** Archery Range building",
               "priority": "a",
-              "tags": [
-                "early-game",
-                "ranged"
-              ],
+              "tags": ["early-game", "ranged"],
               "subCards": [],
               "effort": 23
             },
@@ -68,9 +62,7 @@
               "id": "archer-card",
               "content": "Archer\n\nRanged infantry unit effective against air and melee.\n\n**Cost:** Consider resource costs\n**Strengths:** Range, anti-air capability\n**Weaknesses:** Weak in melee, low HP\n**Counter:** Cavalry charges\n\n**Why:** Provides ranged option in rock-paper-scissors balance.",
               "priority": "a",
-              "tags": [
-                "basic-unit"
-              ],
+              "tags": ["basic-unit"],
               "subCards": [],
               "effort": 23
             },
@@ -78,9 +70,7 @@
               "id": "siege-card",
               "content": "Siege Engine\n\nHeavy unit for destroying buildings.\n\n**Cost:** High resources, slow production\n**Strengths:** Massive damage to structures\n**Weaknesses:** Slow, vulnerable to units\n**Counter:** Fast cavalry\n\n**Consider:** Should it require setup time? Pack/unpack mechanic?",
               "priority": "b",
-              "tags": [
-                "advanced-unit"
-              ],
+              "tags": ["advanced-unit"],
               "subCards": [],
               "effort": 23
             }
@@ -120,8 +110,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IBrUvfUpGH/units.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IBrUvfUpGH/units.png"
         },
         {
           "name": "Buildings",
@@ -130,18 +119,14 @@
             {
               "content": "Town Center\n\nMain base building that trains workers.\n\n**Cost:** Starting building (free)\n**Trains:** Worker units\n**HP:** 2000\n**Special:** Serves as dropoff point for resources\n\n> **Priority:** Marked 'a' because this is your core building - everything depends on it working!",
               "priority": "a",
-              "tags": [
-                "early-game"
-              ],
+              "tags": ["early-game"],
               "subCards": [],
               "effort": 21
             },
             {
               "content": "Barracks\n\nProduces military infantry units.\n\n**Cost:** 150 wood\n**Trains:** Warrior, Spearman, Swordsman\n**HP:** 1200\n**Build Time:** 45 seconds",
               "priority": "a",
-              "tags": [
-                "early-game"
-              ],
+              "tags": ["early-game"],
               "subCards": [],
               "effort": 21
             },
@@ -149,9 +134,7 @@
               "id": "barracks-card",
               "content": "Barracks\n\nMilitary building for training infantry units.\n\n**Cost:** Define resource requirements\n**Function:** Unlocks and produces infantry\n**Upgrade Path:** Can upgrade for stronger units\n\n**Consider:** Train time per unit? Queue system?",
               "priority": "a",
-              "tags": [
-                "military"
-              ],
+              "tags": ["military"],
               "subCards": [],
               "effort": 21
             }
@@ -185,8 +168,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_UI.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/VPwN7x8DIC/buildings.png"
         },
         {
           "name": "Technologies",
@@ -195,9 +177,7 @@
             {
               "content": "Iron Weapons\n\nUpgrade that boosts all melee unit damage.\n\n**Cost:** 200 gold, 100 iron\n**Research Time:** 60 seconds\n**Effect:** Increases damage for all melee units\n**Requires:** Blacksmith building\n\n**Effort Note:** Technologies are quick to add once your research system exists - just 2 effort points!",
               "priority": "b",
-              "tags": [
-                "mid-game"
-              ],
+              "tags": ["mid-game"],
               "effort": 6,
               "subCards": []
             },
@@ -205,9 +185,7 @@
               "id": "melee-tech-card",
               "content": "Melee Weapons Research\n\nUpgrade improving melee unit damage.\n\n**Cost:** Research time and resources\n**Effect:** +20% damage for all melee units\n**Prerequisites:** Barracks built\n\n**Consider:** Should there be multiple tiers? Diminishing returns?",
               "priority": "a",
-              "tags": [
-                "military-tech"
-              ],
+              "tags": ["military-tech"],
               "subCards": [],
               "effort": 6
             },
@@ -215,9 +193,7 @@
               "id": "econ-tech-card",
               "content": "Advanced Economy\n\nImproves resource gathering efficiency.\n\n**Cost:** High research investment\n**Effect:** +15% gather rate for all resources\n**Prerequisites:** Market built\n\n**Why:** Rewards economic investment, enables late-game strategies.",
               "priority": "b",
-              "tags": [
-                "economy-tech"
-              ],
+              "tags": ["economy-tech"],
               "subCards": [],
               "effort": 6
             }
@@ -245,8 +221,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gSnM2SAVNs/technologies.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gSnM2SAVNs/technologies.png"
         },
         {
           "name": "Maps",
@@ -255,9 +230,7 @@
             {
               "content": "Grasslands 1v1\n\nBasic map for learning the game.\n\n**Size:** Small (2 players)\n**Starting Resources:** Balanced, nearby\n**Terrain:** Mostly flat with small hills\n**Features:** Mirror symmetry for fairness",
               "priority": "a",
-              "tags": [
-                "early-game"
-              ],
+              "tags": ["early-game"],
               "subCards": [],
               "effort": 24
             },
@@ -265,9 +238,7 @@
               "id": "highlands-map-card",
               "content": "Highland Valleys\n\nMap with elevation differences and chokepoints.\n\n**Features:**\n- High ground provides combat bonuses\n- Narrow passes create defensive positions\n- Central control point\n\n**Playstyle:** Rewards positional play and map control",
               "priority": "a",
-              "tags": [
-                "map"
-              ],
+              "tags": ["map"],
               "subCards": [],
               "effort": 24
             }
@@ -301,8 +272,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/gOieur1Tmx/maps.png"
         },
         {
           "name": "Design Notes",
@@ -320,8 +290,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ]
     },
@@ -347,8 +316,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "name": "Art",
@@ -367,8 +335,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "name": "Game Design",
@@ -384,8 +351,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "name": "Audio",
@@ -404,8 +370,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "name": "Bugs & QA",

@@ -52,27 +52,21 @@
               "id": "fire-sword-card",
               "content": "Fire Sword\n\nA weapon that deals fire damage and can ignite enemies.\n\n**Effect:** Bonus damage, chance to inflict burn damage over time\n**Rarity:** Uncommon\n\nThis card has the **#uncommon** tag. Use rarity tags to control how often items appear in runs and to organize your loot tables.\n\n> **Sub-Cards:** The tasks below were created by this card's journey. Each journey step creates a production task automatically - this is how Codecks helps you stay organized!",
               "priority": "a",
-              "tags": [
-                "uncommon"
-              ],
+              "tags": ["uncommon"],
               "subCards": [],
               "effort": 14
             },
             {
               "content": "Health Potion\n\nInstant heal consumable.\n\n**Effect:** Restores health immediately\n**Rarity:** Common\n**Stack Size:** Up to 3\n\nCommon items like this should appear frequently to give players consistent options during runs.",
               "priority": "a",
-              "tags": [
-                "common"
-              ],
+              "tags": ["common"],
               "subCards": [],
               "effort": 14
             },
             {
               "content": "Wings of Icarus\n\nGrants temporary flight ability.\n\n**Effect:** Can fly over pits and obstacles for 10 seconds\n**Rarity:** Legendary\n**Cooldown:** 60 seconds\n\n> **Effort:** Estimated at 8 points because flight requires significant physics and level design considerations. Use higher effort estimates for complex features!",
               "priority": "b",
-              "tags": [
-                "legendary"
-              ],
+              "tags": ["legendary"],
               "effort": 14,
               "subCards": []
             },
@@ -80,9 +74,7 @@
               "id": "shield-card",
               "content": "Iron Shield\n\nDefensive equipment that blocks incoming damage.\n\n**Effect:** Block next attack completely (breaks after 3 blocks)\n**Rarity:** Common\n\nThis demonstrates defensive item design - should encourage aggressive play by providing safety net.",
               "priority": "a",
-              "tags": [
-                "common"
-              ],
+              "tags": ["common"],
               "subCards": [],
               "effort": 14
             }
@@ -122,8 +114,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/GVeKuhuQv2/items-power-ups.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/GVeKuhuQv2/items-power-ups.png"
         },
         {
           "name": "Enemies",
@@ -133,18 +124,14 @@
               "id": "goblin-card",
               "content": "Goblin\n\nBasic melee enemy that charges at the player.\n\n**HP:** 20\n**Damage:** 5\n**Behavior:** Chases player when in range, attacks on contact\n**Loot:** 50% chance to drop common item\n\n**Appears in:** Early floors (1-3)",
               "priority": "a",
-              "tags": [
-                "common"
-              ],
+              "tags": ["common"],
               "subCards": [],
               "effort": 18
             },
             {
               "content": "Necromancer\n\nRanged enemy that summons skeleton minions.\n\n**HP:** 40\n**Damage:** 8 (projectile)\n**Behavior:** Keeps distance, summons skeletons every 10 seconds\n**Loot:** 80% chance rare item\n\n> **Priority:** This is marked priority 'b' since you should have basic enemies working before adding complex summoner mechanics.",
               "priority": "b",
-              "tags": [
-                "rare"
-              ],
+              "tags": ["rare"],
               "subCards": [],
               "effort": 18
             },
@@ -152,9 +139,7 @@
               "id": "boss-card",
               "content": "Floor Boss\n\nPowerful enemy guarding the exit to next floor.\n\n**HP:** 200\n**Damage:** 15-20\n**Behavior:** Multi-phase fight with pattern changes\n**Loot:** Guaranteed rare item\n\n**Appears in:** Every 5th floor",
               "priority": "a",
-              "tags": [
-                "rare"
-              ],
+              "tags": ["rare"],
               "subCards": [],
               "effort": 18
             }
@@ -188,8 +173,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Fh7qFefS10/enemies.png"
         },
         {
           "name": "Room Types",
@@ -198,18 +182,14 @@
             {
               "content": "Combat Arena\n\nA room focused on enemy encounters.\n\n**Size:** Medium (15x15 tiles)\n**Spawns:** 3-6 enemies based on floor depth\n**Exits:** 2-3 doors\n**Loot:** Always contains 1 chest\n\nCombat rooms are the backbone of roguelike pacing - make sure they're varied and interesting!",
               "priority": "a",
-              "tags": [
-                "common"
-              ],
+              "tags": ["common"],
               "subCards": [],
               "effort": 15
             },
             {
               "content": "Treasure Vault\n\nA rare room with no enemies but high-value loot.\n\n**Size:** Small (8x8 tiles)\n**Spawns:** No enemies, but may have traps\n**Loot:** 2-3 high-rarity chests\n**Frequency:** 5% chance per floor\n\n**Linked to:** Wings of Icarus (might need flight to access)",
               "priority": "b",
-              "tags": [
-                "rare"
-              ],
+              "tags": ["rare"],
               "subCards": [],
               "effort": 15
             },
@@ -217,9 +197,7 @@
               "id": "shop-room-card",
               "content": "Shop Room\n\nMerchant offering items for gold.\n\n**Size:** Small (10x10 tiles)\n**Spawns:** Friendly NPC merchant\n**Stock:** 3-5 random items\n**Frequency:** 15% chance per floor\n\nShops create interesting resource management decisions.",
               "priority": "a",
-              "tags": [
-                "uncommon"
-              ],
+              "tags": ["uncommon"],
               "subCards": [],
               "effort": 15
             }
@@ -253,8 +231,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/qQpfkwlYjp/room-types.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/qQpfkwlYjp/room-types.png"
         },
         {
           "name": "Meta-Progression",
@@ -263,25 +240,20 @@
             {
               "content": "Skill Tree System\n\nPermanent unlockable abilities purchased with currency earned across runs.\n\n**Currency:** Soul Gems (earned on death based on floor reached)\n**Skills:** 20-30 nodes offering stat boosts and new abilities\n**Reset:** Never (permanent upgrades)\n\nThis is the **#meta-progression** tag in action - content that stays with the player even after permadeath. This is what makes roguelites more accessible than pure roguelikes!",
               "priority": "a",
-              "tags": [
-                "meta-progression"
-              ],
+              "tags": ["meta-progression"],
               "subCards": [],
               "effort": 8
             },
             {
               "content": "Starting Loadout Unlocks\n\nNew character classes or starting items unlocked through achievements.\n\n**Examples:**\n- Warrior: Unlocked by default\n- Mage: Unlocked by reaching floor 5\n- Assassin: Unlocked by completing a run without taking damage in 10 rooms\n\n**Why this matters:** Gives players goals beyond just \"reach the end\" and adds replayability.",
               "priority": "b",
-              "tags": [
-                "meta-progression"
-              ],
+              "tags": ["meta-progression"],
               "subCards": [],
               "effort": 8
             }
           ],
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Map5J0obIA/meta-progression.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/Map5J0obIA/meta-progression.png"
         },
         {
           "name": "Design Notes",
@@ -299,8 +271,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ]
     },
@@ -326,8 +297,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "name": "Art",
@@ -346,8 +316,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "name": "Game Design",
@@ -366,8 +335,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "name": "Audio",
@@ -386,8 +354,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "name": "Bugs & QA",

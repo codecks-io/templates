@@ -72,8 +72,7 @@
             }
           ],
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/F3DZPKlj4o/core-mechanics.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/F3DZPKlj4o/core-mechanics.png"
         },
         {
           "name": "Quests",
@@ -82,9 +81,7 @@
             {
               "content": "MQ1: The Dragon's Lair\n\n**Goal:** Player must defeat the dragon in the Burning Peaks.\n**Giver:** King Alistair in the capital.\n**Steps:**\n1. Find the hidden map.\n2. Speak to the Hermit.\n3. Slay the dragon.",
               "priority": "a",
-              "tags": [
-                "main-quest"
-              ],
+              "tags": ["main-quest"],
               "id": "quests-card-1",
               "subCards": [],
               "effort": 26
@@ -93,18 +90,14 @@
               "id": "mq2-card",
               "content": "MQ2: The Shadow's Heart\n\n**Goal:** Stop the Shadow Cult from completing their dark ritual in the sunken temple.\n**Giver:** Varis the Royal Mage, after completing 'MQ1: The Dragon's Lair'.\n**Steps:**\n1. Find the key to the Sunken Temple.\n2. Survive the temple's water traps.\n3. Interrupt the ritual by defeating the 3 Cultist Lieutenants.\n4. Confront the Cult's leader, Malakor.",
               "priority": "a",
-              "tags": [
-                "main-quest"
-              ],
+              "tags": ["main-quest"],
               "subCards": [],
               "effort": 26
             },
             {
               "content": "SQ1: The Lost Miner\n\n**Goal:** Find the miner lost in the Crystal Caves.\n**Giver:** Worried Wife in Boulder Town.\n**Reward:** 500 Gold, 2x Health Potion.",
               "priority": "b",
-              "tags": [
-                "side-quest"
-              ],
+              "tags": ["side-quest"],
               "subCards": [],
               "effort": 26
             }
@@ -144,8 +137,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/80ixNg4oIJ/quests.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/80ixNg4oIJ/quests.png"
         },
         {
           "name": "Items",
@@ -154,9 +146,7 @@
             {
               "content": "Iron Sword\n\n**Type:** 1H Weapon\n**Damage:** 8-12 Physical\n**Stats:** +1 STR\n**Cost:** 50 Gold",
               "priority": "a",
-              "tags": [
-                "common"
-              ],
+              "tags": ["common"],
               "isDoc": true,
               "id": "items-card-1",
               "subCards": [],
@@ -166,9 +156,7 @@
               "id": "health-potion-card",
               "content": "Health Potion\n\n**Type:** Consumable\n**Effect:** Restores health over time.\n**Cost:** 25 Gold",
               "priority": "b",
-              "tags": [
-                "common"
-              ],
+              "tags": ["common"],
               "isDoc": true,
               "subCards": [],
               "effort": 9
@@ -176,9 +164,7 @@
             {
               "content": "Shadowfang Mail\n\n**Type:** Chest Armor (Medium)\n**Defense:** 25\n**Stats:** +2 DEX, +10 Stealth\n**Cost:** 800 Gold",
               "priority": "c",
-              "tags": [
-                "rare"
-              ],
+              "tags": ["rare"],
               "isDoc": true,
               "subCards": [],
               "effort": 9
@@ -219,8 +205,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IJgQGPNRjt/items.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/IJgQGPNRjt/items.png"
         },
         {
           "name": "Creatures",
@@ -284,8 +269,7 @@
             ]
           },
           "deckType": "hero",
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/YDDZWpYl5L/creatures.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Ideas.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/YDDZWpYl5L/creatures.png"
         },
         {
           "name": "Design Notes",
@@ -303,8 +287,7 @@
               "isDoc": true
             }
           ],
-          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/xuu7lsKeHq/design-notes.png"
         }
       ],
       "icon": "gdd"
@@ -329,8 +312,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Code.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg"
         },
         {
           "id": "2-art",
@@ -348,8 +330,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Art.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg"
         },
         {
           "id": "3-writing",
@@ -367,8 +348,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Docs.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg"
         },
         {
           "id": "4-audio",
@@ -386,8 +366,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_Audio.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Audio.jpeg"
         },
         {
           "id": "5-game-design",
@@ -405,8 +384,7 @@
             }
           ],
           "deckType": "task",
-          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_LD.jpeg"
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg"
         },
         {
           "id": "6-qa",
@@ -425,7 +403,7 @@
           ],
           "deckType": "task",
           "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
-          "image": "https://i.codecks.io/w:147,h:104,fit:cover,avif,noAnim/https%3A%2F%2Fperma-assets-codecks.s3.eu-central-1.amazonaws.com%2Fcovers%2Fruth-2019%2FCD_QA.jpeg",
+
           "autoTag": "bug"
         }
       ],
