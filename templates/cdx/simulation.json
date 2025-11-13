@@ -2,7 +2,7 @@
   "meta": {
     "id": "cdx/simulation",
     "title": "Simulation",
-    "description": "Simulation and management game template with resource systems, buildings, crafting, worker needs, and economy balancing.",
+    "description": "Management sim with resources, buildings, crafting, and worker needs.",
     "tags": ["gamedev"],
     "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/oZTddDOl6L/template-simulation.png"
   },

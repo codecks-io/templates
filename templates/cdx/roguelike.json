@@ -2,7 +2,7 @@
   "meta": {
     "id": "cdx/roguelike",
     "title": "Roguelike",
-    "description": "Roguelike game template featuring items, enemies, procedural room generation, permadeath runs, and meta-progression systems.",
+    "description": "Roguelike game with items, enemies, procedural rooms, and meta-progression.",
     "tags": ["gamedev"],
     "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/3JjUoafcV2/template-roguelike.png"
   },

@@ -2,7 +2,7 @@
   "meta": {
     "id": "cdx/survival",
     "title": "Survival",
-    "description": "Survival game template with resource gathering, crafting systems, threats, hunger mechanics, and environmental challenges.",
+    "description": "Survival game with resource gathering, crafting, threats, and hunger mechanics.",
     "tags": ["gamedev"],
     "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/F7nQDUHVwo/template-strategy-1.png"
   },
