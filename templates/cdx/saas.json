@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "id": "cdx/saas",
+    "title": "SaaS Startup",
+    "description": "Product development template for SaaS startups with features and marketing.",
+    "tags": ["saas"],
+    "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/AGy6QuJ2Pr/template-puzzle.png"
+  },
+  "tags": [
+    {
+      "tag": "bug",
+      "description": null,
+      "color": null,
+      "emoji": "🐞"
+    }
+  ],
+  "spaces": [
+    {
+      "name": "Product & Marketing",
+      "icon": "gdd",
+      "defaultDeckType": "hero",
+      "decks": [
+        {
+          "id": "122",
+          "name": "Core Features",
+          "description": "Feature specifications that auto-create implementation tasks. Add a feature card, then start its journey.",
+          "deckType": "hero",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Ideas.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": [
+              {
+                "targetDeck": "124",
+                "content": "Define Feature Requirements & Technical Spec\n\n- [ ] Write user stories\n- [ ] Define acceptance criteria\n- [ ] Specify API endpoints\n- [ ] Plan database schema\n- [ ] Identify dependencies",
+                "priority": "a",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "126",
+                "content": "Design Feature UI/UX\n\n- [ ] Create user flow diagrams\n- [ ] Design mockups\n- [ ] Define interactions\n- [ ] Review with team",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "125",
+                "content": "Implement Feature Backend\n\n- [ ] Create database migrations\n- [ ] Build API endpoints\n- [ ] Write business logic\n- [ ] Add validation\n- [ ] Write unit tests",
+                "priority": "a",
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "125",
+                "content": "Build Feature Frontend\n\n- [ ] Create components\n- [ ] Integrate with API\n- [ ] Add form validation\n- [ ] Handle error states\n- [ ] Add loading states",
+                "priority": "a",
+                "effort": 8,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "128",
+                "content": "Deploy Feature to Production\n\n- [ ] Run database migrations\n- [ ] Deploy backend changes\n- [ ] Deploy frontend changes\n- [ ] Update environment config\n- [ ] Monitor for errors",
+                "priority": "a",
+                "effort": 2,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "129",
+                "content": "Test Feature End-to-End\n\n- [ ] Write E2E tests\n- [ ] Manual testing\n- [ ] Cross-browser testing\n- [ ] Security testing\n- [ ] Performance testing",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              }
+            ]
+          },
+          "cards": [
+            {
+              "id": "490",
+              "content": "Authentication & Authorization\n\nUser authentication system with multiple sign-in methods.\n\n**Requirements:**\n- Email/password registration and login\n- OAuth providers (Google, GitHub)\n- Password reset flow\n- Email verification\n- Session management\n- Role-based access control (RBAC)\n\n**Success Criteria:**\n- Secure token-based authentication\n- Support for 2FA (future enhancement)\n- Compliant with security best practices",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": ["500", "508", "504", "505", "516", "520"]
+            },
+            {
+              "id": "491",
+              "content": "User Profile Management\n\nUser profile creation and management system.\n\n**Features:**\n- View and edit profile information\n- Avatar/photo upload\n- Account settings (email, password, preferences)\n- Privacy settings\n- Account deletion with data export\n\n**Consider:**\n- GDPR compliance for data export/deletion\n- Profile visibility settings",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "492",
+              "content": "Subscription & Billing\n\nSubscription management with Stripe integration.\n\n**Pricing Tiers:**\n- Free tier (limited features)\n- Pro tier ($29/month)\n- Enterprise tier (custom pricing)\n\n**Features:**\n- Subscribe/upgrade/downgrade flows\n- Payment method management\n- Invoice generation\n- Trial period (14 days)\n- Cancellation handling\n\n**Technical:**\n- Stripe webhooks for payment events\n- Prorated billing\n- Failed payment retry logic",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "493",
+              "content": "Dashboard & Analytics\n\nUser dashboard showing key metrics and insights.\n\n**Metrics to Display:**\n- Usage statistics\n- Activity timeline\n- Performance indicators\n- Growth charts\n- Export data functionality\n\n**Technical:**\n- Real-time data updates (WebSocket?)\n- Data visualization library\n- Responsive charts\n- CSV/PDF export",
+              "priority": "b",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "494",
+              "content": "API & Integrations\n\nPublic API for third-party integrations.\n\n**Features:**\n- RESTful API endpoints\n- API key generation & management\n- Rate limiting (100 req/min free, 1000 req/min pro)\n- API documentation (OpenAPI/Swagger)\n- Webhook system for events\n\n**Developer Experience:**\n- Interactive API docs\n- Code examples (Python, JavaScript, cURL)\n- Sandbox environment",
+              "priority": "b",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "495",
+              "content": "Notifications System\n\nMulti-channel notification system.\n\n**Channels:**\n- Email notifications\n- In-app notification center\n- Push notifications (future)\n\n**Notification Types:**\n- Welcome email\n- Feature updates\n- Billing reminders\n- Activity alerts\n- System announcements\n\n**User Controls:**\n- Notification preferences per type\n- Frequency settings\n- Unsubscribe management",
+              "priority": "b",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "123",
+          "name": "Marketing Initiatives",
+          "description": "Marketing campaigns and go-to-market activities. Add an initiative card, then start its journey.",
+          "deckType": "hero",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Marketing.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": [
+              {
+                "targetDeck": "124",
+                "content": "Plan Marketing Strategy & Goals\n\n- [ ] Define target audience\n- [ ] Set measurable goals\n- [ ] Plan timeline\n- [ ] Allocate budget\n- [ ] Identify channels",
+                "priority": "a",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "127",
+                "content": "Execute Marketing Campaign\n\n- [ ] Create content\n- [ ] Schedule posts\n- [ ] Launch campaign\n- [ ] Monitor performance\n- [ ] Adjust based on data",
+                "priority": "a",
+                "effort": 5,
+                "tags": [],
+                "zoneLabel": null
+              },
+              {
+                "targetDeck": "126",
+                "content": "Design Marketing Assets\n\n- [ ] Create graphics\n- [ ] Design layouts\n- [ ] Write copy\n- [ ] Review and iterate",
+                "priority": "b",
+                "effort": 3,
+                "tags": [],
+                "zoneLabel": null
+              }
+            ]
+          },
+          "cards": [
+            {
+              "id": "497",
+              "content": "Email Campaign: User Onboarding\n\nAutomated email sequence for new users.\n\n**Email Sequence:**\n1. Welcome email (immediate)\n2. Getting started guide (Day 1)\n3. Feature spotlight (Day 3)\n4. Tips & tricks (Day 7)\n5. Upgrade prompt (Day 14)\n\n**Metrics:**\n- Open rate target: 40%\n- Click-through rate: 15%\n- Conversion to paid: 5%",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "498",
+              "content": "Product Launch Campaign\n\nGo-to-market launch campaign.\n\n**Channels:**\n- Product Hunt launch\n- Social media (Twitter, LinkedIn)\n- Email list announcement\n- Press release\n- Influencer outreach\n\n**Timeline:**\n- Pre-launch: Build anticipation (2 weeks)\n- Launch day: Maximum visibility\n- Post-launch: Sustained engagement (1 month)",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "499",
+              "content": "Content Marketing Strategy\n\nLong-term content strategy for organic growth.\n\n**Content Types:**\n- Blog posts (SEO-focused)\n- Case studies\n- Video tutorials\n- Help center articles\n- Webinars\n\n**Goals:**\n- Increase organic traffic\n- Establish thought leadership\n- Improve SEO rankings\n- Generate qualified leads",
+              "priority": "b",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "496",
+              "content": "Landing Page Launch\n\nPublic-facing landing page to convert visitors.\n\n**Sections:**\n- Hero section with value proposition\n- Feature highlights (3-5 key features)\n- Pricing comparison table\n- Customer testimonials\n- FAQ section\n- Call-to-action (CTA)\n\n**Goals:**\n- Clear messaging\n- High conversion rate\n- Mobile responsive\n- SEO optimized",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": false,
+              "subCards": ["501", "512", "509"]
+            }
+          ]
+        },
+        {
+          "id": "131",
+          "name": "Knowledge Base",
+          "description": "Documentation, onboarding, and team knowledge.",
+          "deckType": "doc",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Docs.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "525",
+              "content": "API Documentation\n\nComprehensive API reference for developers.\n\n**Sections:**\n- Authentication\n- Endpoints reference\n- Request/response examples\n- Rate limiting\n- Error codes\n- SDKs and libraries",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
+            },
+            {
+              "id": "526",
+              "content": "Development Environment Setup\n\nGuide for setting up local development.\n\n**Contents:**\n- Prerequisites\n- Installation steps\n- Configuration\n- Running locally\n- Troubleshooting",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
+            },
+            {
+              "id": "527",
+              "content": "Architecture Decision: Why PostgreSQL\n\n**Context:** Choosing a database for our SaaS platform\n\n**Decision:** Use PostgreSQL as primary database\n\n**Rationale:**\n- Strong ACID compliance\n- JSON support for flexibility\n- Excellent performance\n- Wide ecosystem support\n\n**Consequences:** Team needs PostgreSQL expertise",
+              "priority": "c",
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
+            },
+            {
+              "id": "528",
+              "content": "Sprint Retrospective Notes\n\n**Date:** Sprint 5\n\n**What Went Well:**\n- Delivered authentication on time\n- Good collaboration\n\n**What Could Improve:**\n- Better estimation\n- More code reviews\n\n**Action Items:**\n- Schedule estimation workshop\n- Set up review reminders",
+              "priority": "c",
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
+            },
+            {
+              "id": "529",
+              "content": "Security Best Practices\n\nInternal guide for secure coding.\n\n**Topics:**\n- Input validation\n- SQL injection prevention\n- XSS protection\n- CSRF tokens\n- Secret management\n- Authentication best practices",
+              "priority": "a",
+              "effort": null,
+              "tags": [],
+              "isDoc": true,
+              "subCards": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Execution",
+      "icon": "tasks",
+      "defaultDeckType": "task",
+      "decks": [
+        {
+          "id": "124",
+          "name": "Planning",
+          "description": "Product specs, requirements, and strategy documentation.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Ideas.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "502",
+              "content": "Weekly Sprint Planning Meeting\n\nPlan the upcoming sprint and set goals.\n\n- [ ] Review backlog\n- [ ] Estimate story points\n- [ ] Assign tasks\n- [ ] Set sprint goals",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "503",
+              "content": "Quarterly Roadmap Review\n\nReview progress and plan next quarter.\n\n- [ ] Analyze metrics\n- [ ] Gather stakeholder feedback\n- [ ] Prioritize features\n- [ ] Update roadmap",
+              "priority": "b",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "500",
+              "content": "Define Feature Requirements & Technical Spec\n\n- [ ] Write user stories\n- [ ] Define acceptance criteria\n- [ ] Specify API endpoints\n- [ ] Plan database schema\n- [ ] Identify dependencies",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "501",
+              "content": "Plan Marketing Strategy & Goals\n\n- [ ] Define target audience\n- [ ] Set measurable goals\n- [ ] Plan timeline\n- [ ] Allocate budget\n- [ ] Identify channels",
+              "priority": "a",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "125",
+          "name": "Programming",
+          "description": "Backend, frontend, and integration development work.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Code.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "506",
+              "content": "Upgrade Dependencies to Latest Versions\n\nUpdate npm packages and fix breaking changes.\n\n- [ ] Review dependency updates\n- [ ] Test compatibility\n- [ ] Update code if needed\n- [ ] Run test suite",
+              "priority": "c",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "507",
+              "content": "Refactor Legacy Authentication Code\n\nImprove code quality and maintainability.\n\n- [ ] Review current implementation\n- [ ] Plan refactoring approach\n- [ ] Implement changes\n- [ ] Ensure tests pass",
+              "priority": "b",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "504",
+              "content": "Implement Feature Backend\n\n- [ ] Create database migrations\n- [ ] Build API endpoints\n- [ ] Write business logic\n- [ ] Add validation\n- [ ] Write unit tests",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "505",
+              "content": "Build Feature Frontend\n\n- [ ] Create components\n- [ ] Integrate with API\n- [ ] Add form validation\n- [ ] Handle error states\n- [ ] Add loading states",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "126",
+          "name": "UI/UX Design",
+          "description": "Visual design, user experience, and interface work.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Art.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "510",
+              "content": "Design System Audit\n\nReview and update design system components.\n\n- [ ] Audit existing components\n- [ ] Identify inconsistencies\n- [ ] Update documentation\n- [ ] Create missing components",
+              "priority": "b",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "511",
+              "content": "Dark Mode Exploration\n\nExplore and design dark mode color palette.\n\n- [ ] Research best practices\n- [ ] Design color palette\n- [ ] Create mockups\n- [ ] Get feedback",
+              "priority": "c",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "508",
+              "content": "Design Feature UI/UX\n\n- [ ] Create user flow diagrams\n- [ ] Design mockups\n- [ ] Define interactions\n- [ ] Review with team",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "509",
+              "content": "Design Marketing Assets\n\n- [ ] Create graphics\n- [ ] Design layouts\n- [ ] Write copy\n- [ ] Review and iterate",
+              "priority": "b",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "127",
+          "name": "Marketing",
+          "description": "Marketing execution, content creation, and campaigns.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_Marketing.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "513",
+              "content": "Write Blog Post: Getting Started Guide\n\nCreate SEO-optimized tutorial content.\n\n- [ ] Keyword research\n- [ ] Write draft\n- [ ] Add screenshots\n- [ ] Edit and publish\n- [ ] Promote on social media",
+              "priority": "b",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "514",
+              "content": "Weekly Social Media Posts\n\nCreate and schedule social media content.\n\n- [ ] Plan content topics\n- [ ] Create graphics\n- [ ] Write captions\n- [ ] Schedule posts",
+              "priority": "b",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "515",
+              "content": "A/B Test Email Subject Lines\n\nOptimize email open rates.\n\n- [ ] Design experiment\n- [ ] Create variants\n- [ ] Run test\n- [ ] Analyze results",
+              "priority": "c",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "512",
+              "content": "Execute Marketing Campaign\n\n- [ ] Create content\n- [ ] Schedule posts\n- [ ] Launch campaign\n- [ ] Monitor performance\n- [ ] Adjust based on data",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "128",
+          "name": "DevOps",
+          "description": "Infrastructure, deployment, and operational tasks.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "517",
+              "content": "Set Up CI/CD Pipeline\n\nAutomate testing and deployment.\n\n- [ ] Configure GitHub Actions\n- [ ] Add automated tests\n- [ ] Set up staging environment\n- [ ] Configure production deploy\n- [ ] Test pipeline",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "518",
+              "content": "Configure Monitoring & Alerting\n\nSet up application monitoring.\n\n- [ ] Choose monitoring tool\n- [ ] Set up error tracking\n- [ ] Configure alerts\n- [ ] Create dashboards",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "519",
+              "content": "Monthly Security Patches\n\nApply system and dependency updates.\n\n- [ ] Review security advisories\n- [ ] Apply patches\n- [ ] Test functionality\n- [ ] Document changes",
+              "priority": "b",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "516",
+              "content": "Deploy Feature to Production\n\n- [ ] Run database migrations\n- [ ] Deploy backend changes\n- [ ] Deploy frontend changes\n- [ ] Update environment config\n- [ ] Monitor for errors",
+              "priority": "a",
+              "effort": 2,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "129",
+          "name": "QA",
+          "description": "Testing, quality assurance, and bug tracking.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "523",
+              "content": "Bug Bash Session\n\nTeam testing to find bugs.\n\n- [ ] Schedule session\n- [ ] Define testing scope\n- [ ] Conduct testing\n- [ ] Triage bugs found",
+              "priority": "b",
+              "effort": 3,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "521",
+              "content": "Write Unit Tests for Authentication\n\nImprove test coverage.\n\n- [ ] Identify untested code\n- [ ] Write test cases\n- [ ] Achieve 80% coverage\n- [ ] Document edge cases",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "522",
+              "content": "Accessibility Audit (WCAG Compliance)\n\nEnsure app is accessible.\n\n- [ ] Run automated tests\n- [ ] Manual keyboard navigation\n- [ ] Screen reader testing\n- [ ] Fix issues found",
+              "priority": "b",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            },
+            {
+              "id": "520",
+              "content": "Test Feature End-to-End\n\n- [ ] Write E2E tests\n- [ ] Manual testing\n- [ ] Cross-browser testing\n- [ ] Security testing\n- [ ] Performance testing",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "130",
+          "name": "Bugs & Issues",
+          "description": "Bug reports and issue tracking. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_UI.jpeg",
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "524",
+              "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing.\n\n**Steps to Reproduce:**\n1. ...\n2. ...\n\n**Expected:** \n**Actual:** \n\n- [ ] Investigate root cause\n- [ ] Fix implementation\n- [ ] Add regression test\n- [ ] Verify fix in staging",
+              "priority": "a",
+              "effort": 3,
+              "tags": ["bug"],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
