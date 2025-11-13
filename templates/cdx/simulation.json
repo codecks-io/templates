@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Simulation",
-  "description": "Export",
-  "title": "Template Simulation",
+  "meta": {
+    "id": "cdx/simulation",
+    "title": "Simulation",
+    "description": "Simulation and management game template with resource systems, buildings, crafting, worker needs, and economy balancing.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",

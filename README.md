@@ -8,9 +8,13 @@ A Codecks template is a JSON object with the following structure:
 
 ```
 Template
-├── title (required)
-├── description (required)
-├── tags (optional)
+├── meta (required, object)
+│   ├── id (required)
+│   ├── title (required)
+│   ├── description (required)
+│   ├── tags (required, array)
+│   └── imageUrl (optional, nullable)
+├── tags (optional, array)
 └── spaces (required, array)
     └── Space
         ├── name (nullable)
@@ -48,8 +52,12 @@ Template
 
 ### Template Level
 
-- **title** (string, required): The name of your template
-- **description** (string, required): A brief description of what this template is for
+- **meta** (object, required): Metadata about the template
+  - **id** (string, required): Unique identifier for the template (e.g., "cdx/action", "myname/mytemplate")
+  - **title** (string, required): The name of your template
+  - **description** (string, required): A brief description of what this template is for
+  - **tags** (string array, required): Categories for the template (e.g., ["gamedev"], ["marketing"])
+  - **imageUrl** (string, optional, nullable): URL to a preview image for the template
 - **tags** (string array, optional): Global tags that can be referenced by cards and journey steps
 - **spaces** (array, required): One or more spaces containing decks
 
@@ -118,8 +126,13 @@ Journey steps create cards in target decks when the journey is activated.
 
 ```json
 {
-  "title": "Basic Game Project",
-  "description": "A simple template for small game projects",
+  "meta": {
+    "id": "example/basic-game",
+    "title": "Basic Game Project",
+    "description": "A simple template for small game projects",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": ["art", "code", "design"],
   "spaces": [
     {
@@ -162,8 +175,13 @@ Journey steps create cards in target decks when the journey is activated.
 
 ```json
 {
-  "title": "Complete Game Development Pipeline",
-  "description": "A comprehensive template for professional game development teams with multiple disciplines",
+  "meta": {
+    "id": "example/game-dev-pipeline",
+    "title": "Complete Game Development Pipeline",
+    "description": "A comprehensive template for professional game development teams with multiple disciplines",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": ["programming", "art", "audio", "design", "qa", "marketing", "urgent", "blocked"],
   "spaces": [
     {
@@ -313,9 +331,10 @@ Journey steps create cards in target decks when the journey is activated.
 
 ## Common Mistakes to Avoid
 
+- Missing the `meta` object or any of its required fields (`id`, `title`, `description`, `tags`)
 - Using tags in cards/steps that aren't defined in the template `tags` array
 - Referencing non-existent deck names in journey `targetDeck` fields
-- Missing required fields like `content` (for cards and journey steps), `description` (for templates), `name` (for decks)
+- Missing required fields like `content` (for cards and journey steps), `name` (for decks)
 - Using invalid enum values for `priority`, `deckType`, `icon`, etc.
 - Adding custom properties not defined in the schema
 - Using `title` field on cards (use `content` instead)

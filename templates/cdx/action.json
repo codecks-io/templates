@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Action",
-  "description": "Export",
-  "title": "Template Action",
+  "meta": {
+    "id": "cdx/action",
+    "title": "Action",
+    "description": "Project structure for action games featuring weapons, enemies, and maps.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -35,11 +38,7 @@
               "effort": null,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "14",
-                "353",
-                "354"
-              ]
+              "subCards": ["14", "353", "354"]
             },
             {
               "id": "3",
@@ -147,13 +146,7 @@
               "effort": 24,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "336",
-                "337",
-                "338",
-                "339",
-                "340"
-              ]
+              "subCards": ["336", "337", "338", "339", "340"]
             }
           ]
         },
@@ -242,14 +235,7 @@
               "effort": 29,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "341",
-                "342",
-                "343",
-                "344",
-                "345",
-                "346"
-              ]
+              "subCards": ["341", "342", "343", "344", "345", "346"]
             }
           ]
         },
@@ -338,14 +324,7 @@
               "effort": 23,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "347",
-                "348",
-                "349",
-                "350",
-                "351",
-                "352"
-              ]
+              "subCards": ["347", "348", "349", "350", "351", "352"]
             }
           ]
         },
@@ -635,9 +614,7 @@
               "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "a",
               "effort": 2,
-              "tags": [
-                "bug"
-              ],
+              "tags": ["bug"],
               "isDoc": false,
               "subCards": []
             }

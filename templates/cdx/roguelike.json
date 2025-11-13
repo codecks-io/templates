@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Roguelike",
-  "description": "Export",
-  "title": "Template Roguelike",
+  "meta": {
+    "id": "cdx/roguelike",
+    "title": "Roguelike",
+    "description": "Roguelike game template featuring items, enemies, procedural room generation, permadeath runs, and meta-progression systems.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -103,13 +106,7 @@
               "effort": 14,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "400",
-                "401",
-                "402",
-                "403",
-                "404"
-              ]
+              "subCards": ["400", "401", "402", "403", "404"]
             }
           ]
         },
@@ -182,12 +179,7 @@
               "effort": 18,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "405",
-                "406",
-                "407",
-                "408"
-              ]
+              "subCards": ["405", "406", "407", "408"]
             }
           ]
         },
@@ -260,12 +252,7 @@
               "effort": 15,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "409",
-                "410",
-                "411",
-                "412"
-              ]
+              "subCards": ["409", "410", "411", "412"]
             }
           ]
         },
@@ -559,9 +546,7 @@
               "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
               "priority": "a",
               "effort": 2,
-              "tags": [
-                "bug"
-              ],
+              "tags": ["bug"],
               "isDoc": false,
               "subCards": []
             }

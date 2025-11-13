@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Survival",
-  "description": "Export",
-  "title": "Template Survival",
+  "meta": {
+    "id": "cdx/survival",
+    "title": "Survival",
+    "description": "Survival game template with resource gathering, crafting systems, threats, hunger mechanics, and environmental challenges.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -94,13 +97,7 @@
               "effort": 10,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "475",
-                "476",
-                "477",
-                "478",
-                "479"
-              ]
+              "subCards": ["475", "476", "477", "478", "479"]
             },
             {
               "id": "304",
@@ -109,13 +106,7 @@
               "effort": 10,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "470",
-                "471",
-                "472",
-                "473",
-                "474"
-              ]
+              "subCards": ["470", "471", "472", "473", "474"]
             }
           ]
         },
@@ -196,13 +187,7 @@
               "effort": 14,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "480",
-                "481",
-                "482",
-                "483",
-                "484"
-              ]
+              "subCards": ["480", "481", "482", "483", "484"]
             }
           ]
         },
@@ -265,13 +250,7 @@
               "effort": 22,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "485",
-                "486",
-                "487",
-                "488",
-                "489"
-              ]
+              "subCards": ["485", "486", "487", "488", "489"]
             },
             {
               "id": "312",
@@ -646,9 +625,7 @@
               "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "a",
               "effort": 2,
-              "tags": [
-                "bug"
-              ],
+              "tags": ["bug"],
               "isDoc": false,
               "subCards": []
             }

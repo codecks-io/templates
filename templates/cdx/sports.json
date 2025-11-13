@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Sports",
-  "description": "Export",
-  "title": "Template Sports",
+  "meta": {
+    "id": "cdx/sports",
+    "title": "Sports",
+    "description": "Sports game template with rules, teams, player stats, stamina systems, scoring mechanics, and career mode.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -135,12 +138,7 @@
               "effort": 18,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "442",
-                "443",
-                "444",
-                "445"
-              ]
+              "subCards": ["442", "443", "444", "445"]
             }
           ]
         },
@@ -205,11 +203,7 @@
               "effort": 9,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "446",
-                "447",
-                "448"
-              ]
+              "subCards": ["446", "447", "448"]
             }
           ]
         },
@@ -265,11 +259,7 @@
               "effort": 21,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "449",
-                "450",
-                "451"
-              ]
+              "subCards": ["449", "450", "451"]
             }
           ]
         },

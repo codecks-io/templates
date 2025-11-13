@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template RPG",
-  "description": "Export",
-  "title": "Template RPG",
+  "meta": {
+    "id": "cdx/rpg",
+    "title": "RPG",
+    "description": "RPG template with character progression, quest tracking, items, creatures, turn-based combat, and dialogue systems.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -143,13 +146,7 @@
               "effort": 26,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "413",
-                "414",
-                "415",
-                "416",
-                "417"
-              ]
+              "subCards": ["413", "414", "415", "416", "417"]
             }
           ]
         },
@@ -230,13 +227,7 @@
               "effort": 9,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "418",
-                "419",
-                "420",
-                "421",
-                "422"
-              ]
+              "subCards": ["418", "419", "420", "421", "422"]
             }
           ]
         },
@@ -316,14 +307,7 @@
               "effort": 40,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "423",
-                "424",
-                "425",
-                "426",
-                "427",
-                "428"
-              ]
+              "subCards": ["423", "424", "425", "426", "427", "428"]
             }
           ]
         },

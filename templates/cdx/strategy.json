@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Strategy",
-  "description": "Export",
-  "title": "Template Strategy",
+  "meta": {
+    "id": "cdx/strategy",
+    "title": "Strategy",
+    "description": "Strategy game template with units, buildings, technologies, resource management, and tactical combat systems.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -103,13 +106,7 @@
               "effort": 23,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "452",
-                "453",
-                "454",
-                "455",
-                "456"
-              ]
+              "subCards": ["452", "453", "454", "455", "456"]
             }
           ]
         },
@@ -182,12 +179,7 @@
               "effort": 21,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "457",
-                "458",
-                "459",
-                "460"
-              ]
+              "subCards": ["457", "458", "459", "460"]
             }
           ]
         },
@@ -252,11 +244,7 @@
               "effort": 6,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "461",
-                "462",
-                "463"
-              ]
+              "subCards": ["461", "462", "463"]
             }
           ]
         },
@@ -320,12 +308,7 @@
               "effort": 24,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "464",
-                "465",
-                "466",
-                "467"
-              ]
+              "subCards": ["464", "465", "466", "467"]
             }
           ]
         },
@@ -606,9 +589,7 @@
               "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Self-review\n- [ ] Request peer review if needed",
               "priority": "c",
               "effort": 2,
-              "tags": [
-                "bug"
-              ],
+              "tags": ["bug"],
               "isDoc": false,
               "subCards": []
             },
@@ -617,9 +598,7 @@
               "content": "Test Map Balance\n\nPlaytest for fairness and pacing.\n\n- [ ] Define success criteria\n- [ ] Implement initial values\n- [ ] Playtest\n- [ ] Iterate based on feedback\n- [ ] Document final values",
               "priority": "b",
               "effort": 3,
-              "tags": [
-                "bug"
-              ],
+              "tags": ["bug"],
               "isDoc": false,
               "subCards": []
             }

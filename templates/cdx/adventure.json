@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Adventure",
-  "description": "Export",
-  "title": "Template Adventure",
+  "meta": {
+    "id": "cdx/adventure",
+    "title": "Adventure",
+    "description": "Story-driven adventure game template with locations, characters, puzzles, dialogue, and narrative progression tracking.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -103,13 +106,7 @@
               "effort": 29,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "355",
-                "356",
-                "357",
-                "358",
-                "359"
-              ]
+              "subCards": ["355", "356", "357", "358", "359"]
             }
           ]
         },
@@ -182,12 +179,7 @@
               "effort": 23,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "360",
-                "361",
-                "362",
-                "363"
-              ]
+              "subCards": ["360", "361", "362", "363"]
             }
           ]
         },
@@ -268,13 +260,7 @@
               "effort": 17,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "364",
-                "365",
-                "366",
-                "367",
-                "368"
-              ]
+              "subCards": ["364", "365", "366", "367", "368"]
             }
           ]
         },
@@ -313,10 +299,7 @@
               "effort": 8,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "371",
-                "372"
-              ]
+              "subCards": ["371", "372"]
             },
             {
               "id": "50",

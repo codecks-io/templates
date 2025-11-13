@@ -1,8 +1,11 @@
 {
-  "org": "cdx-templates",
-  "name": "Template Puzzle",
-  "description": "Export",
-  "title": "Template Puzzle",
+  "meta": {
+    "id": "cdx/puzzle",
+    "title": "Puzzle",
+    "description": "Logic-based puzzle game template with mechanics, reusable elements, level design, and difficulty progression tracking.",
+    "tags": ["gamedev"],
+    "imageUrl": null
+  },
   "tags": [
     {
       "tag": "bug",
@@ -135,12 +138,7 @@
               "effort": 12,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "391",
-                "392",
-                "393",
-                "394"
-              ]
+              "subCards": ["391", "392", "393", "394"]
             }
           ]
         },
@@ -221,13 +219,7 @@
               "effort": 18,
               "tags": [],
               "isDoc": false,
-              "subCards": [
-                "395",
-                "396",
-                "397",
-                "398",
-                "399"
-              ]
+              "subCards": ["395", "396", "397", "398", "399"]
             }
           ]
         },
@@ -485,9 +477,7 @@
               "content": "Example Bug Report\n\nUse this deck to track bugs found during development and testing. All cards in this deck are automatically tagged with 🐞.\n\n- [ ] Review task requirements\n- [ ] Complete main work\n- [ ] Request peer review if needed",
               "priority": "a",
               "effort": 2,
-              "tags": [
-                "bug"
-              ],
+              "tags": ["bug"],
               "isDoc": false,
               "subCards": []
             }
