@@ -4,7 +4,8 @@
     "title": "Adventure",
     "description": "Story-driven adventure game with locations, characters, puzzles, and dialogue.",
     "tags": ["gamedev"],
-    "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/oa1gy66ur9/template-adventure.png"
+    "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/oa1gy66ur9/template-adventure.png",
+    "iconName": "map"
   },
   "tags": [
     {

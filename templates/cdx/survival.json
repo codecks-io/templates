@@ -4,7 +4,8 @@
     "title": "Survival",
     "description": "Survival game with resource gathering, crafting, threats, and hunger mechanics.",
     "tags": ["gamedev"],
-    "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/F7nQDUHVwo/template-strategy-1.png"
+    "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/F7nQDUHVwo/template-strategy-1.png",
+    "iconName": "wolf"
   },
   "tags": [
     {

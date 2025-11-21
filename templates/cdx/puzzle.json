@@ -4,7 +4,8 @@
     "title": "Puzzle",
     "description": "Logic puzzle game with mechanics, elements, levels, and difficulty progression.",
     "tags": ["gamedev"],
-    "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/AGy6QuJ2Pr/template-puzzle.png"
+    "imageUrl": "https://uploads.codecks.io/account-14c3021c-95ad-11e9-b939-5368e19a8f5e/2025/AGy6QuJ2Pr/template-puzzle.png",
+    "iconName": "puzzle"
   },
   "tags": [
     {
