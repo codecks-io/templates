@@ -16,9 +16,9 @@
   ],
   "spaces": [
     {
-      "name": "Features",
-      "icon": "gdd",
-      "defaultDeckType": "hero",
+      "name": null,
+      "icon": "tasks",
+      "defaultDeckType": "mixed",
       "decks": [
         {
           "id": "1",
@@ -41,14 +41,7 @@
               "subCards": ["2"]
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "Tasks",
-      "icon": "tasks",
-      "defaultDeckType": "task",
-      "decks": [
+        },
         {
           "id": "2",
           "name": "Tasks",
@@ -74,7 +67,7 @@
         {
           "id": "3",
           "name": "Bugs",
-          "description": "Bug reports and fixes. All cards automatically tagged with 🐞.",
+          "description": "Bug reports and issues.",
           "deckType": "task",
           "coverFileUrl": null,
           "preferredOrder": null,

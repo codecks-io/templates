@@ -74,7 +74,7 @@
         {
           "id": "3",
           "name": "Bugs",
-          "description": "Bug reports and fixes. All cards automatically tagged with 🐞.",
+          "description": "Bug reports and fixes.",
           "deckType": "task",
           "coverFileUrl": null,
           "preferredOrder": null,
