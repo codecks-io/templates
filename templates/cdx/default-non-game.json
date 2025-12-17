@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "id": "cdx/default-non-game",
+    "title": "Default Project",
+    "description": "A minimal project template.",
+    "tags": ["default-gamedev"],
+    "iconName": "empty"
+  },
+  "tags": [
+    {
+      "tag": "bug",
+      "description": null,
+      "color": null,
+      "emoji": "🐞"
+    }
+  ],
+  "spaces": [
+    {
+      "name": "Features",
+      "icon": "gdd",
+      "defaultDeckType": "hero",
+      "decks": [
+        {
+          "id": "1",
+          "name": "Features",
+          "description": "Core features and functionality for your project.",
+          "deckType": "hero",
+          "coverFileUrl": null,
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "1",
+              "content": "Player Movement\n\nImplement basic player movement mechanics.\n\n**Consider:**\n- Walking and running speeds\n- Jump height and physics\n- Acceleration and deceleration\n- Input responsiveness\n\nThis is a foundational feature that other systems will build upon.",
+              "priority": "a",
+              "effort": 8,
+              "tags": [],
+              "isDoc": false,
+              "subCards": ["2"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "icon": "tasks",
+      "defaultDeckType": "task",
+      "decks": [
+        {
+          "id": "2",
+          "name": "Tasks",
+          "description": "General development tasks and implementation work.",
+          "deckType": "task",
+          "coverFileUrl": null,
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": [
+            {
+              "id": "2",
+              "content": "Implement Player Movement System\n\n- [ ] Set up input handling\n- [ ] Implement movement physics\n- [ ] Add animation support\n- [ ] Test edge cases\n- [ ] Code review",
+              "priority": "a",
+              "effort": 5,
+              "tags": [],
+              "isDoc": false,
+              "subCards": []
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "Bugs",
+          "description": "Bug reports and fixes. All cards automatically tagged with 🐞.",
+          "deckType": "task",
+          "coverFileUrl": null,
+          "preferredOrder": null,
+          "journey": {
+            "steps": []
+          },
+          "cards": []
+        }
+      ]
+    }
+  ]
+}
