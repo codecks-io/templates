@@ -12,6 +12,12 @@
       "description": null,
       "color": null,
       "emoji": "🐞"
+    },
+    {
+      "tag": "discuss",
+      "description": null,
+      "color": null,
+      "emoji": null
     }
   ],
   "spaces": [
@@ -25,7 +31,7 @@
           "name": "Features",
           "description": "Core features and functionality for your project.",
           "deckType": "hero",
-          "coverFileUrl": null,
+          "coverFileUrl": "https://uploads.codecks.io/account-14c302a7-95ad-11e9-b939-0bf704dfb721/2025/cWYkAlWBL1/world-systems.png",
           "preferredOrder": null,
           "journey": {
             "steps": []
@@ -33,9 +39,9 @@
           "cards": [
             {
               "id": "1",
-              "content": "Player Movement\n\nImplement basic player movement mechanics.\n\n**Consider:**\n- Walking and running speeds\n- Jump height and physics\n- Acceleration and deceleration\n- Input responsiveness\n\nThis is a foundational feature that other systems will build upon.",
+              "content": "User Profile Management\n\nUser profile creation and management system.\n\n**Features:**\n- View and edit profile information\n- Avatar/photo upload\n- Account settings (email, password, preferences)\n- Privacy settings\n- Account deletion with data export\n\n**Consider:**\n- GDPR compliance for data export/deletion\n- Profile visibility settings",
               "priority": "a",
-              "effort": 8,
+              "effort": null,
               "tags": [],
               "isDoc": false,
               "subCards": ["2"]
@@ -47,7 +53,7 @@
           "name": "Tasks",
           "description": "General development tasks and implementation work.",
           "deckType": "task",
-          "coverFileUrl": null,
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_LD.jpeg",
           "preferredOrder": null,
           "journey": {
             "steps": []
@@ -55,7 +61,7 @@
           "cards": [
             {
               "id": "2",
-              "content": "Implement Player Movement System\n\n- [ ] Set up input handling\n- [ ] Implement movement physics\n- [ ] Add animation support\n- [ ] Test edge cases\n- [ ] Code review",
+              "content": "Implement\n\n- [ ] Create database schema for user profiles\n- [ ] Build profile viewing and editing UI\n- [ ] Implement avatar upload functionality\n- [ ] Add account settings page\n- [ ] Test and code review",
               "priority": "a",
               "effort": 5,
               "tags": [],
@@ -69,7 +75,7 @@
           "name": "Bugs",
           "description": "Bug reports and issues.",
           "deckType": "task",
-          "coverFileUrl": null,
+          "coverFileUrl": "https://perma-assets-codecks.s3.eu-central-1.amazonaws.com/covers/ruth-2019/CD_QA.jpeg",
           "preferredOrder": null,
           "journey": {
             "steps": []

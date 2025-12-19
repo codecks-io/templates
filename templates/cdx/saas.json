@@ -12,6 +12,36 @@
       "description": null,
       "color": null,
       "emoji": "🐞"
+    },
+    {
+      "tag": "urgent",
+      "description": null,
+      "color": null,
+      "emoji": null
+    },
+    {
+      "tag": "security",
+      "description": null,
+      "color": null,
+      "emoji": null
+    },
+    {
+      "tag": "enhancement",
+      "description": null,
+      "color": null,
+      "emoji": null
+    },
+    {
+      "tag": "customer-facing",
+      "description": null,
+      "color": null,
+      "emoji": null
+    },
+    {
+      "tag": "tech-debt",
+      "description": null,
+      "color": null,
+      "emoji": null
     }
   ],
   "spaces": [
@@ -85,7 +115,7 @@
               "content": "Authentication & Authorization\n\nUser authentication system with multiple sign-in methods.\n\n**Requirements:**\n- Email/password registration and login\n- OAuth providers (Google, GitHub)\n- Password reset flow\n- Email verification\n- Session management\n- Role-based access control (RBAC)\n\n**Success Criteria:**\n- Secure token-based authentication\n- Support for 2FA (future enhancement)\n- Compliant with security best practices",
               "priority": "a",
               "effort": null,
-              "tags": [],
+              "tags": ["security", "customer-facing"],
               "isDoc": false,
               "subCards": ["500", "508", "504", "505", "516", "520"]
             },
@@ -103,7 +133,7 @@
               "content": "Subscription & Billing\n\nSubscription management with Stripe integration.\n\n**Pricing Tiers:**\n- Free tier (limited features)\n- Pro tier ($29/month)\n- Enterprise tier (custom pricing)\n\n**Features:**\n- Subscribe/upgrade/downgrade flows\n- Payment method management\n- Invoice generation\n- Trial period (14 days)\n- Cancellation handling\n\n**Technical:**\n- Stripe webhooks for payment events\n- Prorated billing\n- Failed payment retry logic",
               "priority": "a",
               "effort": null,
-              "tags": [],
+              "tags": ["security", "customer-facing"],
               "isDoc": false,
               "subCards": []
             },
@@ -340,7 +370,7 @@
               "content": "Upgrade Dependencies to Latest Versions\n\nUpdate npm packages and fix breaking changes.\n\n- [ ] Review dependency updates\n- [ ] Test compatibility\n- [ ] Update code if needed\n- [ ] Run test suite",
               "priority": "c",
               "effort": 3,
-              "tags": [],
+              "tags": ["tech-debt"],
               "isDoc": false,
               "subCards": []
             },
@@ -349,7 +379,7 @@
               "content": "Refactor Legacy Authentication Code\n\nImprove code quality and maintainability.\n\n- [ ] Review current implementation\n- [ ] Plan refactoring approach\n- [ ] Implement changes\n- [ ] Ensure tests pass",
               "priority": "b",
               "effort": 5,
-              "tags": [],
+              "tags": ["tech-debt", "security"],
               "isDoc": false,
               "subCards": []
             },
@@ -505,7 +535,7 @@
               "content": "Monthly Security Patches\n\nApply system and dependency updates.\n\n- [ ] Review security advisories\n- [ ] Apply patches\n- [ ] Test functionality\n- [ ] Document changes",
               "priority": "b",
               "effort": 3,
-              "tags": [],
+              "tags": ["security"],
               "isDoc": false,
               "subCards": []
             },
@@ -545,7 +575,7 @@
               "content": "Write Unit Tests for Authentication\n\nImprove test coverage.\n\n- [ ] Identify untested code\n- [ ] Write test cases\n- [ ] Achieve 80% coverage\n- [ ] Document edge cases",
               "priority": "a",
               "effort": 5,
-              "tags": [],
+              "tags": ["security"],
               "isDoc": false,
               "subCards": []
             },
@@ -554,7 +584,7 @@
               "content": "Accessibility Audit (WCAG Compliance)\n\nEnsure app is accessible.\n\n- [ ] Run automated tests\n- [ ] Manual keyboard navigation\n- [ ] Screen reader testing\n- [ ] Fix issues found",
               "priority": "b",
               "effort": 5,
-              "tags": [],
+              "tags": ["customer-facing"],
               "isDoc": false,
               "subCards": []
             },
